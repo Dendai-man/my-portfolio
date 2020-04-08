@@ -387,6 +387,16 @@ a {
   z-index: 10;
 }
 
+.main-visual::after {
+  content: "";
+  position: absolute;
+  top: 91.2%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #000;
+}
+
 .main-visual__observerArea {
   position: fixed;
   width: 100%;
@@ -470,16 +480,6 @@ a {
   white-space: nowrap;
   -webkit-transition: .3s;
   transition: .3s;
-}
-
-.main-visual__title-logo-inner-left::after {
-  content: "";
-  position: absolute;
-  top: 80%;
-  left: -100vw;
-  width: 200vw;
-  height: 5px;
-  background: #000;
 }
 
 .main-visual__title-logo-inner-left__title-logo-char {
