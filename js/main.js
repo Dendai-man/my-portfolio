@@ -14,8 +14,9 @@ window.addEventListener('load', function () {
 	const so3 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
 	const so4 = new ScrollObserver('.h-fade-in__body', true, {rootMargin: "0px 0px -30% 0px"});
 	const so5 = new ScrollObserver('.h-fade-in', true, {rootMargin: "0px 0px -30% 0px"});
-	const so6 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -55% 0px"});
-	const so7 = new ScrollObserver('.profile__profile-3', true, {rootMargin: "0px 0px -15% 0px"});
+	const so6 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -55% 0px"});
+	const so7 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -15% 0px"});
+	const so8 = new ScrollObserver('.profile__profile-3', true, {rootMargin: "0px 0px -15% 0px"});
 });
 
 class ScrollObserver {

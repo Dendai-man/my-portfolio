@@ -257,8 +257,16 @@ a {
 
 .jsFadeIn {
     opacity: 0;
-    transform: translateY(50px);
+    transition: 1s;
     transition-property: opacity;
+    &.scrolled {
+        opacity: 1;
+    }
+}
+
+.jsFadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
     transition: 1s;
     &.scrolled {
         opacity: 1;
@@ -436,14 +444,14 @@ a {
 
 .profile {
     &__profile-1{
-        position: relative;
         width: 100%;
         height: 50vh;
         &__left {
             position: absolute;
             width: 30%;
-            height: 100%;
+            height: 52%;
             margin-top: 10%;
+            z-index: 2;
             & .profile-icon {
                 width: 80%;
                 height: 100%;
@@ -455,13 +463,13 @@ a {
         }
         &__right {
             position: absolute;
-            top: 30%;
+            top: 130%;
             right: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 70%;
-            height: 200%;
+            height: 100%;
             &::before {
                 content: "";
                 display: block;
@@ -473,11 +481,13 @@ a {
             & span{
                 display: block;
                 position: absolute;
-                top: 180%;
+                top: 150%;
                 right: 5%;
                 width: 120%;
                 height: 80%;
-                background: $c-1;
+                background: url('/images/bg-front01.JPG') no-repeat center;
+                background-size: cover;
+                z-index: -1;
                 // filter: grayscale(100%) blur(6px);
             }
             & .profile-name {
