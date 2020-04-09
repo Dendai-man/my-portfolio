@@ -12,10 +12,10 @@ window.addEventListener('load', function () {
 	// const so = new ScrollObserver('.main-visual__arrow', {root: null});
 	const so2 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
 	const so3 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
-	const so4 = new ScrollObserver('.h-fade-in__body', true, {rootMargin: "0px 0px -30% 0px"});
-	const so5 = new ScrollObserver('.h-fade-in', true, {rootMargin: "0px 0px -30% 0px"});
-	const so6 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -55% 0px"});
-	const so7 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -15% 0px"});
+	const so4 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -50% 0px"});
+	const so5 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -50% 0px"});
+	const so6 = new ScrollObserver('.jsFadeInUp', false, {rootMargin: "0px 0px -55% 0px"});
+	const so7 = new ScrollObserver('.jsFadeIn', false, {rootMargin: "0px 0px -25% 0px"});
 	const so8 = new ScrollObserver('.profile__profile-3', true, {rootMargin: "0px 0px -15% 0px"});
 });
 

@@ -41,7 +41,11 @@ ul {
 
 a {
     text-decoration: none;
-} 
+}
+
+.sections {
+    padding-top: 10vh;
+}
 
 .more-text {
     width: 100%;
@@ -288,7 +292,7 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    background: url("/images/main-visual-img.png") no-repeat center;
+    background: url("/images/main-visual-img.jpg") no-repeat center;
     background-size: cover;
     z-index: -99;
     &::before {
@@ -303,12 +307,11 @@ a {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 .main-visual {
     position: relative;
     width: 100%;
     height: 75vh;
-    background: url("/images/main-visual-img.png") no-repeat center;
+    background: url("/images/main-visual-img.jpg") no-repeat center;
     background-size: cover;
     margin-bottom: 28vh;
     &::before{
@@ -443,117 +446,120 @@ a {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .profile {
-    &__profile-1{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    // referc
+    margin-bottom: 10%; 
+    &__profile-bg-inner { 
+        position: absolute;
         width: 100%;
-        height: 50vh;
-        &__left {
+        height: 100%;
+        &__profile-bg {
+            content: "";
+            display: block;
             position: absolute;
-            width: 30%;
-            height: 52%;
-            margin-top: 10%;
-            z-index: 2;
-            & .profile-icon {
-                width: 80%;
-                height: 100%;
-                margin-left: 5%;
-                background: url(/images/profile-icon.png) center;
-                background-size: cover;
-                box-shadow: 5px 5px 10px #222;
-            }
-        }
-        &__right {
-            position: absolute;
-            top: 130%;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 70%;
-            height: 100%;
-            &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: $c-3;
-            }
-            & span{
-                display: block;
-                position: absolute;
-                top: 150%;
-                right: 5%;
-                width: 120%;
-                height: 80%;
-                background: url('/images/bg-front01.JPG') no-repeat center;
-                background-size: cover;
-                z-index: -1;
-                // filter: grayscale(100%) blur(6px);
-            }
-            & .profile-name {
-                font-size: 1.5rem;
-                font-weight: bold;
-                margin: 10px 3% 0 auto;
-                writing-mode: vertical-rl;
-            }
-            & .profile-en-name {
-                font-size: .7rem;
-                margin: 10px 3% 0 auto;
-                writing-mode: vertical-rl;
-            }
-            & .profile-my-background {
-                font-size: .8rem;
-                margin: 25% 5% 0 5%;
-                line-height: 25px;
-            }
-            & .profile-intro {
-                font-size: .6rem;
-                margin: 10px 5% 0 5%;
-                line-height: 25px;
-            }
+            top: -40%;
+            left: -10%;
+            width: 90%;
+            height: 150%;
+            background: url('/images/bg-front01.jpg') no-repeat center;
+            background-size: cover;
+            filter: grayscale(80%);
+            transform: skewX(-8deg);
         }
     }
-    &__profile-2 {
-        text-align: right;
+    &__left {
+        position: absolute;
+        top: 190%;
         width: 100%;
-        // margin: 0 auto 60px auto;
-        font-size: .9rem;
-        line-height: 25px;
-        border-radius: 9px;
-        & .profile-skills {
-            position: relative;
-            // width: 100%;
-            // height: 150px;
-            color: white;
-            border-top: white solid .5px;
-            // padding: 50px;
-            &:nth-child(3) {
-                border-bottom: white solid .5px;
-            }
+        height: 100%;
+        z-index: 2;
+        & .profile-icon {
+            position: absolute;
+            top: -50%;
+            left: 3%;
+            width: 35%;
+            height: 50vh;
+            background: url(/images/profile-icon.jpg) center;
+            background-size: cover;
+            border: solid $c-5;
         }
     }
-    & .profile__profile-3 {
-        padding: 20px 0 0 0;
-        text-align: center;
-        line-height: 25px;
-        &__left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            height: 400px;
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        top: -10%;
+        right: 0;
+        width: 80%;
+        height: 90vh;
+        background-color: $c-3;
+        box-shadow: 1px 5px 5px #444;
+        & .profile-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10% 5% 0 auto;
+            writing-mode: vertical-rl;
         }
-        &__right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            height: 400px;
-            margin: 0 auto;
+        & .profile-en-name {
+            font-size: .7rem;
+            margin: 1% 5% 0 auto;
+            writing-mode: vertical-rl;
+        }
+        & .profile-my-background {
+            font-size: .8rem;
+            margin: 15% 5% 0 19%;
+            line-height: 25px;
+        }
+        & .profile-intro {
+            font-size: .6rem;
+            margin: 6% 5% 10% 19%;
+            line-height: 25px;
         }
     }
 }
+    // &__profile-2 {
+    //     text-align: right;
+    //     width: 100%;
+    //     // margin: 0 auto 60px auto;
+    //     font-size: .9rem;
+    //     line-height: 25px;
+    //     border-radius: 9px;
+    //     & .profile-skills {
+    //         position: relative;
+    //         // width: 100%;
+    //         // height: 150px;
+    //         color: white;
+    //         border-top: white solid .5px;
+    //         // padding: 50px;
+    //         &:nth-child(3) {
+    //             border-bottom: white solid .5px;
+    //         }
+    //     }
+    // }
+    // & .profile__profile-3 {
+    //     padding: 20px 0 0 0;
+    //     text-align: center;
+    //     line-height: 25px;
+    //     &__left {
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //         align-items: center;
+    //         width: 50%;
+    //         height: 400px;
+    //     }
+    //     &__right {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         width: 50%;
+    //         height: 400px;
+    //         margin: 0 auto;
+    //     }
+    // }
 
 // .canvasWrapper {
 //     position: absolute;
