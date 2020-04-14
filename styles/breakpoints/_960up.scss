@@ -4,67 +4,114 @@ Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
 .font-sm {
-  font-size: 16px;
+  font-size: 13px;
 }
 .font-md {
-  font-size: 19px;
+  font-size: 18px;
 }
 .font-lr {
   font-size: 23px;
 }
 .font-lg {
-  font-size: 36px;
-}
-.mb-lg {
-  margin-bottom: 150px !important;
-}
-.pb-lg {
-  padding-bottom: 150px !important;
+  font-size: 28px;
 }
 
-.popular {
-  &__item {
-    flex-basis: 25%;
-  }
+.line-h-sm {
+  line-height: 21px;
+}
+.line-h-md {
+  line-height: 23px;
+}
+.line-h-lr {
+  line-height: 25px;
+}
+.line-h-lg {
+  line-height: 26px;
+}
 
-  &__img {
-    height: 335px;
+.main-visual {
+  &__title-logo-inner-right{
+      right: 20px;
+          &.scrolled{
+              transform: translateX(-55vw);
+          }
+          &__title-logo-kt{
+            font-size: 9em;
+          }
+//         @include query-sm {
+//             right: 20px;
+//             transform: scaleX(.8);
+//         }
+  }
+  &__title-logo-inner-left{
+      left: 20px;
+      //         @include query-sm {
+      //             left: 10px;
+      //         }
+      //         &.scrolled{
+      //             transform: translateX(55vw);
+      //         }
+      &__title-logo-char {
+          font-size: 3.9em;
+          letter-spacing: 7px; 
+      }
+  }
+}
+.global-bg-container { 
+  &__bg-left-1 {
+      margin-top: 1000px;
+      height: 400px;
+  }
+  &__bg-right-1 {
+    margin-top: 1800px;
+      height: 400px;
   }
 }
 
-.travel {
-  &__img {
-    height: 400px;
-  }
 
-  &__description {
-    margin-bottom: 40px;
-  }
-  &__title {
-    &::before {
-      display: block;
+.h-fade-in {
+    padding: 66px 0;
+}
+
+.profile {
+  &__left {
+    & .profile-icon {
+      top: -20%;
+      left: 5%;
+      width: 330px;
+      height: 450px;
+    }
+}
+  &__right {
+    &__profile-wrapper {
+        & .profile-name {
+            margin: 30px 3% 0 auto;
+        }
+        & .profile-my-background {
+          top: 0%;
+          right: 7px;
+      }
+        & .profile-en-name {
+            margin: 7px 3% 0 auto;
+        }
     }
   }
 }
 
-.footer {
-  &__li {
-    justify-content: flex-start;
+.skills {
+  margin-top: 150px;
+  margin-bottom: -70px;
+  &__skills-wrapper {
+    flex-direction: row;
+    &__skill-1 {
+      height: 450px;
+      & .skill-body {
+          margin: 0 30px;
+      }
+  }
   }
 }
 
-.header {
-  &__nav {
-    display: block;
-  }
-}
-
-.mobile-menu {
-    &__btn {
-        display: none;
-    }
-}
-
-.swiper-slide {
-  box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+.skill-body {
+  // margin: 0 30px !important; 
 }

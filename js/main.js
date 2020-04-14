@@ -1,22 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
-	var rellax = new Rellax('.rellax');
+	const rellax = new Rellax('.rellax', {
+		// center: true
+	})
+	// const rellaxin = document.querySelectorAll(".rellax");
+
+	// rellaxin.forEach(el => {
+		
+	// 	const rellax = new Rellax(el, {
+	// 		// relativeToWrapper: true,
+	// 		// wrapper: el.parentElement
+	// 	});
+	// 	// console.log(el.parentElement);
+	// 	window.addEventListener("scroll", () => { // fix to init
+	// 		rellax.refresh();
+	// 	});
+	// });
 });
 
 // window.addEventListener('load', function () {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// インターセクションオブザーバー　でスクロール監視、　トグルクラス
+// インターセクションオブザーバーでスクロール監視、　トグルクラスでcssアニメーション
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener('load', function () {
 	// const so = new ScrollObserver('.main-visual__arrow', {root: null});
-	const so2 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
-	const so3 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
-	const so4 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -50% 0px"});
-	const so5 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -50% 0px"});
-	const so6 = new ScrollObserver('.jsFadeInUp', false, {rootMargin: "0px 0px -55% 0px"});
-	const so7 = new ScrollObserver('.jsFadeIn', false, {rootMargin: "0px 0px -25% 0px"});
-	const so8 = new ScrollObserver('.profile__profile-3', true, {rootMargin: "0px 0px -15% 0px"});
+	const so1 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -25% 0px"});
+	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -55% 0px"});
+	const so3 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
+	const so4 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
+	const so5 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-25% 0px -75% 0px"});
+	const so6 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
+	const so7 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
+	const so8 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -50% 0px"});
+	const so9 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -50% 0px"});
+	const so10 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
+	const so11 = new ScrollObserver('.skills__skill-3', false, {rootMargin: "0px 0px -65% 0px"});
 });
 
 class ScrollObserver {
@@ -193,50 +212,77 @@ new MenuIcon();
 // 	}
 // }
 
-// //ここからロード時・リサイズ時の処理
-// window.addEventListener('load', () => {
-// 	// bodyを親とするノード内で、新しくcanvasとdivを作る
-// 	const container = document.querySelector('.profile__profile-2');
-// 	const profileSkills = document.querySelectorAll('.profile-skills');
-// 	profileSkills.forEach(profileSkill => {
-// 		const newCanvas = document.createElement('canvas');
-// 		const newDiv = document.createElement('div');
-// 		newDiv.classList.add('canvasWrapper');
-// 		// 新しく作ったdivの中にcanvasを入れる
-// 		newDiv.appendChild(newCanvas);
-// 		// 新しく作ったdivを#containerの前に挿入する
-// 		profileSkill.insertBefore(newDiv, profileSkill.firstChild);
-// 		// canvasのサイズを新しいdivからもらう
-// 		newCanvas.style.width = '100%';
-// 		newCanvas.style.height = '100%';
-// 		// 新しく作ったdivのidの指定
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 各section要素の背景に＠ランダムなspanを生成（rellax導入）
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 各sectionノードを取得
+const sections = document.querySelectorAll('section');
+// 各ノードに対して処理
+sections.forEach(section => {
+	// divを作成・スタイルを指定、各ノードのlastChilsに挿入
+	const newDiv = document.createElement('div');
+	newDiv.classList.add('spanWrapper');
+	newDiv.style.position = "absolute";
+	newDiv.style.top ="0";
+	newDiv.style.width = "100%";
+	newDiv.style.height = "200%";
+	newDiv.style.zIndex = '1';
+	newDiv.style.overflow = 'visible';
+	section.appendChild(newDiv);
+
+	// ランダムな大きさ・カラーのspanを生成
+	for (i=0; i<9; i++){
+		const newSpan = document.createElement('span');
+		const spanSize = (Math.round(Math.random() * (20 - 10) + 10) + "vw");
+		// クラス・属性を適用
+		newSpan.classList.add('rellax')
+		newSpan.setAttribute('data-rellax-speed', Math.round(Math.random() * (8 - 2) + 2));
+		newSpan.setAttribute('data-rellax-percentage', '.5');
+		// スタイルを適用
+		newSpan.style.position = "absolute";
+		newSpan.style.top = Math.round((Math.random() * (400 - 10) + 10)) + "%";
+		newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
+		newSpan.style.width = spanSize;
+		newSpan.style.height = spanSize;
+		r = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 7;
+		g = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 6;
+		b = Math.round( (Math.random( ) * (25 - 18) + 18) ) * 4;
+		newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.2)";
+		newSpan.style.borderRadius = '3%';
+		newSpan.style.transform = 'rotate(45deg)';
+		newSpan.style.transition = '.7s';
+		newSpan.style.transitionTimingFunction = 'ease-out';
+		newSpan.style.willChange = 'transform';
 		
-// 		// canvasへの描画
-// 		const ctx = newCanvas.getContext('2d');
-// 		const cW = newCanvas.width, //canvasの幅
-// 		cH = newCanvas.height; //canvasの高さ
-// 		// canvasの背景を黒に
-// 		ctx.fillStyle = 'transparent';
-// 		ctx.fillRect(0,0,cW,cH);
-// 		// ランダムな始点・終点、カラーのラインを複数描く
-// 		ctx.globalCompositeOperation = "lighter";
-// 		ctx.lineWidth = 150;
-// 		for (i=0; i<25; i++){/*線の本数がこの状態のとき*/
-// 			const lsX = Math.round(Math.random( )* cW * 5),
-// 			leX = Math.round(Math.random( )* cW -1),
-// 			lsY = Math.round(Math.random( )* cH * 5),
-// 			leY = Math.round(Math.random( )* cH -800),
-// 			r = Math.round(Math.random( )* (250 - 200) + 200),
-// 			g = Math.round(Math.random( )* (250 - 200) + 200),
-// 			b = Math.round(Math.random( )* (250 - 200) + 200);
-// 			ctx.beginPath();
-// 			ctx.strokeStyle = "rgba("+r+","+g+","+b+",0.05)";
-// 			ctx.moveTo(lsX,lsY);
-// 			ctx.lineTo(leX,leY);
-// 			ctx.stroke();
-// 		} 
-// 	});
-//   });
+		newDiv.appendChild(newSpan);
+	}
+});
+	// const ctx = newCanvas.getContext('2d');
+			// const cW = newCanvas.width, //canvasの幅
+			// cH = newCanvas.height; //canvasの高さ
+			// // canvasの背景を黒に
+			// ctx.fillStyle = 'transparent';
+			// ctx.fillRect(0,0,cW,cH);
+			// // ランダムな始点・終点、カラーのラインを複数描く
+			// ctx.globalCompositeOperation = "lighter";
+			// ctx.lineWidth = 150;
+		// // canvasへの描画
+		// for (i=0; i<10; i++){/*線の本数がこの状態のとき*/
+		// 	const lsX = Math.round(Math.random( )* random),
+		// 	leX = Math.round(Math.random( )* random),
+		// 	lsY = Math.round(Math.random( )* random),
+		// // 	leY = Math.round(Math.random( )* random),
+		// 	r = Math.round(Math.random( )* (250 - 0) + 0),
+		// 	g = Math.round(Math.random( )* (250 - 0) + 0),
+		// 	b = Math.round(Math.random( )* (250 - 0) + 0);
+		// 	ctx.beginPath();
+		// 	ctx.strokeStyle = "rgba("+r+","+g+","+b+",0.5)";
+		// 	ctx.moveTo(lsX,lsY);
+		// 	ctx.lineTo(leX,leY);
+		// 	ctx.stroke();
+		// } 
 
 
 

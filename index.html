@@ -20,7 +20,7 @@
   <!-- Body -->
   <div id="global-container">
   <!-- Global Background -->
-  <div class="bg-target01"></div>
+  <!-- <div class="bg-target01"></div> -->
   <!-- <div class="bg-img"></div> -->
   <!-- Nav Menu -->
   <nav class="nav">
@@ -33,10 +33,10 @@
         <a href="#profile">Profile</a>
       </li>
       <li>
-        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
       </li>
       <li>
-        <a href="#pr">About me</a>
+        <a href="#skills">Skills</a>
       </li>
       <li>
         <a href="#works">Works</a>
@@ -53,42 +53,44 @@
   </nav>
   <!-- Main Sections -->
   <div class="sections-container">
-    <section class="main-visual" id="home">
-      <div class="main-visual__overlay-top"></div>
-      <div class="main-visual__overlay-left"></div>
-      <div class="main-visual__overlay-right"></div>
-      <div class="main-visual__title-logo-inner-left">
-        <span class="main-visual__title-logo-inner-left__title-logo-char">ashiro</span>
-      </div>
-      <div class="main-visual__title-logo-inner-right">
-        <span class="main-visual__title-logo-inner-right__title-logo-kt">K.T</span>
-      </div>
-      <div class="main-visual__arrow-inner rellax" data-rellax-speed="-3" data-rellax-xs-speed="-7" data-rellax-mobile-speed="-6" data-rellax-tablet-speed="-5" data-rellax-desktop-speed="-4">
-        <a href="#profile">
-          <img class="main-visual__arrow-inner__arrow" src="/images/down-arrow.png" alt="画像">
-        </a>
+    <!-- <div class="global-bg-container rellax" data-rellax-speed="-4" data-rellax-percentage=".5">
+      <span class="global-bg-container__bg-left-1"></span>
+      <span class="global-bg-container__bg-right-1"></span>
+    </div> -->
+    <section id="home">
+      <div class="main-visual">
+        <div class="main-visual__overlay-top"></div>
+        <div class="main-visual__overlay-left"></div>
+        <div class="main-visual__overlay-right"></div>
+        <div class="main-visual__title-logo-inner-left">
+          <span class="main-visual__title-logo-inner-left__title-logo-char">ashiro</span>
+        </div>
+        <div class="main-visual__title-logo-inner-right">
+          <span class="main-visual__title-logo-inner-right__title-logo-kt">K.T</span>
+        </div>
+        <div class="main-visual__arrow-inner rellax" data-rellax-speed="-3" data-rellax-percentage=".5">
+          <a href="#profile">
+            <img class="main-visual__arrow-inner__arrow" src="/images/down-arrow.png" alt="画像">
+          </a>
+        </div>
       </div>
     </section>
-    <section class="sections" id="profile">
+    <section id="profile">
       <div class="h-fade-in">
-        <h2 class="h-fade-in__body">profile</h2>
+        <h2 class="h-fade-in__body">Profile</h2>
       </div>
       <div class="profile">
-        <div class="profile__profile-bg-inner rellax" data-rellax-speed="-3" data-rellax-xs-speed="-1" data-rellax-mobile-speed="-2" data-rellax-tablet-speed="-2" data-rellax-desktop-speed="-3">
-          <span class="profile__profile-bg-inner__profile-bg jsFadeIn"></span>
+        <div class="profile__left">
+          <div class="profile-icon rellax jsFadeIn" data-rellax-speed="4" data-rellax-percentage=".9"></div>
         </div>
-        <div class="profile__left rellax jsFadeIn" data-rellax-speed="8" data-rellax-xs-speed="6" data-rellax-mobile-speed="6" data-rellax-tablet-speed="7" data-rellax-desktop-speed="7">
-          <div class="profile-icon"></div>
-        </div>
-        <div class="profile__right rellax" data-rellax-speed="4">
-          <div class="jsFadeInUp">
+        <div class="profile__right rellax jsFadeInOut" data-rellax-speed="2" data-rellax-percentage=".4">
+          <div class="profile__right__profile-wrapper jsFadeInUp">
             <div class="profile-name">田代敬太</div>
             <div class="profile-en-name">Keita Tashiro</div>
-            <div class="profile-my-background">青山学院大学 経済学部経済学科 20年3月卒業　｜　TOEIC795</div>
+            <div class="profile-my-background">青山学院大学 経済学部経済学科 二十年三月卒業　TOEIC795</div>
             <div class="profile-intro">
-              ITとものづくりが好きです。
-              <br>約1年半前にエンジニアを志しましたが、不運にも突然両手が使えなくなってしまい
-              <br>1年以上前に進めない日々が続きましたがなんとか乗り越え、プログラミングの独学を始めてからは約3ヶ月が経ちます。
+              ITとものづくりが好きな学生です（でした）。
+              <br>Webエンジニアを目指しています。独学を始めて約3ヶ月が経ちました。<br>エンジニアになりたい気持ちは誰にも負けません。
               <br>好きなものは歌・映画・旅行・寿司・うどんです。
             </div>
           </div>
@@ -96,64 +98,77 @@
         </div>
       </div>
     </section>
+    <section class="about" id="about">
+        <div class="h-fade-in">
+          <div class="h-fade-in__body">About</div>
+        </div>
+        <!-- <div class="h-sticky-wrapper">
+          <div class="h-fade-in-sticky">
+            <div class="h-fade-in-sticky__body">About myself</div>
+          </div>
+        </div> -->
+        <div class="about__container">
+          <div class="about__container__about-1  jsFadeInOutDelay">
+            
+          </div>
+          <div class="about__container__about-2  jsFadeInOutDelay">
+            
+          </div>
+          <div class="about__container__about-3  jsFadeInOutDelay">
+            
+          </div>
+        </div>
+    </section>
     <section id="skills">
       <div class="h-fade-in">
         <h2 class="h-fade-in__body">Skills</h2>
       </div>
       <div class="skills">
-        <div class="skills__skill"><b>Back End</b>
-          <!-- <img src="images/down-arrow02.png" alt="画像" class="down-arrow-2"> -->
-          <p>Ruby/Ruby on Rails 6<br>Railsで掲示板アプリを作成しました。MVCフレームワークを用いて、記事の投稿/削除/編集機能・ユーザー情報登録/ログイン/ログアウト機能・コメント機能・いいね機能・タグを用いた記事絞り込み機能などを実装してみました。様々な機能を実装していく中で、基本的なデータのやり取りとその仕組みを理解することが出来ました。テストやデプロイには至っていません。</p>
-        </div>
-        <div class="skills__skill">
-          <b>Front End</b>
-          <div>HTML5/CSS3/JavaScript   |   SCSS/Bootstrap4/jQuery　＋ Vue.js(かじった程度)<br>バックエンドをある程度学ぶことが出来たのでオリジナルアプリケーション作りに取り掛かったのですが、デザインが思うように出来なかったためフロントエンドの学習に切り替えました。
-          簡単なものであれば、アニメーションのあるWebページをレスポンシブに作成できるようになりました。</div>
-          <!-- <img src="images/down-arrow02.png" alt="画像" class="down-arrow-2"> -->
-        </div>
-        <div class="skills__skill">
-          <b>Now</b>
-          <div>バックエンドの学習中心に切り替えていきます。
-          同時にDockerやGithubやAWSやなど、現段階では？の多い知見を取り入れながら、効率的に技術力を磨いていきたいです。
-          資格では、TOEIC850点と基本情報技術者取得を目指します。</div>
-          <!-- <img src="images/down-arrow02.png" alt="画像" class="down-arrow-2"> -->
-        </div>
-      </div>
-    </section>
-    <section class="about">
-        <div class="about__left">
-          <span class="h-article">自己紹介</span>
-          <span class="h-article__en">About me</span>
-        </div>
-        <div class="about__right">
-          <span>あああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ</span>
-        </div>
-        <div class="about__left">
-          <span class="h-article">エンジニアになりたい理由
-          </span>
-          <span class="h-article__en">Why I hope to become an engineer
-          </span>
-        </div>
-        <div class="about__right">
-          <span>あああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ</span>
-        </div>
-        <div class="about__left">
-          <span class="h-article">今後やってみたいこと</span>
-          <span class="h-article__en">My vision</span>
-          <div class="profile__profile-3__right"><p>あああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ
-            あああああああああああああああああああああああああああああああああああああああ</p>
+        <div class="skills__skills-wrapper rellax jsFadeIn" data-rellax-speed="3" data-rellax-percentage=".2">
+          <div class="skills__skills-wrapper__skill-1 jsFadeInOut">
+            <div class="skill-title">
+              <strong>Back End</strong>
+            </div>
+            <div class="skills-icons-wrapper">
+              <div class="skill-icons __ruby"></div>
+              <div class="skill-icons __rails"></div>
+            </div>
+            <p class="skill-body">Railsで掲示板アプリを作成しました。
+              MVCフレームワークを用いて、記事の投稿/削除/編集機能・ユーザー情報登録/ログイン/ログアウト機能・コメント機能・いいね機能・タグを用いた記事絞り込み機能などを実装してみました。
+              様々な機能を実装していく中で、基本的なデータのやり取りとその仕組みを理解することが出来ました。テストやデプロイには至っていません。
+            </p>
+          </div>
+          <div class="skills__skills-wrapper__skill-2 jsFadeInOut">
+            <div class="skill-title">
+              <strong>Front End</strong>
+            </div>
+            <div class="skills-icons-wrapper">
+              <div class="skill-icons __html"></div>
+              <div class="skill-icons __css"></div>
+              <div class="skill-icons __js"></div>
+            </div>
+            <p class="skill-body">
+              バックエンドをある程度学んだ後オリジナルアプリケーション作りに取り掛かりました。<br>当初はBootstrapやjQueryで簡易的なデザインを実装しようとしたのですが、満足したものが出来なかったため
+              HTML/CSS/JSを1から学んでいきました。現在は簡単なものであれば、アニメーションのあるWebページをレスポンシブに作成できます。保守性が高く、直感的に分かりやすいコードを目指しました。
+            </p>
+          </div>
+          <div class="skills__skills-wrapper__skill-3 jsFadeInOut">
+            <div class="skill-title">
+              <strong>Next</strong>
+            </div>
+            <div class="skills-icons-wrapper">
+              <div class="skill-icons __next"></div>
+            </div>
+            <p class="skill-body">バックエンドの学習中心に切り替えていきます。
+              同時にDockerやGithubやAWSやなど、現段階では？の多い知見を取り入れながら、効率的に技術力を磨いていきたいです。
+              資格では、TOEIC850点と基本情報技術者取得を目指します。あそいｄじょあいｓｊどあいｊどいあｓだどあいっぁしぉあおいさじょいｄじょいあじゃおいｓｃじょあいｓｊｃおいあｓｃじょいあｊそｃいじゃ
+            </p>
           </div>
         </div>
+        <div class="skills__right">
+          
+        </div>
+      </div>
     </section>
     <section class="works" id="works">
       <div class="h-fade-in">
@@ -168,13 +183,13 @@
               <!-- Slides -->
               <div class="swiper-slide">
                 <div class="work-title">Techfolio</div>
-                <img src="/images/not-available-icon.jpg" alt=""></div>
+                <!-- <img src="/images/not-available-icon.jpg" alt=""></div> -->
                 <div class="swiper-slide">
                   <div class="work-title">work2</div>
-                  <img src="/images/not-available-icon.jpg" alt=""></div>
+                  <!-- <img src="/images/not-available-icon.jpg" alt=""></div> -->
                   <div class="swiper-slide">
                     <div class="work-title">work3</div>
-                    <img src="/images/not-available-icon.jpg" alt=""></div>
+                    <!-- <img src="/images/not-available-icon.jpg" alt=""></div> -->
                   </div>
                   <!-- <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div> -->

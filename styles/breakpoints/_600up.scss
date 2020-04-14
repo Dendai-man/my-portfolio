@@ -2,51 +2,96 @@
 
 Stylesheet: 600px以上のタブレットやモニタで適用
 
-******************************************************************/
-.flex {
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+// ******************************************************************/
+.font-sm {
+    font-size: 12px;
+  }
+  .font-md {
+    font-size: 16px;
+  }
+  .font-lr {
+    font-size: 17px;
+  }
+  .font-lg {
+    font-size: 28px;
+  }
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pb-lg {
+    padding-bottom: 150px !important;
+  }
 
-.houses {
-    &__item {
-        flex-basis: 50%;
-        margin-bottom: 60px;
+  .main-visual {
+        &__title-logo-inner-right{
+            right: 20px;
+            &.scrolled{
+                transform: translateX(-55vw);
+            }
+            &__title-logo-kt{
+                font-size: 6em;
+            }
+        }
+        &__title-logo-inner-left{
+            left: 20px;
+            //         @include query-sm {
+            //             left: 10px;
+            //         }
+            //         &.scrolled{
+            //             transform: translateX(55vw);
+            //         }
+            &__title-logo-char {
+                font-size: 3em;
+                letter-spacing: 3px;
+    //             @include query-md {
+    //                 letter-spacing: 3px;
+    //                 font-size: 3em;
+    //             }
+    //             @include query-sm {
+    //                 letter-spacing: 0;
+    //                 font-size: 1.7em;
+    //             }
+            }
+        }
     }
-}
+    
 
-.popular {
-    &__container {
-        justify-content: space-between;
+  .profile {
+    &__left {
+        & .profile-icon {
+          left: 15%;
+          width: 300px;
+          height: 250px;
+        }
     }
+    &__right {
+        &__profile-wrapper {
+            & .profile-en-name {
+                margin: 7px 5% 0 auto;
+            }
+            & .profile-my-background {
+                top: 0%;
+                right: 10px;
+            }
+            & .profile-intro {
+                margin: 3% 15% 0 35%;
+            }
+        }
+    }
+  }
 
-    &__item {
-        flex-basis: 47%;
-    }
-}
+.skills {
+    &__skills-wrapper {
+            // & .skills-icons-wrapper {
+            //     & .skill-icons {
 
-.travel {
-    &__inner {
-        padding: 50px;
-    }
-    &__texts,
-    &__img {
-        flex-basis: 47%;
-    }
-
-    &__texts {
-        display: flex;
-        align-items: flex-end;
-    }
-}
-
-.footer {
-    & .logo {
-        justify-content: flex-start;
-    }
-
-    &__li {
-        margin-left: 0;
-        margin-right: 30px;
+            //     }
+            // }
+        &__skill-1 {
+            height: 300px;
+            & .skill-body {
+                margin: 0 30px;
+            }
+        }
     }
 }
