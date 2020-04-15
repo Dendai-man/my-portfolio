@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const rellax = new Rellax('.rellax', {
 		// center: true
-	})
+});
 	// const rellaxin = document.querySelectorAll(".rellax");
 
 	// rellaxin.forEach(el => {
@@ -131,23 +131,23 @@ class ScrollObserver {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // more-textクラスのspanを取得しそれぞれの後ろにボタンを設置、クラスとスタイルを指定
-const readMoreTexts = document.querySelectorAll('.more-text');
-readMoreTexts.forEach(readMoreText => {
-	const a = document.createElement('a');
-	const br = document.createElement('br');
-	readMoreText.parentNode.insertBefore(a, readMoreText.previousSibling);
-	readMoreText.insertBefore(br, readMoreText.firstChild);
-	a.classList.add('read-more-area')
-});
+// const readMoreTexts = document.querySelectorAll('.more-text');
+// readMoreTexts.forEach(readMoreText => {
+// 	const a = document.createElement('a');
+// 	const br = document.createElement('br');
+// 	readMoreText.parentNode.insertBefore(a, readMoreText.previousSibling);
+// 	readMoreText.insertBefore(br, readMoreText.firstChild);
+// 	a.classList.add('read-more-area')
+// });
 
-// ボタンにクリックイベントを追加
-const readMoreAreas = document.querySelectorAll('.read-more-area');
-readMoreAreas.forEach(readMoreArea => {
-	readMoreArea.addEventListener('click', function() {
-		const localReadMoreText = this.nextElementSibling;
-		localReadMoreText.classList.toggle('show');
-	})
-});
+// // ボタンにクリックイベントを追加
+// const readMoreAreas = document.querySelectorAll('.read-more-area');
+// readMoreAreas.forEach(readMoreArea => {
+// 	readMoreArea.addEventListener('click', function() {
+// 		const localReadMoreText = this.nextElementSibling;
+// 		localReadMoreText.classList.toggle('show');
+// 	})
+// });
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -187,7 +187,10 @@ class MenuIcon {
 		this.DOM.closingTarget.classList.toggle('show');
 	}
 }
-new MenuIcon();
+
+// window.addEventListener('DOMcontentloaded', () => {
+	new MenuIcon();
+// });
 
 // 	// クラス化前の記述
 // document.querySelector('.menu-icon').onclick = function() {
@@ -216,49 +219,53 @@ new MenuIcon();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 各section要素の背景に＠ランダムなspanを生成（rellax導入）
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// window.addEventListener('DOMcontentloaded' , () => {
 
-// 各sectionノードを取得
-const sections = document.querySelectorAll('section');
-// 各ノードに対して処理
-sections.forEach(section => {
-	// divを作成・スタイルを指定、各ノードのlastChilsに挿入
-	const newDiv = document.createElement('div');
-	newDiv.classList.add('spanWrapper');
-	newDiv.style.position = "absolute";
-	newDiv.style.top ="0";
-	newDiv.style.width = "100%";
-	newDiv.style.height = "200%";
-	newDiv.style.zIndex = '1';
-	newDiv.style.overflow = 'visible';
-	section.appendChild(newDiv);
-
-	// ランダムな大きさ・カラーのspanを生成
-	for (i=0; i<9; i++){
-		const newSpan = document.createElement('span');
-		const spanSize = (Math.round(Math.random() * (20 - 10) + 10) + "vw");
-		// クラス・属性を適用
-		newSpan.classList.add('rellax')
-		newSpan.setAttribute('data-rellax-speed', Math.round(Math.random() * (8 - 2) + 2));
-		newSpan.setAttribute('data-rellax-percentage', '.5');
-		// スタイルを適用
-		newSpan.style.position = "absolute";
-		newSpan.style.top = Math.round((Math.random() * (400 - 10) + 10)) + "%";
-		newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
-		newSpan.style.width = spanSize;
-		newSpan.style.height = spanSize;
-		r = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 7;
-		g = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 6;
-		b = Math.round( (Math.random( ) * (25 - 18) + 18) ) * 4;
-		newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.2)";
-		newSpan.style.borderRadius = '3%';
-		newSpan.style.transform = 'rotate(45deg)';
-		newSpan.style.transition = '.7s';
-		newSpan.style.transitionTimingFunction = 'ease-out';
-		newSpan.style.willChange = 'transform';
-		
-		newDiv.appendChild(newSpan);
-	}
-});
+	// 各sectionノードを取得
+	const sections = document.querySelectorAll('section');
+	// 各ノードに対して処理
+	sections.forEach(section => {
+		// divを作成・スタイルを指定、各ノードのlastChilsに挿入
+		const newDiv = document.createElement('div');
+		newDiv.classList.add('spanWrapper');
+		newDiv.style.position = "absolute";
+		newDiv.style.top ="-100%";
+		newDiv.style.width = "100%";
+		newDiv.style.height = "200%";
+		newDiv.style.zIndex = '1';
+		newDiv.style.visibility = 'hidden';
+		newDiv.style.overflow = 'hidden';
+		section.appendChild(newDiv);
+	
+		// ランダムな大きさ・カラーのspanを生成
+		for (i=0; i<9; i++){
+			const newSpan = document.createElement('span');
+			const spanSize = (Math.round(Math.random() * (20 - 10) + 10) + "vw");
+			// クラス・属性を適用
+			newSpan.classList.add('rellax')
+			newSpan.setAttribute('data-rellax-speed', Math.round((Math.random() * (10 - 1) + 1)));
+			newSpan.setAttribute('data-rellax-percentage', '.5');
+			// スタイルを適用
+			newSpan.style.position = "absolute";
+			newSpan.style.top = Math.round((Math.random() * (100 - 0) + 0)) + "%";
+			newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
+			newSpan.style.width = spanSize;
+			newSpan.style.height = spanSize;
+			newDiv.style.visibility = 'visible';
+			r = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 7;
+			g = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 6;
+			b = Math.round( (Math.random( ) * (25 - 18) + 18) ) * 4;
+			newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.25)";
+			newSpan.style.borderRadius = '3%';
+			newSpan.style.transform = 'rotate(45deg)';
+			newSpan.style.transition = '.7s';
+			newSpan.style.transitionTimingFunction = 'ease-out';
+			newSpan.style.willChange = 'transform';
+			
+			newDiv.appendChild(newSpan);
+		}
+	});
+// });
 	// const ctx = newCanvas.getContext('2d');
 			// const cW = newCanvas.width, //canvasの幅
 			// cH = newCanvas.height; //canvasの高さ
