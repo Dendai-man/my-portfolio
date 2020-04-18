@@ -27,6 +27,7 @@ body {
     z-index: 0;
     font-family: 'Krona One', 'Karla', 'Source Sans Pro','NotoSansCJKjp', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
     color: $c-white;
+    line-height: unset;
 }
 
 ul {
@@ -67,6 +68,7 @@ a {
     opacity: 0;
     transition: .7s;
     transition-property: opacity;
+    backface-visibility: hidden;
     &.scrolled {
         opacity: 1;
     }
@@ -88,10 +90,15 @@ a {
     transform: translateY(50px);
     transition: .4s;
     transition-property: opacity transform;
+    backface-visibility: hidden;
     &.scrolled {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.jsFadeInOutUp {
+    @extend .jsFadeInUp;
 }
 
 
@@ -140,7 +147,7 @@ a {
     &__menu-icon {
         position: fixed;
         top: 20px;
-        right: 2%;
+        right: 20px;
         width: 35px;
         height: 45px;
         padding-left: 10px;
@@ -161,18 +168,19 @@ a {
                 }
             }
         }
-        & > span {
+        &__line {
             display: block;
             width: 30px;
-            height: 2px;
+            height: 3px;
             margin-bottom: 9px;
-            background-color: $c-white;
+            background-color: $c-black;
             transition: 0.7s;
+            &.cChanged {
+                background-color: $c-red; 
+            }
         }
     }
 }
-
-  
 // .menu-icon.show {
 //     & span {
 //         background-color: #fff;
@@ -219,7 +227,7 @@ a {
 
 .bgSectionTitlesWrapper {
     position: absolute;
-    top: 80vh;
+    top: 551px;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -230,7 +238,6 @@ a {
     letter-spacing: 4vh;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    overflow: hidden;
     z-index: 1;
     & .bgSectionTitles {
         padding-top: 10vh;
@@ -245,7 +252,7 @@ a {
             position: absolute;
             top: 95%;
             left: 10vw;
-            width: 90vw;
+            width: 85vw;
             height: 1px;
             background-color: $c-black;
         }
@@ -273,14 +280,15 @@ a {
     position: relative;
     width: 70%;
     padding: 57px 0;
-    background-color: $c-7;
     text-align: right;
     color: $c-white;
+    background-color: $c-7;
     z-index: 10;
-    transition: .3s;
-    transform: scaleX(0) skewY(3deg);
-    transform-origin: left;
     box-shadow: 1px 1px 10px #000;
+    transition: .3s;
+    transform-origin: left;
+    transform: scaleX(0) skewY(3deg);
+    backface-visibility: hidden;
     &.cChanged {
         background-color: #ff00007a;
     }
@@ -291,11 +299,12 @@ a {
         @extend .font-md;
         opacity: 0;
         width: 95%;
-        letter-spacing: -10px;
         line-height: 25px;
+        letter-spacing: -10px;
         transition: .3s;
         transform: scaleX(0);
         transform-origin: right;
+        backface-visibility: hidden;
         &.scrolled{
             letter-spacing: 15px;
             opacity: 1;
@@ -314,7 +323,7 @@ a {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Main Section
+// Main visual Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 .main-visual-section {
     position: relative;
@@ -327,7 +336,7 @@ a {
     height: 551px;
     background: url("/images/main-visual-img.jpg") no-repeat center;
     background-size: cover;
-    margin-bottom: 100vh;
+    // margin-bottom: 100vh;
     z-index: 3;
     &::before{
         content: "'s portfolio site";
@@ -336,11 +345,12 @@ a {
         left: -5px;
         transform: rotate(-45deg);
         z-index: 10;
+        backface-visibility: hidden;
     }
     &::after {
         content: "";
         position: absolute;
-        top: 91.2%;
+        top: 480px;
         left: 0;
         width: 100%;
         height: 5px;
@@ -354,6 +364,7 @@ a {
         height: 193px;
         background-color: #3a281280;
         transform: skewY(-8deg);
+        backface-visibility: hidden;
     }
     &__overlay-left {
         position: absolute;
@@ -368,13 +379,14 @@ a {
     }
     &__title-logo-inner-right{
         position: absolute;
-        top: 30%;
+        top: 165px;
         right: 7px;
         white-space: nowrap;
         transition: .3s;
+        backface-visibility: hidden;
         &__title-logo-kt{   
             letter-spacing: 7px;
-            font-size: 3.5em;
+            font-size: 70px;
         }
         &.scrolled{
             transform: translateX(-53vw);
@@ -382,15 +394,16 @@ a {
     }
     &__title-logo-inner-left{
         position: absolute;
-        top: 80%;
+        top: 441px;
         left: 10px;
         white-space: nowrap;
         transition: .3s;
+        backface-visibility: hidden;
         &.scrolled{
             transform: translateX(55vw);
         }
         &__title-logo-char {
-            font-size: 1.7em;
+            font-size: 40px;
             letter-spacing: 0;
             color: #000;
         }
@@ -407,24 +420,59 @@ a {
             left: 50%;
             width: 96px;
             height: 70px;
-            @include animation(
-                $name: up-down,
-                $duration: 1.2s,
-                $iteration-count: infinite,
-                $timing-function: ease-in-out,
-                );
-            @keyframes up-down {
-                0%,
-                100% {
-                    transform: translateX(-50%) translateY(-10%);
-                }
-                50% {
-                    transform: translateX(-50%) translateY(10%);
-                }
-            }            
+            transform: translateX(-50%)
+            // @include animation(
+            //     $name: up-down,
+            //     $duration: 1.2s,
+            //     $iteration-count: infinite,
+            //     $timing-function: ease-in-out,
+            //     );
+            // @keyframes up-down {
+            //     0%,
+            //     100% {
+            //         transform: translateX(-50%) translateY(-10%);
+            //     }
+            //     50% {
+            //         transform: translateX(-50%) translateY(10%);
+            //     }
+            // }            
         }
     }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// gateAnimation Section
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+.gate-animation {
+    position: relative;
+    z-index: 1;
+}
+
+.gateAnimation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 4;
+    & .gateWrapper {
+        display: flex;
+        height: 200px;
+        overflow: hidden;
+        & .gateLeft {
+            width: 50%;
+            background:#000;
+            box-shadow: 10px 50px 100px #000;
+            backface-visibility: hidden;
+        }
+        & .gateRight {
+            width: 50%;
+            background:#fff;
+            box-shadow: -20px 20px 100px #000;
+            backface-visibility: hidden;
+        }
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // profile Section
@@ -432,6 +480,7 @@ a {
 .profile-section {
     position: relative;
     z-index: 2;
+    // margin-top: -600px;
 }
 
 .profile {
@@ -446,9 +495,9 @@ a {
         z-index: 1;
         & .profile-icon {
             position: absolute;
-            top: 250px;
+            top: 185px;
             left: 15%;
-            width: 230px;
+            width: 220px;
             height: 250px;
             background: url(/images/profile-icon.jpg) center;
             background-size: cover;

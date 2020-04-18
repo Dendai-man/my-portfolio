@@ -28,16 +28,17 @@ window.addEventListener('load', function () {
 	// const so = new ScrollObserver('.main-visual__arrow', {root: null});
 	const so1 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -25% 0px"});
 	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -65% 0px"});
-	const so3 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
-	const so4 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
-	const so5 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
-	const so6 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
-	const so7 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
-	const so8 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -70% 0px"});
-	const so9 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -70% 0px"});
-	const so10 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
-	const so11 = new ScrollObserver('.skills__skill-3', false, {rootMargin: "0px 0px -65% 0px"});
-	const so12 = new ScrollObserver('.sections-container', false, {root: document.querySelector('.about__about-1'), rootMargin: "0px 0px 0px 0px"});
+	const so3 = new ScrollObserver('.jsFadeInOutUp', false, {rootMargin: "0px 0px -65% 0px"});
+	const so4 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
+	const so5 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
+	const so6 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
+	const so7 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
+	const so8 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
+	const so9 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -70% 0px"});
+	const so10 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -70% 0px"});
+	const so11 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
+	const so12 = new ScrollObserver('.skills__skill-3', false, {rootMargin: "0px 0px -65% 0px"});
+	const so13 = new ScrollObserver('.sections-container', false, {root: document.querySelector('.about__about-1'), rootMargin: "0px 0px 0px 0px"});
 });
 
 class ScrollObserver {
@@ -250,15 +251,15 @@ new MenuIcon();
 			newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
 			newSpan.style.width = spanSize;
 			newSpan.style.height = spanSize;
-			r = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 7;
-			g = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 6;
-			b = Math.round( (Math.random( ) * (25 - 18) + 18) ) * 4;
-			newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.55)";
+			r = Math.round( (Math.random( ) * (20 - 15) + 15) ) * 7;
+			g = Math.round( (Math.random( ) * (20 - 15) + 15) ) * 6;
+			b = Math.round( (Math.random( ) * (25 - 15) + 15) ) * 4;
+			newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.7)";
 			newSpan.style.borderRadius = '3%';
 			newSpan.style.transform = 'rotate(45deg)';
 			newSpan.style.transition = '.5s';
 			newSpan.style.transitionTimingFunction = 'ease-out';
-			
+			newSpan.style.backfaceVisibility = 'hidden';
 			newDiv.appendChild(newSpan);
 		}
 	// });

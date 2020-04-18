@@ -22,35 +22,24 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     padding-bottom: 150px !important;
   }
 
-  .main-visual {
+.main-visual {
+        &::after {
+            top: 500px;
+        }
         &__title-logo-inner-right{
             right: 20px;
             &.scrolled{
                 transform: translateX(-55vw);
             }
             &__title-logo-kt{
-                font-size: 6em;
+                font-size: 120px;
             }
         }
         &__title-logo-inner-left{
             left: 20px;
-            //         @include query-sm {
-            //             left: 10px;
-            //         }
-            //         &.scrolled{
-            //             transform: translateX(55vw);
-            //         }
             &__title-logo-char {
-                font-size: 3em;
+                font-size: 60px;
                 letter-spacing: 3px;
-    //             @include query-md {
-    //                 letter-spacing: 3px;
-    //                 font-size: 3em;
-    //             }
-    //             @include query-sm {
-    //                 letter-spacing: 0;
-    //                 font-size: 1.7em;
-    //             }
             }
         }
     }
@@ -60,7 +49,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     &__left {
         & .profile-icon {
           top: 180px;
-          left: 15%;
+          left: 20%;
           width: 370px;
           height: 300px;
         }
@@ -75,7 +64,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
                 right: 10px;
             }
             & .profile-intro {
-                margin: 3% 15% 0 35%;
+                margin: 3% 15% 0 5%;
             }
         }
     }

@@ -58,6 +58,7 @@ body {
   z-index: 0;
   font-family: 'Krona One', 'Karla', 'Source Sans Pro','NotoSansCJKjp', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
   color: #fff;
+  line-height: unset;
 }
 
 ul {
@@ -106,13 +107,15 @@ a {
   transition: .7s;
   -webkit-transition-property: opacity;
   transition-property: opacity;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .jsFadeIn.scrolled, .scrolled.jsFadeInDelay, .scrolled.jsFadeInOut, .scrolled.jsFadeInOutDelay {
   opacity: 1;
 }
 
-.jsFadeInUp {
+.jsFadeInUp, .jsFadeInOutUp {
   opacity: 0;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
@@ -120,9 +123,11 @@ a {
   transition: .4s;
   -webkit-transition-property: opacity transform;
   transition-property: opacity transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-.jsFadeInUp.scrolled {
+.jsFadeInUp.scrolled, .scrolled.jsFadeInOutUp {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -186,7 +191,7 @@ a {
 .nav__menu-icon {
   position: fixed;
   top: 20px;
-  right: 2%;
+  right: 20px;
   width: 35px;
   height: 45px;
   padding-left: 10px;
@@ -214,14 +219,18 @@ a {
           transform: translate(-2px, 5px) scaleX(0.8) rotate(30deg);
 }
 
-.nav__menu-icon > span {
+.nav__menu-icon__line {
   display: block;
   width: 30px;
-  height: 2px;
+  height: 3px;
   margin-bottom: 9px;
-  background-color: #fff;
+  background-color: #000;
   -webkit-transition: 0.7s;
   transition: 0.7s;
+}
+
+.nav__menu-icon__line.cChanged {
+  background-color: #f00;
 }
 
 .sections-container {
@@ -248,7 +257,7 @@ a {
 
 .bgSectionTitlesWrapper {
   position: absolute;
-  top: 80vh;
+  top: 551px;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -267,7 +276,6 @@ a {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -288,7 +296,7 @@ a {
   position: absolute;
   top: 95%;
   left: 10vw;
-  width: 90vw;
+  width: 85vw;
   height: 1px;
   background-color: #000;
 }
@@ -317,18 +325,20 @@ a {
   position: relative;
   width: 70%;
   padding: 57px 0;
-  background-color: #887e6c;
   text-align: right;
   color: #fff;
+  background-color: #887e6c;
   z-index: 10;
-  -webkit-transition: .3s;
-  transition: .3s;
-  -webkit-transform: scaleX(0) skewY(3deg);
-          transform: scaleX(0) skewY(3deg);
-  -webkit-transform-origin: left;
-          transform-origin: left;
   -webkit-box-shadow: 1px 1px 10px #000;
           box-shadow: 1px 1px 10px #000;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0) skewY(3deg);
+          transform: scaleX(0) skewY(3deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .h-fade-in.cChanged {
@@ -343,14 +353,16 @@ a {
 .h-fade-in__body {
   opacity: 0;
   width: 95%;
-  letter-spacing: -10px;
   line-height: 25px;
+  letter-spacing: -10px;
   -webkit-transition: .3s;
   transition: .3s;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: right;
           transform-origin: right;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .h-fade-in__body.scrolled {
@@ -381,7 +393,6 @@ a {
   height: 551px;
   background: url("/images/main-visual-img.jpg") no-repeat center;
   background-size: cover;
-  margin-bottom: 100vh;
   z-index: 3;
 }
 
@@ -393,12 +404,14 @@ a {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   z-index: 10;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .main-visual::after {
   content: "";
   position: absolute;
-  top: 91.2%;
+  top: 480px;
   left: 0;
   width: 100%;
   height: 5px;
@@ -414,6 +427,8 @@ a {
   background-color: #3a281280;
   -webkit-transform: skewY(-8deg);
           transform: skewY(-8deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .main-visual__overlay-left, .main-visual__overlay-right {
@@ -430,16 +445,18 @@ a {
 
 .main-visual__title-logo-inner-right {
   position: absolute;
-  top: 30%;
+  top: 165px;
   right: 7px;
   white-space: nowrap;
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .main-visual__title-logo-inner-right__title-logo-kt {
   letter-spacing: 7px;
-  font-size: 3.5em;
+  font-size: 70px;
 }
 
 .main-visual__title-logo-inner-right.scrolled {
@@ -449,11 +466,13 @@ a {
 
 .main-visual__title-logo-inner-left {
   position: absolute;
-  top: 80%;
+  top: 441px;
   left: 10px;
   white-space: nowrap;
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .main-visual__title-logo-inner-left.scrolled {
@@ -462,7 +481,7 @@ a {
 }
 
 .main-visual__title-logo-inner-left__title-logo-char {
-  font-size: 1.7em;
+  font-size: 40px;
   letter-spacing: 0;
   color: #000;
 }
@@ -482,44 +501,52 @@ a {
   left: 50%;
   width: 96px;
   height: 70px;
-  -webkit-animation-name: up-down;
-          animation-name: up-down;
-  -webkit-animation-duration: 1.2s;
-          animation-duration: 1.2s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: normal;
-          animation-fill-mode: normal;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
-@-webkit-keyframes up-down {
-  0%,
-  100% {
-    -webkit-transform: translateX(-50%) translateY(-10%);
-            transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    -webkit-transform: translateX(-50%) translateY(10%);
-            transform: translateX(-50%) translateY(10%);
-  }
+.gate-animation {
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes up-down {
-  0%,
-  100% {
-    -webkit-transform: translateX(-50%) translateY(-10%);
-            transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    -webkit-transform: translateX(-50%) translateY(10%);
-            transform: translateX(-50%) translateY(10%);
-  }
+.gateAnimation {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  z-index: 4;
+}
+
+.gateAnimation .gateWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gateAnimation .gateWrapper .gateLeft {
+  width: 50%;
+  background: #000;
+  -webkit-box-shadow: 10px 50px 100px #000;
+          box-shadow: 10px 50px 100px #000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.gateAnimation .gateWrapper .gateRight {
+  width: 50%;
+  background: #fff;
+  -webkit-box-shadow: -20px 20px 100px #000;
+          box-shadow: -20px 20px 100px #000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .profile-section {
@@ -543,9 +570,9 @@ a {
 
 .profile__left .profile-icon {
   position: absolute;
-  top: 250px;
+  top: 185px;
   left: 15%;
-  width: 230px;
+  width: 220px;
   height: 250px;
   background: url(/images/profile-icon.jpg) center;
   background-size: cover;
@@ -838,6 +865,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   .pb-lg {
     padding-bottom: 150px !important;
   }
+  .main-visual::after {
+    top: 500px;
+  }
   .main-visual__title-logo-inner-right {
     right: 20px;
   }
@@ -846,18 +876,18 @@ Stylesheet: 600px以上のタブレットやモニタで適用
             transform: translateX(-55vw);
   }
   .main-visual__title-logo-inner-right__title-logo-kt {
-    font-size: 6em;
+    font-size: 120px;
   }
   .main-visual__title-logo-inner-left {
     left: 20px;
   }
   .main-visual__title-logo-inner-left__title-logo-char {
-    font-size: 3em;
+    font-size: 60px;
     letter-spacing: 3px;
   }
   .profile__left .profile-icon {
     top: 180px;
-    left: 15%;
+    left: 20%;
     width: 370px;
     height: 300px;
   }
@@ -869,7 +899,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     right: 10px;
   }
   .profile__right__profile-wrapper .profile-intro {
-    margin: 3% 15% 0 35%;
+    margin: 3% 15% 0 5%;
   }
   .skills__skills-wrapper__skill-1, .skills__skills-wrapper__skill-2, .skills__skills-wrapper__skill-3 {
     height: 300px;
@@ -909,6 +939,9 @@ Stylesheet: 960px以上のモニタで適用
   .line-h-lg, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
     line-height: 26px;
   }
+  .main-visual::after {
+    top: 520px;
+  }
   .main-visual__title-logo-inner-right {
     right: 20px;
   }
@@ -917,13 +950,13 @@ Stylesheet: 960px以上のモニタで適用
             transform: translateX(-55vw);
   }
   .main-visual__title-logo-inner-right__title-logo-kt {
-    font-size: 9em;
+    font-size: 170px;
   }
   .main-visual__title-logo-inner-left {
     left: 20px;
   }
   .main-visual__title-logo-inner-left__title-logo-char {
-    font-size: 3.9em;
+    font-size: 80px;
     letter-spacing: 7px;
   }
   .global-bg-container__bg-left-1 {
@@ -940,7 +973,7 @@ Stylesheet: 960px以上のモニタで適用
   .profile__left .profile-icon {
     top: 150px;
     left: 10%;
-    width: 330px;
+    width: 310px;
     height: 450px;
   }
   .profile__right__profile-wrapper .profile-name {
@@ -952,6 +985,9 @@ Stylesheet: 960px以上のモニタで適用
   .profile__right__profile-wrapper .profile-my-background {
     top: 2%;
     right: -1%;
+  }
+  .profile__right__profile-wrapper .profile-intro {
+    margin: 3% 15% 0 35%;
   }
   .about {
     z-index: 2;

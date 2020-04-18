@@ -30,29 +30,22 @@ Stylesheet: 960px以上のモニタで適用
 }
 
 .main-visual {
-  &__title-logo-inner-right{
-      right: 20px;
-          &.scrolled{
-              transform: translateX(-55vw);
-          }
-          &__title-logo-kt{
-            font-size: 9em;
-          }
-//         @include query-sm {
-//             right: 20px;
-//             transform: scaleX(.8);
-//         }
-  }
+    &::after {
+        top: 520px;
+    }
+    &__title-logo-inner-right{
+        right: 20px;
+            &.scrolled{
+                transform: translateX(-55vw);
+            }
+            &__title-logo-kt{
+              font-size: 170px;
+            }
+    }
   &__title-logo-inner-left{
       left: 20px;
-      //         @include query-sm {
-      //             left: 10px;
-      //         }
-      //         &.scrolled{
-      //             transform: translateX(55vw);
-      //         }
       &__title-logo-char {
-          font-size: 3.9em;
+          font-size: 80px;
           letter-spacing: 7px; 
       }
   }
@@ -78,7 +71,7 @@ Stylesheet: 960px以上のモニタで適用
     & .profile-icon {
       top: 150px;
       left: 10%;
-      width: 330px;
+      width: 310px;
       height: 450px;
     }
 }
@@ -93,6 +86,9 @@ Stylesheet: 960px以上のモニタで適用
         & .profile-my-background {
           top: 2%;
           right: -1%;
+        }
+        & .profile-intro {
+          margin: 3% 15% 0 35%;
         }
       }
   }
