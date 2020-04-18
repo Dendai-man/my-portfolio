@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const rellax = new Rellax('.rellax', {
 		// center: true
+
 });
 	// const rellaxin = document.querySelectorAll(".rellax");
 
@@ -26,16 +27,17 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function () {
 	// const so = new ScrollObserver('.main-visual__arrow', {root: null});
 	const so1 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -25% 0px"});
-	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -55% 0px"});
+	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -65% 0px"});
 	const so3 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
 	const so4 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
-	const so5 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-25% 0px -75% 0px"});
+	const so5 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
 	const so6 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
 	const so7 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
-	const so8 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -50% 0px"});
-	const so9 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -50% 0px"});
+	const so8 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -70% 0px"});
+	const so9 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -70% 0px"});
 	const so10 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
 	const so11 = new ScrollObserver('.skills__skill-3', false, {rootMargin: "0px 0px -65% 0px"});
+	const so12 = new ScrollObserver('.sections-container', false, {root: document.querySelector('.about__about-1'), rootMargin: "0px 0px 0px 0px"});
 });
 
 class ScrollObserver {
@@ -162,7 +164,7 @@ class MenuIcon {
 		this.DOM.links = document.querySelectorAll('.nav a');
 
 		this.eventType = this._getEventType();
-		this.eventType = window.ontouchstart ? 'touchstart' : 'click';
+		// this.eventType = window.ontouchstart ? 'touchstart' : 'click';
 		// //スマホのブラウザにはwindow.ontouchstartというプロパティが存在するのでeventTypeにtouchstartが登録される
 		// //特定の処理をクラス内で行う場合は基本的にはプライベートメソッドに切り出してあげルのがベター↓
 
@@ -188,9 +190,7 @@ class MenuIcon {
 	}
 }
 
-// window.addEventListener('DOMcontentloaded', () => {
-	new MenuIcon();
-// });
+new MenuIcon();
 
 // 	// クラス化前の記述
 // document.querySelector('.menu-icon').onclick = function() {
@@ -217,33 +217,32 @@ class MenuIcon {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 各section要素の背景に＠ランダムなspanを生成（rellax導入）
+// sections-container要素の背景に＠ランダムなspanを生成（rellax導入）
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // window.addEventListener('DOMcontentloaded' , () => {
 
 	// 各sectionノードを取得
-	const sections = document.querySelectorAll('section');
-	// 各ノードに対して処理
-	sections.forEach(section => {
+	// const sections = document.querySelectorAll('section');
+	const section = document.querySelector('.sections-container');
 		// divを作成・スタイルを指定、各ノードのlastChilsに挿入
 		const newDiv = document.createElement('div');
 		newDiv.classList.add('spanWrapper');
 		newDiv.style.position = "absolute";
-		newDiv.style.top ="-100%";
+		newDiv.style.top ="0";
 		newDiv.style.width = "100%";
-		newDiv.style.height = "200%";
-		newDiv.style.zIndex = '1';
-		newDiv.style.visibility = 'hidden';
+		newDiv.style.height = "100%";
+		newDiv.style.zIndex = '0';
 		newDiv.style.overflow = 'hidden';
-		section.appendChild(newDiv);
+		section.insertBefore(newDiv, section.firstChild);
 	
 		// ランダムな大きさ・カラーのspanを生成
-		for (i=0; i<9; i++){
+		for (i=0; i<25; i++){
 			const newSpan = document.createElement('span');
 			const spanSize = (Math.round(Math.random() * (20 - 10) + 10) + "vw");
 			// クラス・属性を適用
-			newSpan.classList.add('rellax')
-			newSpan.setAttribute('data-rellax-speed', Math.round((Math.random() * (10 - 1) + 1)));
+			newSpan.classList.add('rellax');
+			newSpan.classList.add('bgSpan');
+			newSpan.setAttribute('data-rellax-speed', Math.round((Math.random() * (6 - 1) + 1)));
 			newSpan.setAttribute('data-rellax-percentage', '.5');
 			// スタイルを適用
 			newSpan.style.position = "absolute";
@@ -251,20 +250,18 @@ class MenuIcon {
 			newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
 			newSpan.style.width = spanSize;
 			newSpan.style.height = spanSize;
-			newDiv.style.visibility = 'visible';
 			r = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 7;
 			g = Math.round( (Math.random( ) * (20 - 18) + 18) ) * 6;
 			b = Math.round( (Math.random( ) * (25 - 18) + 18) ) * 4;
-			newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.25)";
+			newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.55)";
 			newSpan.style.borderRadius = '3%';
 			newSpan.style.transform = 'rotate(45deg)';
-			newSpan.style.transition = '.7s';
+			newSpan.style.transition = '.5s';
 			newSpan.style.transitionTimingFunction = 'ease-out';
-			newSpan.style.willChange = 'transform';
 			
 			newDiv.appendChild(newSpan);
 		}
-	});
+	// });
 // });
 	// const ctx = newCanvas.getContext('2d');
 			// const cW = newCanvas.width, //canvasの幅
@@ -292,10 +289,6 @@ class MenuIcon {
 		// } 
 
 
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -310,6 +303,59 @@ class MenuIcon {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// aboutセクション / スライドショー
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// window.addEventListener('DOMcontentloaded', () => {
+	// const images01 = ['/images/bg-front01.jpg', '/images/bg-front02.jpg', '/images/bg-front03.jpg'];
+	// const images02 = ['/images/bg-front02.jpg', '/images/bg-front01.jpg', '/images/bg-front02.jpg'];
+	// // const ss1 = new slideShow(images01);
+
+	// class slideShow {
+	// 	constructor(target, images) {
+	// 		this.target = document.querySelector(target);
+	// 		this.images = images;
+	// 		this.count = 0;
+	// 		this.slideid = 0;
+	// 		this._addEvent();
+	// 		// console.log(this.images);
+	// 	};
+	// 	_addEvent() {
+	// 			// if (this.slideid <= this.images.length) {
+	// 			// console.log(this.slideTarget);
+	// 			console.log('a');
+	// 			this.slideid = setInterval(this._slideImage.bind(this), 2000);
+	// 			console.log(this.slideid);
+	// 			// }
+	// 			// else {
+	// 				// clearInterval(this.slideid);
+	// 				// console.log('b');
+	// 				// this.slideid = 0;
+	// 			// }
+	// 	}
+	// 	_slideImage() {
+	// 		if (this.count >= this.images.length) {
+	// 			console.log('c');
+	// 		// 	console.log(this.count);
+	// 		// 	console.log(images.length);
+	// 			this.count = 0;
+	// 			this.target.style.backgroundImage = "url('" + this.images[this.count] + "')";
+	// 			this.count++;
+	// 			console.log(this.target.style.backgroundImage);
+	// 		}
+	// 		else {
+	// 			console.log('d');
+	// 			this.target.style.backgroundImage = "url('" + this.images[this.count] + "')";
+	// 			this.count++;
+	// 			// console.log(images[this.count]);
+	// 			console.log(this.target.style.backgroundImage);
+	// 		}
+	// 	}
+	// }	
+	// const ss1 = new slideShow('.slideTarget01', images01);
+	// const ss2 = new slideShow(images02);
+// });
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

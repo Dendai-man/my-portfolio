@@ -76,8 +76,8 @@ Stylesheet: 960px以上のモニタで適用
 .profile {
   &__left {
     & .profile-icon {
-      top: -20%;
-      left: 5%;
+      top: 150px;
+      left: 10%;
       width: 330px;
       height: 450px;
     }
@@ -87,15 +87,44 @@ Stylesheet: 960px以上のモニタで適用
         & .profile-name {
             margin: 30px 3% 0 auto;
         }
-        & .profile-my-background {
-          top: 0%;
-          right: 7px;
-      }
         & .profile-en-name {
-            margin: 7px 3% 0 auto;
+          margin: 7px 3% 0 auto;
         }
-    }
+        & .profile-my-background {
+          top: 2%;
+          right: -1%;
+        }
+      }
   }
+}
+
+.about {
+  z-index: 2;
+  margin-bottom: 200px;
+  // &__container {
+      // &__about-1 {
+      //     height: 550px;
+      //     // &__left {
+      //     // }
+      //     // &__right {
+            
+      //     // }
+      // }
+      // &__about-2 {
+      //     height: 400px;
+      //     &__left {
+      //     }
+      //     &__right {
+      //     }
+      // }
+      // &__about-3 {
+      //     height: 400px;
+      //     &__left {
+      //     }
+      //     &__right {
+      //     }
+      // }
+  // }
 }
 
 .skills {
@@ -108,10 +137,16 @@ Stylesheet: 960px以上のモニタで適用
       & .skill-body {
           margin: 0 30px;
       }
-  }
+    }
+    &__skill-2 {
+      transition-delay: .3s;
+    }
+    &__skill-3 {    
+      transition-delay: .6s;
+    }
   }
 }
 
-.skill-body {
-  // margin: 0 30px !important; 
-}
+// .skill-body {
+//   // margin: 0 30px !important; 
+// }

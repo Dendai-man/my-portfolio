@@ -1,124 +1,203 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="田代敬太のポートフォリオサイト | エンジニア目指して日々勉強中、文系大学生のポートフォリオサイトです。現在は 「Techfolio」'エンジニアによるエンジニアのためのポートフォリオシェアリングコミュニティサイト' を制作中。">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K.Tashiro | 田代敬太のポートフォリオサイト</title>
-  <meta property="og:site_name" content="K.Tashiro">
-  <meta property="og:url" content="https://K.Tashiro.com">
+    <meta charset="UTF-8">
+    <meta name="description" content="田代敬太のポートフォリオサイト | エンジニア目指して日々勉強中、文系大学生のポートフォリオサイトです。現在は 「Techfolio」'エンジニアによるエンジニアのためのポートフォリオシェアリングコミュニティサイト' を制作中。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.Tashiro | 田代敬太のポートフォリオサイト</title>
+    <meta property="og:site_name" content="K.Tashiro">
+    <meta property="og:url" content="https://K.Tashiro.com">
 
-  <link rel="icon" href="/images/icon.jpg">
-  <link rel="stylesheet" type="text/css" href="/styles/venders/swiper.min.css">
-  <link rel="stylesheet" type="text/css" href="/styles/reset.css">
-  <link rel="stylesheet" type="text/css" href="/styles/loader.css">
-  <link rel="stylesheet" type="text/css" href="/styles/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Krona+One|Ubuntu&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/icon.jpg">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles/loader.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
 </head>
 <body id="body">
-  <!-- Body -->
-  <div id="global-container">
-  <!-- Global Background -->
-  <!-- <div class="bg-target01"></div> -->
-  <!-- <div class="bg-img"></div> -->
-  <!-- Nav Menu -->
-  <nav class="nav">
-    <div class="nav__closing-target"></div>
-    <ul>
-      <li>
-        <a href="#home">HOME</a>
-      </li>
-      <li>
-        <a href="#profile">Profile</a>
-      </li>
-      <li>
-        <a href="#about">About</a>
-      </li>
-      <li>
-        <a href="#skills">Skills</a>
-      </li>
-      <li>
-        <a href="#works">Works</a>
-      </li> 
-      <li>
-        <a href="#contact">Contact</a>
-      </li> 
-    </ul>
-    <div class="nav__menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-  <!-- Main Sections -->
-  <div class="sections-container">
+    <!-- Body -->
+    <div id="global-container">
+    <!-- Global Background -->
+    <!-- <div class="bg-target01"></div> -->
+    <!-- <div class="bg-img"></div> -->
+    <!-- Nav Menu -->
+    <nav class="nav">
+        <div class="nav__closing-target"></div>
+        <ul>
+        <li>
+            <a href="#top"><span style='color: red'>T</span>OP</a>
+        </li>
+        <li>
+            <a href="#profile">Profile</a>
+        </li>
+        <li>
+            <a href="#about">About</a>
+        </li>
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+        <li>
+            <a href="#works">Works</a>
+        </li> 
+        <li>
+            <a href="#contact">Contact</a>
+        </li> 
+        </ul>
+        <div class="nav__menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+    </nav>
+    <!-- Main Sections -->
+    <div class="sections-container">
+        <div class="bgSectionTitlesWrapper">
+            <span class="bgSectionTitles jsFadeInDelay">welcome</span>
+            <div class="bgSectionTitlesOverlay"></div>
+        </div>
     <!-- <div class="global-bg-container rellax" data-rellax-speed="-4" data-rellax-percentage=".5">
       <span class="global-bg-container__bg-left-1"></span>
       <span class="global-bg-container__bg-right-1"></span>
     </div> -->
-    <section id="home">
-      <div class="main-visual">
-        <div class="main-visual__overlay-top"></div>
-        <div class="main-visual__overlay-left"></div>
-        <div class="main-visual__overlay-right"></div>
-        <div class="main-visual__title-logo-inner-left">
-          <span class="main-visual__title-logo-inner-left__title-logo-char">ashiro</span>
-        </div>
-        <div class="main-visual__title-logo-inner-right">
-          <span class="main-visual__title-logo-inner-right__title-logo-kt">K.T</span>
-        </div>
-        <div class="main-visual__arrow-inner rellax" data-rellax-speed="-3" data-rellax-percentage=".5">
-          <a href="#profile">
-            <img class="main-visual__arrow-inner__arrow" src="/images/down-arrow.png" alt="画像">
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="profile">
-      <div class="h-fade-in">
-        <h2 class="h-fade-in__body">Profile</h2>
-      </div>
-      <div class="profile">
-        <div class="profile__left">
-          <div class="profile-icon rellax jsFadeIn" data-rellax-speed="4" data-rellax-percentage=".9"></div>
-        </div>
-        <div class="profile__right rellax jsFadeInOut" data-rellax-speed="2" data-rellax-percentage=".4">
-          <div class="profile__right__profile-wrapper jsFadeInUp">
-            <div class="profile-name">田代敬太</div>
-            <div class="profile-en-name">Keita Tashiro</div>
-            <div class="profile-my-background">青山学院大学 経済学部経済学科 二十年三月卒業　TOEIC795</div>
-            <div class="profile-intro">
-              ITとものづくりが好きな学生です（でした）。
-              <br>Webエンジニアを目指しています。独学を始めて約3ヶ月が経ちました。<br>エンジニアになりたい気持ちは誰にも負けません。
-              <br>好きなものは歌・映画・旅行・寿司・うどんです。
+        <section class="main-visual-section" id="top">
+        <div class="main-visual">
+            <div class="main-visual__overlay-top"></div>
+            <div class="main-visual__overlay-left"></div>
+            <div class="main-visual__overlay-right"></div>
+            <div class="main-visual__title-logo-inner-left">
+            <span class="main-visual__title-logo-inner-left__title-logo-char">ash<span style='color: red'>i</span>ro</span>
             </div>
-          </div>
-          <!-- <span class="jsFadeIn rellax" data-rellax-speed="-5"></span> -->
+            <div class="main-visual__title-logo-inner-right">
+            <span class="main-visual__title-logo-inner-right__title-logo-kt">K.T</span>
+            </div>
+            <div class="main-visual__arrow-inner">
+            <a href="#profile">
+                <img class="main-visual__arrow-inner__arrow" src="/images/down-arrow.png" alt="画像">
+            </a>
+            </div>
         </div>
-      </div>
-    </section>
-    <section class="about" id="about">
+        </section>
+        <section class="profile-section" id="profile">
         <div class="h-fade-in">
-          <div class="h-fade-in__body">About</div>
+            <h2 class="h-fade-in__body">Profile</h2>
         </div>
-        <!-- <div class="h-sticky-wrapper">
-          <div class="h-fade-in-sticky">
-            <div class="h-fade-in-sticky__body">About myself</div>
-          </div>
-        </div> -->
-        <div class="about__container">
-          <div class="about__container__about-1  jsFadeInOutDelay">
-            
-          </div>
-          <div class="about__container__about-2  jsFadeInOutDelay">
-            
-          </div>
-          <div class="about__container__about-3  jsFadeInOutDelay">
-            
-          </div>
+        <div class="profile">
+            <div class="profile__left jsFadeInUp">
+              <div class="profile-icon rellax" data-rellax-speed="3" data-rellax-percentage=".1"></div>
+            </div>
+            <div class="profile__right rellax" data-rellax-speed="3" data-rellax-percentage=".4">
+                <div class="profile__right__profile-wrapper jsFadeInUp">
+                    <div class="profile-name">田代敬太</div>
+                    <div class="profile-en-name">Keita Tashiro</div>
+                    <div class="profile-my-background">青山学院大学 経済学部経済学科 二十年三月卒業　TOEIC795</div>
+                    <div class="profile-intro">
+                    ITとものづくりが好きな学生です（でした）。
+                    <br>Webエンジニアを目指しています。独学を始めて約3ヶ月が経ちました。<br>エンジニアになりたい気持ちは誰にも負けません。
+                    <br>好きなものは歌・映画・旅行・寿司・うどんです。
+                    </div>
+                </div>
+            <!-- <span class="jsFadeIn rellax" data-rellax-speed="-5"></span> -->
+            </div>
         </div>
-    </section>
+        </section>
+        <section class="about-section" id="about">
+            <div class="h-fade-in">
+                <div class="h-fade-in__body">About</div>
+            </div>
+            <div class="about">
+                <p class="about__about-header jsFadeInUp">Why enginner?</p>
+                <div class="about__about-1 jsFadeInOutDelay">
+                    <div class="about__about-1__left">
+                        <p>ああああああ</p>
+                        <div class="">あああ</div>
+                    </div>
+                    <div class="about__about-1__right">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front01.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front02.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front03.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="/images/bg-front01.JPG" alt="画像">
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="/images/bg-front02.JPG" alt="画像">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="swiper-my-pagination"></div>
+                    </div>
+                    <!-- <div class="about__about-body">
+                        <p>こんにちは</p>
+                        <p>サンプルです</p>
+                        <p>わわわわわわわ</p>
+                    </div> -->
+                </div>
+                <div class="about__about-2 jsFadeInOutDelay">
+                    <div class="about__about-2__left">
+                        <p>ああああああ</p>
+                        <div class="">あああ</div>
+                    </div>
+                    <div class="about__about-2__right">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front01.JPG" alt="画像">
+                                    </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front02.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front03.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front01.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front02.JPG" alt="画像">
+                                </div>
+                                </div>
+                            </div>
+                        <div class="swiper-my-pagination"></div>
+                    </div>
+                </div>
+                <div class="about__about-3 jsFadeInOutDelay">
+                    <div class="about__about-3__left">
+                        <p>ああああああ</p>
+                        <div class="">あああ</div>
+                    </div>
+                    <div class="about__about-3__right">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front01.JPG" alt="画像">
+                                    </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front02.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front03.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front01.JPG" alt="画像">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/bg-front02.JPG" alt="画像">
+                                </div>
+                                </div>
+                            </div>
+                        <div class="swiper-my-pagination"></div>
+                    </div>
+                </div>
+       </section>
     <section id="skills">
       <div class="h-fade-in">
         <h2 class="h-fade-in__body">Skills</h2>
@@ -165,103 +244,27 @@
             </p>
           </div>
         </div>
-        <div class="skills__right">
-          
-        </div>
       </div>
     </section>
     <section class="works" id="works">
       <div class="h-fade-in">
         <h2 class="h-fade-in__body">works</h2>
       </div>
-      <div class="section-container">
-        <!-- Slider main container -->
-        <div class="hero">
-          <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <div class="work-title">Techfolio</div>
-                <!-- <img src="/images/not-available-icon.jpg" alt=""></div> -->
-                <div class="swiper-slide">
-                  <div class="work-title">work2</div>
-                  <!-- <img src="/images/not-available-icon.jpg" alt=""></div> -->
-                  <div class="swiper-slide">
-                    <div class="work-title">work3</div>
-                    <!-- <img src="/images/not-available-icon.jpg" alt=""></div> -->
-                  </div>
-                  <!-- <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div> -->
-                  </div>
-                </div>
-              </div>
-              <div id="works-list">
-                <div class="" id="work01">
-                  <a href="">
-                    <span></span>
-                    <img src="" alt="">
-                  </a>
-                  <div class="tag">
-                    <span></span>
-                  </div>
-                </div>
-                <div class="" id="work02">
-                  <a href="">
-                    <span></span>
-                    <img src="" alt="">
-                  </a>
-                  <div class="tag">
-                    <span></span>
-                  </div>
-                </div>
-                <div class="" id="work03">
-                  <a href="">
-                    <span></span>
-                    <img src="" alt="">
-                  </a>
-                  <div class="tag">
-                    <span></span>
-                  </div>
-                </div>
-                <div class="" id="work04">
-                  <a href="">
-                    <span></span>
-                    <img src="" alt="">
-                  </a>
-                  <div class="tag">
-                    <span></span>
-                  </div>
-                </div>
-                <div class="" id="work05">
-                  <a href="">
-                    <span></span>
-                    <img src="" alt="">
-                  </a>
-                  <div class="tag">
-                    <span></span>
-                  </div>
-                </div>
-                <div class="" id="work06">
-                  <a href="">
-                    <span></span>
-                    <img src="" alt="">
-                  </a>
-                  <div class="tag">
-                    <span></span>
-                  </div>
-                </div>
-              </div>
      </section>
     <!-- <section class="contact"></section> -->
-    </div>
     <!-- Footer -->
     <footer><p>© 2020 K.Tashiro.</p></footer>
   </div>
-    <script type="text/javascript" src="/js/libs/hero-slider.js"></script>
-    <script type="text/javascript" src="/js/libs/pace.min.js"></script>
-    <script type="text/javascript" src="/js/libs/rellax.min.js"></script>
-    <script type="text/javascript" src="/js/venders/swiper.min.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="/js/venders/pace.min.js"></script>
+  <script type="text/javascript" src="/js/venders/rellax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/TextPlugin.min.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script type="text/javascript" src="/js/libs/scrollmagic.js"></script>
+  <script type="text/javascript" src="/js/libs/swiper.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>

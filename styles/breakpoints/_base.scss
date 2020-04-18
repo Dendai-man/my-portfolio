@@ -26,6 +26,7 @@ body {
     height: 100%;
     z-index: 0;
     font-family: 'Krona One', 'Karla', 'Source Sans Pro','NotoSansCJKjp', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+    color: $c-white;
 }
 
 ul {
@@ -34,11 +35,6 @@ ul {
 
 a {
     text-decoration: none;
-}
-
-section {
-    position: relative;
-    // overflow: hidden;
 }
 
 .font-sm {
@@ -67,32 +63,41 @@ section {
     line-height: 24px;
 }
 
-// .more-text {
-//     width: 100%;
-//     display: none;
-//     transition: .3s;
-//     transform-origin: top;
-//     &.show {
-//         display: inline-block;
-//     }
-// }
+.jsFadeIn {
+    opacity: 0;
+    transition: .7s;
+    transition-property: opacity;
+    &.scrolled {
+        opacity: 1;
+    }
+}
 
-// .read-more-area {
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     cursor: pointer;
-// }
+.jsFadeInDelay {
+    @extend .jsFadeIn;
+}
+.jsFadeInOut {
+    @extend .jsFadeIn;
+}
 
+.jsFadeInOutDelay {
+    @extend .jsFadeIn;
+}
+
+.jsFadeInUp {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .4s;
+    transition-property: opacity transform;
+    &.scrolled {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Nav
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 .nav {
     display: flex;
     flex-direction: column;
@@ -111,12 +116,12 @@ section {
         text-align: center;
         margin-top: 100px;
         & li{
-            border-bottom: solid  #ffffff59 1px;
+            border-bottom: solid  #ffffff59 .5px;
         }
         & a{
             line-height: 60px;
-            font-size: 1em;
-            color: white;
+            @extend .font-md;
+            color: $c-white;
         }
     }
     &__closing-target {
@@ -144,7 +149,7 @@ section {
         cursor: pointer;
         &.show {
             & span {
-                background-color: #fff;
+                background-color: #ff00007a;
                 &:nth-child(1) {
                     transform: translate(-12px, 21px) rotate(-630deg);
                 }
@@ -161,7 +166,7 @@ section {
             width: 30px;
             height: 2px;
             margin-bottom: 9px;
-            background-color: #fff;
+            background-color: $c-white;
             transition: 0.7s;
         }
     }
@@ -185,101 +190,148 @@ section {
 
 
 
-.jsFadeIn {
-    opacity: 0;
-    transition: .5s;
-    transition-property: opacity;
-    &.scrolled {
-        opacity: 1;
-    }
-}
-
-.jsFadeInDelay {
-    @extend .jsFadeIn;
-}
-
-.jsFadeInUp {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: .7s;
-    transition-property: opacity transform;
-    &.scrolled {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.jsFadeInOut {
-    opacity: 0;
-    transition: .5s;
-    transition-property: opacity;
-    &.scrolled {
-        opacity: 1;
-    }
-}
-
-.jsFadeInOutDelay {
-    @extend .jsFadeIn;
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Contents
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 .sections-container{
+    position: relative;
     width: 100%;
-    background-color: $c-4;
-    overflow: visible;
+    background: linear-gradient(198deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
 }
 
-.global-bg-container { 
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 0;
-    z-index: 0;
-    will-change: transform;
-    // transition: .1s ease-out;
-    &__bg-left-1 {
+.bgSpan {
+    &::after {
+        content: "";
         position: absolute;
-        left: -15%;
-        margin-top: 900px;
-        opacity: .7;
-        width: 90vw;
-        height: 300px;
-        background: url('/images/bg-front01.jpg') no-repeat center;
-        background-size: cover;
-        filter: grayscale(80%);
-        transform: skew(-8deg);
+        top: -50%;
+        left: -500%;
+        width: 800px;
+        height: .5px;
+        transform: translateY(-50%) rotate(45deg) skewX(87deg) scaleY(.2);
+        background: $c-black;
     }
-    &__bg-right-1 {
-        position: absolute;
-        left: 35%;
-        margin-top: 1500px;
-        opacity: .7;
-        width: 90vw;
-        height: 300px;
-        background: url('/images/bg-front02.jpg') no-repeat center;
-        background-size: cover;
-        filter: grayscale(80%);
-        transform: skew(8deg);
+    &.cChanged{
+        background-color: #ff00007a !important;
+    }
+}
+
+
+.bgSectionTitlesWrapper {
+    position: absolute;
+    top: 80vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 7vh;
+    letter-spacing: 4vh;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    overflow: hidden;
+    z-index: 1;
+    & .bgSectionTitles {
+        padding-top: 10vh;
+        color: #80808061;
+        transition: .5s;
+        &.cChanged {
+            color: #ff00007a;
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 95%;
+            left: 10vw;
+            width: 90vw;
+            height: 1px;
+            background-color: $c-black;
+        }
+    }
+    .scrollmagic-pin-spacer {
+        min-width: unset !important;
+    }
+    & .bgSectionTitlesOverlay {
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100vh;
+        transition: .5s;
+        opacity: .95;
+        &.cChanged {
+            background-color: #000000d9;
+            opacity: 1;
+        }
+    }
+}
+
+
+.h-fade-in {
+    position: relative;
+    width: 70%;
+    padding: 57px 0;
+    background-color: $c-7;
+    text-align: right;
+    color: $c-white;
+    z-index: 10;
+    transition: .3s;
+    transform: scaleX(0) skewY(3deg);
+    transform-origin: left;
+    box-shadow: 1px 1px 10px #000;
+    &.cChanged {
+        background-color: #ff00007a;
+    }
+    &.scrolled {
+        transform: scaleX(1) skewY(3deg);
+    }
+    &__body {
+        @extend .font-md;
+        opacity: 0;
+        width: 95%;
+        letter-spacing: -10px;
+        line-height: 25px;
+        transition: .3s;
+        transform: scaleX(0);
+        transform-origin: right;
+        &.scrolled{
+            letter-spacing: 15px;
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        &::after {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 85%;
+            margin-top: 10px;
+            margin-left: auto;
+            background-color: $c-6;
+        }
     }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+.main-visual-section {
+    position: relative;
+    z-index: 2;
+}
+
 .main-visual {
     position: relative;
     width: 100%;
     height: 551px;
     background: url("/images/main-visual-img.jpg") no-repeat center;
     background-size: cover;
-    margin-bottom: 206px;
-    z-index: 2;
+    margin-bottom: 100vh;
+    z-index: 3;
     &::before{
         content: "'s portfolio site";
         position: absolute;
-        color: white;
         top: 70px;
         left: -5px;
         transform: rotate(-45deg);
@@ -320,8 +372,7 @@ section {
         right: 7px;
         white-space: nowrap;
         transition: .3s;
-        &__title-logo-kt{
-            color: white;
+        &__title-logo-kt{   
             letter-spacing: 7px;
             font-size: 3.5em;
         }
@@ -335,23 +386,13 @@ section {
         left: 10px;
         white-space: nowrap;
         transition: .3s;
-        // @include query-sm {
-        //     left: 10px;
-        // }
         &.scrolled{
             transform: translateX(55vw);
         }
         &__title-logo-char {
             font-size: 1.7em;
             letter-spacing: 0;
-            // @include query-md {
-            //     letter-spacing: 3px;
-            //     font-size: 3em;
-            // }
-            // @include query-sm {
-            //     letter-spacing: 0;
-            //     font-size: 1.7em;
-            // }
+            color: #000;
         }
     }
     &__arrow-inner {
@@ -388,46 +429,9 @@ section {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // profile Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-.h-fade-in {
+.profile-section {
     position: relative;
-    width: 70%;
-    // r
-    padding: 57px 0;
-    background-color: $c-7;
-    text-align: right;
-    z-index: 10;
-    transition: .3s;
-    transform: scaleX(0) skewY(3deg);
-    transform-origin: left;
-    &.scrolled {
-        transform: scaleX(1) skewY(3deg);
-    }
-    &__body {
-        opacity: 0;
-        width: 95%;
-        color: white;
-        @extend .font-md;
-        letter-spacing: -10px;
-        line-height: 25px;
-        transition: .3s;
-        // transition-property: transform, opacity, letter-spacing;
-        transform: scaleX(0);
-        transform-origin: right;
-        &.scrolled{
-            letter-spacing: 15px;
-            opacity: 1;
-            transform: scaleX(1);
-        }
-        &::after {
-            content: "";
-            display: block;
-            height: 4px;
-            width: 85%;
-            margin-top: 10px;
-            margin-left: auto;
-            background-color: $c-6;
-        }
-    }
+    z-index: 2;
 }
 
 .profile {
@@ -435,7 +439,6 @@ section {
     width: 100%;
     height: 500px;
     pointer-events: none;
-    z-index: 2;
     &__left {
         position: absolute;
         height: 100%;
@@ -443,14 +446,13 @@ section {
         z-index: 1;
         & .profile-icon {
             position: absolute;
-            top: 0;
-            left: 8%;
+            top: 250px;
+            left: 15%;
             width: 230px;
             height: 250px;
             background: url(/images/profile-icon.jpg) center;
             background-size: cover;
-            box-shadow: 1px 1px 10px black;
-            will-change: transform;
+            box-shadow: 1px 1px 20px #000;
         }
     }
     &__right {
@@ -458,7 +460,7 @@ section {
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: -15%;
+        top: 0;
         right: 0;
         width: 90%;
         height: 600px; 
@@ -468,7 +470,6 @@ section {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            color: #fff;
             & .profile-name {
                 @extend .font-lg;
                 font-weight: bold;
@@ -504,67 +505,79 @@ section {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // about Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-// & .h-sticky-wrapper {
-//     position: sticky;
-//     top: 0;
-//     width: 100%;
-//     // height: 80vh;
-//     & .h-fade-in-sticky {
-//         position: absolute;
-//         top: 10%;
-//         width: 70%;
-//         padding: 57px 0;
-//         background-color: $c-7;
-//         text-align: right;
-//         z-index: 10;
-//         transform: skewY(3deg);
-//         margin-top: 100px;
-//         &.scrolled {
-//             position: fixed;
-//         }
-//         &__body {
-//             width: 95%;
-//             color: white;
-//             @extend .font-md;
-//             letter-spacing: 15px;
-//             line-height: 25px;
-//             &::after {
-//                 content: "";
-//                 display: block;
-//                 height: 4px;
-//                 width: 85%;
-//                 margin-top: 10px;
-//                 margin-left: auto;
-//                 background-color: $c-6;
-//             }
-//         }
-//     }
-// }
-.about {
+
+.about-section {
+    position: relative;
     z-index: 2;
-    &__container {
-        position: relative;
+    padding-bottom: 200px;
+    color: #000;
+    & .about {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        height: 400vh;
         margin-top: 100px;
-        z-index: 2;
+        // padding-bottom: 300px;
+        &__about-header {
+            position: sticky;
+            top: 100px;
+            @extend .font-md;
+            margin: 30px auto 200px auto;
+            border-bottom: ridge #000;
+            letter-spacing: 12px;
+            z-index: 2;
+        }
+        &__about-body {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
         &__about-1 {
-            width: 50%;
-            height: 600px;
-            background-image: url('/images/bg-front02.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     top:-100vh;
+            //     width: 100vw;
+            //     height: 100vh;
+            //     background-color: #000;
+            // }
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &__left {
+                width: 100%;
+                height: 350px;
+            }
+            &__right {
+                width: 90%;
+                height: 350px;
+                display: flex;
+                flex-direction: column;
+            }
         }
         &__about-2 {
-            @extend .about__container__about-1;
-            background-image: url('/images/bg-front01.jpg');
+            @extend .about__about-1;
+            &__left {
+                @extend .about__about-1__left;
+            }
+            &__right {
+                @extend .about__about-1__right;
+            }
         }
         &__about-3 {
-            @extend .about__container__about-1;
-            background-image: url('/images/bg-front02.jpg');
+            @extend .about__about-1;
+            &__left {
+                @extend .about__about-1__left;
+            }
+            &__right {
+                @extend .about__about-1__right;
+            }
         }
     }
 }
@@ -633,7 +646,6 @@ section {
             width: 90%;
             height: 400px;
             margin: 10px 10px;
-            color: #fff;
             overflow: hidden;
             pointer-events: none;
             & .skill-title {
@@ -663,16 +675,3 @@ section {
 // Works Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// .works {
-//     // & .h-fade-in {
-//     //     &__h-fade-in-body {
-//     //         transform-origin: left;
-//     //         &::after {
-//     //             margin-left: 0;
-//     //         }
-//     //     }
-//     //     &__h-fade-in-cover {
-//     //         transform-origin: left;
-//     //     }
-//     // }
-// }
