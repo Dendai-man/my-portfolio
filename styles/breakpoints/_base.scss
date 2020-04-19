@@ -88,7 +88,7 @@ a {
 .jsFadeInUp {
     opacity: 0;
     transform: translateY(50px);
-    transition: .4s;
+    transition: .8s;
     transition-property: opacity transform;
     backface-visibility: hidden;
     &.scrolled {
@@ -97,10 +97,23 @@ a {
     }
 }
 
+.jsFadeInUpDelay {
+    @extend .jsFadeInUp;
+}
+
 .jsFadeInOutUp {
     @extend .jsFadeInUp;
 }
 
+
+.pin-target {
+    position: absolute;
+    top: 551px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Nav
@@ -114,7 +127,7 @@ a {
     min-height: 100vh;
     width: 50%;
     z-index: 100;
-    background-color: rgba($color: #000000, $alpha: .8);
+    background-color: rgba($color: #000, $alpha: .8);
     transition: transform .4s;
     &.show {
         transform: translateX(-100%);
@@ -199,31 +212,21 @@ a {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Main Contents
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-.sections-container{
-    position: relative;
-    width: 100%;
-    background: linear-gradient(198deg, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
-}
 
 .bgSpan {
     &::after {
         content: "";
         position: absolute;
-        top: -50%;
-        left: -500%;
-        width: 800px;
-        height: .5px;
-        transform: translateY(-50%) rotate(45deg) skewX(87deg) scaleY(.2);
+        width: .5px;
+        height: 800px;
+        transform: rotate(-45deg) skewY(87deg) scaleX(.2);
         background: $c-black;
+        backface-visibility: hidden;
     }
     &.cChanged{
         background-color: #ff00007a !important;
     }
 }
-
 
 .bgSectionTitlesWrapper {
     position: absolute;
@@ -323,6 +326,15 @@ a {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Main Sections
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+.sections-container{
+    position: relative;
+    width: 100%;
+    background: linear-gradient(48deg, #fff 0%, rgba(234,234,234,1) 100%);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main visual Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 .main-visual-section {
@@ -336,6 +348,7 @@ a {
     height: 551px;
     background: url("/images/main-visual-img.jpg") no-repeat center;
     background-size: cover;
+    pointer-events: none;
     // margin-bottom: 100vh;
     z-index: 3;
     &::before{
@@ -420,7 +433,8 @@ a {
             left: 50%;
             width: 96px;
             height: 70px;
-            transform: translateX(-50%)
+            transform: translateX(-50%);
+            backface-visibility: hidden;
             // @include animation(
             //     $name: up-down,
             //     $duration: 1.2s,
@@ -443,28 +457,35 @@ a {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // gateAnimation Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-.gate-animation {
+
+// ゲートアニメーション用
+.gate-animation-section {
     position: relative;
-    z-index: 1;
+    z-index: 5;
+    margin-bottom: 2300px;
 }
 
 .gateAnimation {
+    visibility: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     z-index: 4;
     & .gateWrapper {
+        visibility: hidden;
         display: flex;
         height: 200px;
         overflow: hidden;
         & .gateLeft {
+            visibility: visible;
             width: 50%;
             background:#000;
             box-shadow: 10px 50px 100px #000;
             backface-visibility: hidden;
         }
         & .gateRight {
+            visibility: visible;
             width: 50%;
             background:#fff;
             box-shadow: -20px 20px 100px #000;
@@ -473,14 +494,54 @@ a {
     }
 }
 
+// イントロ文用
+.my-words-wrapper {
+    position: absolute;
+    top: 800px;
+    width: 100%;
+    // height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // visibility: hidden;
+    & .my-words-inner {
+        width: 80vw;
+        color: $c-black;
+        font-family: "Hannari";
+        & .my-words {
+            &-top {
+                @extend .font-lg;
+                line-height: 40px;
+                transition: 1s !important;
+                backface-visibility: hidden;
+            }
+            &-mid {
+                @extend .font-lr;
+                margin-top: 180px;
+                line-height: 45px;
+                transition: 1s !important;
+                backface-visibility: hidden;
+            }
+            &-bottom {
+                @extend .font-lg;
+                margin-top: 250px;
+                line-height: 40px;
+                transition: 1s !important;
+                backface-visibility: hidden;
+            }
+        }
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // profile Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 .profile-section {
     position: relative;
     z-index: 2;
-    // margin-top: -600px;
 }
 
 .profile {
@@ -535,16 +596,16 @@ a {
                 top: -1%;
                 right: 2%;
                 @extend .font-sm;
-                margin: 140px 5% 0 5%;
+                margin: 140px 6% 0 5%;
                 line-height: 25px;
                 writing-mode: vertical-rl;
             }
             & .profile-intro {
                 position: absolute;
-                bottom: 5%;
+                bottom: 0;
                 @extend .font-sm;
                 @extend .line-h-sm;
-                margin: 3% 15% 0 5%;
+                margin: 0 15% 0 5%;
                 font-family: 'Karla', 'Source Sans Pro','NotoSansCJKjp', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
             }
         }
@@ -558,75 +619,70 @@ a {
 .about-section {
     position: relative;
     z-index: 2;
-    padding-bottom: 200px;
     color: #000;
-    & .about {
+    margin-top: 300px;
+    // padding-bottom: 200px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // padding-bottom: 300px;
+    &__about-header {
+        @extend .font-md;
+        position: absolute;
+        top: 100px;
+        // margin: 30px auto 200px auto;
+        border-bottom: ridge #000;
+        letter-spacing: 12px;
+        z-index: 2;
+        backface-visibility: hidden;
+    }
+    // &__about-body {
+    //     position: sticky;
+    //     top: 0;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 100%;
+    //     height: 100%;
+    //     z-index: 2;
+    // }
+    &__about-1 {
+        // position: relative;
+        // top: 0;
+        width: 90%;
         display: flex;
         flex-direction: column;
-        height: 400vh;
-        margin-top: 100px;
-        // padding-bottom: 300px;
-        &__about-header {
-            position: sticky;
-            top: 100px;
-            @extend .font-md;
-            margin: 30px auto 200px auto;
-            border-bottom: ridge #000;
-            letter-spacing: 12px;
-            z-index: 2;
-        }
-        &__about-body {
-            position: sticky;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        align-items: center;
+        &__top {
             width: 100%;
-            height: 100%;
-            z-index: 2;
+            
         }
-        &__about-1 {
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     top:-100vh;
-            //     width: 100vw;
-            //     height: 100vh;
-            //     background-color: #000;
-            // }
-            position: sticky;
-            top: 0;
+        &__bottom {
+            width: 100%;
+            // height: 350px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            &__left {
-                width: 100%;
-                height: 350px;
-            }
-            &__right {
-                width: 90%;
-                height: 350px;
-                display: flex;
-                flex-direction: column;
-            }
         }
-        &__about-2 {
-            @extend .about__about-1;
-            &__left {
-                @extend .about__about-1__left;
-            }
-            &__right {
-                @extend .about__about-1__right;
-            }
+    }
+    &__about-2 {
+        @extend .about__about-1;
+        &__top {
+            @extend .about__about-1__top;
         }
-        &__about-3 {
-            @extend .about__about-1;
-            &__left {
-                @extend .about__about-1__left;
-            }
-            &__right {
-                @extend .about__about-1__right;
-            }
+        &__bottom {
+            @extend .about__about-1__bottom;
+        }
+    }
+    &__about-3 {
+        @extend .about__about-1;
+        &__top {
+            @extend .about__about-1__top;
+        }
+        &__bottom {
+            @extend .about__about-1__bottom;
         }
     }
 }

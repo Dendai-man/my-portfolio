@@ -1,44 +1,59 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// onloadまでスクロール禁止
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+preventScroll();
+
+function preventScroll() {
+	console.log("a");
+	// PCでのスクロール禁止
+	document.addEventListener("mousewheel", scroll_control, { passive: false });
+	// スマホでのタッチ操作でのスクロール禁止
+	document.addEventListener("touchmove", scroll_control, { passive: false });
+}
+
+// スクロール禁止解除
+window.onload = () => {
+	const returnScroll = function() {
+		document.removeEventListener("mousewheel", scroll_control, { passive: false });
+		// スマホでのタッチ操作でのスクロール禁止解除
+		document.removeEventListener('touchmove', scroll_control, { passive: false });
+		console.log("b");
+	}
+	setTimeout(returnScroll, 1000);
+	// PCでのスクロール禁止解除
+};
+// // スクロール関連メソッド
+function scroll_control(event) {
+    event.preventDefault();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// rellaxライブラリ用 / インスタンス生成
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 document.addEventListener('DOMContentLoaded', function () {
-	const rellax = new Rellax('.rellax', {
-		// center: true
-
+	const rellax = new Rellax('.rellax');
 });
-	// const rellaxin = document.querySelectorAll(".rellax");
-
-	// rellaxin.forEach(el => {
-		
-	// 	const rellax = new Rellax(el, {
-	// 		// relativeToWrapper: true,
-	// 		// wrapper: el.parentElement
-	// 	});
-	// 	// console.log(el.parentElement);
-	// 	window.addEventListener("scroll", () => { // fix to init
-	// 		rellax.refresh();
-	// 	});
-	// });
-});
-
-// window.addEventListener('load', function () {
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // インターセクションオブザーバーでスクロール監視、　トグルクラスでcssアニメーション
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener('load', function () {
-	// const so = new ScrollObserver('.main-visual__arrow', {root: null});
 	const so1 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -25% 0px"});
-	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -65% 0px"});
-	const so3 = new ScrollObserver('.jsFadeInOutUp', false, {rootMargin: "0px 0px -65% 0px"});
-	const so4 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
-	const so5 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
-	const so6 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
-	const so7 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
-	const so8 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
-	const so9 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -70% 0px"});
-	const so10 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -70% 0px"});
-	const so11 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
-	const so12 = new ScrollObserver('.skills__skill-3', false, {rootMargin: "0px 0px -65% 0px"});
-	const so13 = new ScrollObserver('.sections-container', false, {root: document.querySelector('.about__about-1'), rootMargin: "0px 0px 0px 0px"});
+	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -30% 0px"});
+	const so3 = new ScrollObserver('.jsFadeInUpDelay', true, {rootMargin: "0px 0px -65% 0px"});
+	const so4 = new ScrollObserver('.jsFadeInOutUp', false, {rootMargin: "0px 0px -65% 0px"});
+	const so5 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
+	const so6 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
+	const so7 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
+	const so8 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
+	const so9 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
+	const so10 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -70% 0px"});
+	const so11 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -70% 0px"});
+	const so12 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
+	const so13 = new ScrollObserver('.skills__skill-3', false, {rootMargin: "0px 0px -65% 0px"});
+	const so14 = new ScrollObserver('.sections-container', false, {root: document.querySelector('.about__about-1'), rootMargin: "0px 0px 0px 0px"});
 });
 
 class ScrollObserver {
@@ -71,7 +86,6 @@ class ScrollObserver {
 		}
 		const io = new IntersectionObserver(callback.bind(this), this.options);
 		this.els.forEach(el => io.observe(el)); 
-		//entriesの1つ
 	}
 }
 
@@ -100,34 +114,6 @@ class ScrollObserver {
 //  };
 
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// スクロール禁止クラス
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// document.addEventListener('DOMContentLoaded', prevent_scroll() );
-
-// function prevent_scroll() {
-//     // PCでのスクロール禁止
-//     document.addEventListener("mousewheel", scroll_control, { passive: false });
-//     // スマホでのタッチ操作でのスクロール禁止
-//     document.addEventListener("touchmove", scroll_control, { passive: false });
-// }
-// // スクロール禁止解除
-// function return_scroll() {
-//     // PCでのスクロール禁止解除
-//     document.removeEventListener("mousewheel", scroll_control, { passive: false });
-//     // スマホでのタッチ操作でのスクロール禁止解除
-//     document.removeEventListener('touchmove', scroll_control, { passive: false });
-// }
-
-// // スクロール関連メソッド
-// function scroll_control(event) {
-//     event.preventDefault();
-// }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // readMore機能
@@ -220,10 +206,8 @@ new MenuIcon();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // sections-container要素の背景に＠ランダムなspanを生成（rellax導入）
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// window.addEventListener('DOMcontentloaded' , () => {
 
-	// 各sectionノードを取得
-	// const sections = document.querySelectorAll('section');
+	// ノードを取得
 	const section = document.querySelector('.sections-container');
 		// divを作成・スタイルを指定、各ノードのlastChilsに挿入
 		const newDiv = document.createElement('div');
@@ -247,10 +231,10 @@ new MenuIcon();
 			newSpan.setAttribute('data-rellax-percentage', '.5');
 			// スタイルを適用
 			newSpan.style.position = "absolute";
-			newSpan.style.top = Math.round((Math.random() * (100 - 0) + 0)) + "%";
-			newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
 			newSpan.style.width = spanSize;
 			newSpan.style.height = spanSize;
+			newSpan.style.top = Math.round((Math.random() * (100 - 15) + 15)) + "%";
+			newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
 			r = Math.round( (Math.random( ) * (20 - 15) + 15) ) * 7;
 			g = Math.round( (Math.random( ) * (20 - 15) + 15) ) * 6;
 			b = Math.round( (Math.random( ) * (25 - 15) + 15) ) * 4;
@@ -262,8 +246,9 @@ new MenuIcon();
 			newSpan.style.backfaceVisibility = 'hidden';
 			newDiv.appendChild(newSpan);
 		}
-	// });
-// });
+
+		// document.addEventListener("DOMContentLoaded", () => {
+		// });
 	// const ctx = newCanvas.getContext('2d');
 			// const cW = newCanvas.width, //canvasの幅
 			// cH = newCanvas.height; //canvasの高さ
@@ -403,7 +388,6 @@ new MenuIcon();
 //   let clientRect2 = targetElement2.getBoundingClientRect();
 //   let y1 = clientRect1.top ;
 //   let y2 = clientRect2.top ;
-  
 //   if (y1 <= 300) {
 //     targetElement1.classList.add('scrolled');
 //   } else {
@@ -476,4 +460,4 @@ new MenuIcon();
 //   console.log();
 // }
 // // 変数に値が設定されてるかどうかで分岐
-// // なぜ？ => 0やundefinedやnullはfalseなので。
+// なぜ？ => 0やundefinedやnullはfalseなので。

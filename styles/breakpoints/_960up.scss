@@ -29,6 +29,11 @@ Stylesheet: 960px以上のモニタで適用
   line-height: 26px;
 }
 
+
+.h-fade-in {
+    padding: 66px 0;
+}
+
 .main-visual {
     &::after {
         top: 520px;
@@ -50,20 +55,9 @@ Stylesheet: 960px以上のモニタで適用
       }
   }
 }
-.global-bg-container { 
-  &__bg-left-1 {
-      margin-top: 1000px;
-      height: 400px;
-  }
-  &__bg-right-1 {
-    margin-top: 1800px;
-      height: 400px;
-  }
-}
 
-
-.h-fade-in {
-    padding: 66px 0;
+.gate-animation-section {
+  margin-bottom: 1800px;
 }
 
 .profile {
@@ -85,7 +79,7 @@ Stylesheet: 960px以上のモニタで適用
         }
         & .profile-my-background {
           top: 2%;
-          right: -1%;
+          right: -.6%;
         }
         & .profile-intro {
           margin: 3% 15% 0 35%;
@@ -142,7 +136,3 @@ Stylesheet: 960px以上のモニタで適用
     }
   }
 }
-
-// .skill-body {
-//   // margin: 0 30px !important; 
-// }
