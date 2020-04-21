@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .pace-done #global-container {
   -webkit-transition: opacity 1.5s;
   transition: opacity 1.5s;
@@ -9,13 +8,17 @@
   opacity: 0;
 }
 
+.pace.pace-inactive {
+  display: none;
+}
+
 .pace {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  z-index: 2000;
+  z-index: 2001;
   position: fixed;
   margin: auto;
   top: 0;
@@ -28,25 +31,58 @@
   overflow: hidden;
 }
 
-.pace::after {
-  content: "K•T";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 8vh;
-  width: px;
-  /* height: 200px; */
-  color: red;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: upright;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
 }
 
-.pace.pace-inactive {
-  display: none;
+.pace .pace-activity {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  top: 46.5%;
+  left: 48.5%;
+  width: 30px;
+  height: 30px;
+  border: solid 1.5px transparent;
+  border-top-color: red;
+  border-left-color: red;
+  border-radius: 10px;
+  -webkit-animation: pace-spinner 400ms linear infinite;
+          animation: pace-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes pace-spinner {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes pace-spinner {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=loader.css.map */

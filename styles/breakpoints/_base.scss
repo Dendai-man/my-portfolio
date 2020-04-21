@@ -48,7 +48,7 @@ a {
     font-size: 17px;
 }
 .font-lg {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .line-h-sm {
@@ -105,14 +105,8 @@ a {
     @extend .jsFadeInUp;
 }
 
-
-.pin-target {
-    position: absolute;
-    top: 551px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
+.rellax {
+    backface-visibility: hidden;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -211,17 +205,45 @@ a {
 
 
 
+.topCoverAnimate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1000;
+    transition: .8s ease-in-out;
+    backface-visibility: hidden;
+    &::after {
+        content: "K•T";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 8vh;
+        color: #fff;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        transform: translate(-50%, -50%);
+    }
+    &.show {
+        transform: translateY(-150%);
 
+    }
+}
 
 .bgSpan {
     &::after {
         content: "";
         position: absolute;
+        top: 0;
+        left: 0;
         width: .5px;
         height: 800px;
         transform: rotate(-45deg) skewY(87deg) scaleX(.2);
         background: $c-black;
-        backface-visibility: hidden;
     }
     &.cChanged{
         background-color: #ff00007a !important;
@@ -244,7 +266,7 @@ a {
     z-index: 1;
     & .bgSectionTitles {
         padding-top: 10vh;
-        color: #80808061;
+        color: #acacac61;
         transition: .5s;
         &.cChanged {
             color: #ff00007a;
@@ -256,13 +278,10 @@ a {
             top: 95%;
             left: 10vw;
             width: 85vw;
-            height: 1px;
-            background-color: $c-black;
+            height: .5px;
+            background-color: grey;
         }
-    }
-    .scrollmagic-pin-spacer {
-        min-width: unset !important;
-    }
+    }    
     & .bgSectionTitlesOverlay {
         position: fixed;
         top:0;
@@ -279,20 +298,27 @@ a {
 }
 
 
+.scrollmagic-pin-spacer {
+    min-width: unset !important;
+    pointer-events: none;
+    user-select: none;
+}
+
 .h-fade-in {
     position: relative;
     width: 70%;
     padding: 57px 0;
     text-align: right;
-    color: $c-white;
-    background-color: $c-7;
     z-index: 10;
     box-shadow: 1px 1px 10px #000;
-    transition: .3s;
+    transition: .2s;
     transform-origin: left;
     transform: scaleX(0) skewY(3deg);
     backface-visibility: hidden;
+    color: $c-black;
+    background-color: #ffffff94;
     &.cChanged {
+        color: $c-white;
         background-color: #ff00007a;
     }
     &.scrolled {
@@ -304,7 +330,7 @@ a {
         width: 95%;
         line-height: 25px;
         letter-spacing: -10px;
-        transition: .3s;
+        transition: .2s;
         transform: scaleX(0);
         transform-origin: right;
         backface-visibility: hidden;
@@ -320,7 +346,7 @@ a {
             width: 85%;
             margin-top: 10px;
             margin-left: auto;
-            background-color: $c-6;
+            background-color: #d48f80;
         }
     }
 }
@@ -358,7 +384,6 @@ a {
         left: -5px;
         transform: rotate(-45deg);
         z-index: 10;
-        backface-visibility: hidden;
     }
     &::after {
         content: "";
@@ -377,7 +402,6 @@ a {
         height: 193px;
         background-color: #3a281280;
         transform: skewY(-8deg);
-        backface-visibility: hidden;
     }
     &__overlay-left {
         position: absolute;
@@ -433,23 +457,7 @@ a {
             left: 50%;
             width: 96px;
             height: 70px;
-            transform: translateX(-50%);
-            backface-visibility: hidden;
-            // @include animation(
-            //     $name: up-down,
-            //     $duration: 1.2s,
-            //     $iteration-count: infinite,
-            //     $timing-function: ease-in-out,
-            //     );
-            // @keyframes up-down {
-            //     0%,
-            //     100% {
-            //         transform: translateX(-50%) translateY(-10%);
-            //     }
-            //     50% {
-            //         transform: translateX(-50%) translateY(10%);
-            //     }
-            // }            
+            transform: translateX(-50%);         
         }
     }
 }
@@ -514,21 +522,24 @@ a {
                 @extend .font-lg;
                 line-height: 40px;
                 transition: 1s !important;
-                backface-visibility: hidden;
+                pointer-events: none;
+                user-select: none;
             }
             &-mid {
                 @extend .font-lr;
                 margin-top: 180px;
                 line-height: 45px;
                 transition: 1s !important;
-                backface-visibility: hidden;
+                pointer-events: none;
+                user-select: none;
             }
             &-bottom {
                 @extend .font-lg;
                 margin-top: 250px;
                 line-height: 40px;
                 transition: 1s !important;
-                backface-visibility: hidden;
+                pointer-events: none;
+                user-select: none;
             }
         }
     }
@@ -615,31 +626,146 @@ a {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // about Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 .about-section {
     position: relative;
     z-index: 2;
     color: #000;
-    margin-top: 300px;
-    // padding-bottom: 200px;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+    user-select: none;
+}
+
+.previewImgWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100vh;
+    pointer-events: none;
+    user-select: none;
+    background-color: #000000d9;
+    opacity: 0;
+    transition: .5s;
+    backface-visibility: hidden;
+    &.outview {
+        display: none;
+    }
+    & .previewImg {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        // background-image: url('/images/bg-front01.JPG');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
+.aboutCloseTarget {
+    display: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:110%;
+    &.active {
+        display: block;
+    }
+    &.inview {
+        display: block;
+    }
+}
+
+.about-header {
+    @extend .font-md;
+    display: inline-block;
+    position: sticky;
+    top: 100px;
+    left: 45%;
+    width: 75%;
+    margin-top: 170px;
+    border-bottom: solid 1px #000;
+    text-align: right;
+    letter-spacing: 5px;
+    backface-visibility: hidden;
+    overflow: hidden;
 }
 
 .about {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    // padding-bottom: 300px;
-    &__about-header {
-        @extend .font-md;
-        position: absolute;
-        top: 100px;
-        // margin: 30px auto 200px auto;
-        border-bottom: ridge #000;
-        letter-spacing: 12px;
-        z-index: 2;
-        backface-visibility: hidden;
+    &__body-wrapper {
+        display: flex;
+        width: 100%;
+        height: 600px;
+        flex-direction: column;
+        margin-top: 150px;
+        &__body-top {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 3% 0 auto;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            pointer-events: none;
+            user-select: none;
+            & .about-title {
+                @extend .font-lg;
+                letter-spacing: 10px;
+                white-space: nowrap;
+            }
+            & .about-body {
+                @extend .font-sm;
+                @extend .line-h-lg;
+                width: 100%;
+                height: 100%;
+                margin: 15px;
+            }
+        }
+        &__body-bottom {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-top: 60px;
+            &__about-img-inner {
+                position: relative;
+                width: 15%;
+                height: 200px;
+                transform: skewY(-12deg);
+                opacity: .6;
+                margin-left: 5px;
+                &:hover {
+                    opacity: .8;
+                    transform: scale(.95) skewY(-12deg);
+                }
+                &:nth-child(even){
+                    margin-top: 38px;
+                }
+                & > img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                & > span {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
     }
-    // &__about-body {
+}
+
+
+        // &__body {
     //     position: sticky;
     //     top: 0;
     //     display: flex;
@@ -649,55 +775,42 @@ a {
     //     height: 100%;
     //     z-index: 2;
     // }
-    &__about-1 {
-        // position: relative;
-        // top: 0;
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        &__top {
-            width: 100%;
-            
-        }
-        &__bottom {
-            width: 100%;
-            // height: 350px;
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    &__about-2 {
-        @extend .about__about-1;
-        &__top {
-            @extend .about__about-1__top;
-        }
-        &__bottom {
-            @extend .about__about-1__bottom;
-        }
-    }
-    &__about-3 {
-        @extend .about__about-1;
-        &__top {
-            @extend .about__about-1__top;
-        }
-        &__bottom {
-            @extend .about__about-1__bottom;
-        }
-    }
-}
+    // &__about-2 {
+    //     @extend .about__about-1;
+    //     &__top {
+    //         @extend .about__about-1__top;
+    //     }
+    //     &__bottom {
+    //         @extend .about__about-1__bottom;
+    //     }
+    // }
+    // &__about-3 {
+    //     @extend .about__about-1;
+    //     &__top {
+    //         @extend .about__about-1__top;
+    //     }
+    //     &__bottom {
+    //         @extend .about__about-1__bottom;
+    // }
+    //     }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Skills Section
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+.skills-section {
+    position: relative;
+    margin-top: 200px;
+    z-index: 2;
+}
+
 
 .skills {
     position: relative;
     width: 100%;
     z-index: 2;
     margin-top: 100px; 
-    margin-bottom: -170px;
+    // margin-bottom: -170px;
     &__skills-wrapper {
         display: flex;
         flex-direction: column;
@@ -711,7 +824,7 @@ a {
             justify-content: space-around;
             align-items: center;
             margin: 15px 0;
-            & .skill-icons {
+            & .skill-icon {
                 min-width: 54px;
                 min-height: 47px;
                 width: 7.5vw;

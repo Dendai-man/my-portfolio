@@ -13,13 +13,20 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   font-size: 17px;
 }
 .font-lg {
-  font-size: 28px;
+  font-size: 24px;
 }
-.mb-lg {
-  margin-bottom: 150px !important;
+
+.line-h-sm {
+  line-height: 21px;
 }
-.pb-lg {
-  padding-bottom: 150px !important;
+.line-h-md {
+  line-height: 23px;
+}
+.line-h-lr {
+  line-height: 28px;
+}
+.line-h-lg {
+  line-height: 26px;
 }
 
 .main-visual {
@@ -68,6 +75,38 @@ Stylesheet: 600px以上のタブレットやモニタで適用
           }
           & .profile-intro {
               margin: 3% 15% 0 5%;
+          }
+      }
+  }
+}
+
+
+.previewImgWrapper {
+  & .previewImg {
+      width: 85%;
+      height: 450px;
+  }
+}
+
+.about {
+  &__body-wrapper {
+    flex-direction: row-reverse;
+    height: 510px;
+      &__body-top {
+          & .about-title {
+          }
+          & .about-body {
+            margin: 70px;
+          }
+      }
+      &__body-bottom {
+        flex-direction: column;
+        margin: 0 0 0 13%;
+          &__about-img-inner {
+              width: 75%; height: 24%;
+              &:nth-child(even){
+                  margin: -10px 0 30px 98px;
+              }
           }
       }
   }

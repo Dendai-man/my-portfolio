@@ -1,3 +1,5 @@
+@import 'mixin';
+
 .pace-done #global-container {
   transition: opacity 1.5s;
   opacity: 1;
@@ -7,11 +9,14 @@
   opacity: 0;
 }
 
+.pace.pace-inactive {
+  display: none;
+}
+
 .pace {
   pointer-events: none;
   user-select: none;
-
-  z-index: 2000;
+  z-index: 2001;
   position: fixed;
   margin: auto;
   top: 0;
@@ -22,22 +27,42 @@
   height: 100vh;
   background: #000;
   overflow: hidden;
-  &::after {
-    content: "K•T";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 8vh;
-    width: px;
-    /* height: 200px; */
-    color: red;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    transform: translate(-50%, -50%);
-  }
+  // &::after {
+  //   content: "K•T";
+  //   position: absolute;
+  //   left: 50%;
+  //   font-size: 8vh;
+  //   color: #fff;
+  //   writing-mode: vertical-rl;
+  //   text-orientation: upright;
+  //   transform: translateX(-50%);
+  // }
 }
 
-.pace.pace-inactive {
-  display: none;
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace .pace-activity {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  top: 46.5%;
+  left: 48.5%;
+  width: 30px;
+  height: 30px;
+  border: solid 1.5px transparent;
+  border-top-color: red;
+  border-left-color: red;
+  border-radius: 10px;
+  animation: pace-spinner 400ms linear infinite;
+}
+
+@keyframes pace-spinner {
+  0% { transform: translate(-50%, -50%) rotate(0deg); transform: rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); transform: rotate(360deg); }
 }

@@ -20,11 +20,11 @@ a {
   text-decoration: none;
 }
 
-.font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+.font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
   font-size: 11px;
 }
 
-.font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about__about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
+.font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
   font-size: 14px;
 }
 
@@ -32,8 +32,8 @@ a {
   font-size: 17px;
 }
 
-.font-lg, .my-words-wrapper .my-words-inner .my-words-top, .my-words-wrapper .my-words-inner .my-words-bottom, .profile__right__profile-wrapper .profile-name {
-  font-size: 25px;
+.font-lg, .my-words-wrapper .my-words-inner .my-words-top, .my-words-wrapper .my-words-inner .my-words-bottom, .profile__right__profile-wrapper .profile-name, .about__body-wrapper__body-top .about-title {
+  font-size: 20px;
 }
 
 .line-h-sm, .profile__right__profile-wrapper .profile-intro {
@@ -44,11 +44,11 @@ a {
   line-height: 20px;
 }
 
-.line-h-lg, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+.line-h-lg, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
   line-height: 22px;
 }
 
-.line-h-lg, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+.line-h-lg, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
   line-height: 24px;
 }
 
@@ -84,13 +84,9 @@ a {
           transform: translateY(0);
 }
 
-.pin-target {
-  position: absolute;
-  top: 551px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
+.rellax {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .nav {
@@ -193,16 +189,52 @@ a {
   background-color: #f00;
 }
 
+.topCoverAnimate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1000;
+  -webkit-transition: .8s ease-in-out;
+  transition: .8s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.topCoverAnimate::after {
+  content: "K•T";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 8vh;
+  color: #fff;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.topCoverAnimate.show {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+}
+
 .bgSpan::after {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: .5px;
   height: 800px;
   -webkit-transform: rotate(-45deg) skewY(87deg) scaleX(0.2);
           transform: rotate(-45deg) skewY(87deg) scaleX(0.2);
   background: #000;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .bgSpan.cChanged {
@@ -235,7 +267,7 @@ a {
 
 .bgSectionTitlesWrapper .bgSectionTitles {
   padding-top: 10vh;
-  color: #80808061;
+  color: #acacac61;
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -251,12 +283,8 @@ a {
   top: 95%;
   left: 10vw;
   width: 85vw;
-  height: 1px;
-  background-color: #000;
-}
-
-.bgSectionTitlesWrapper .scrollmagic-pin-spacer {
-  min-width: unset !important;
+  height: .5px;
+  background-color: grey;
 }
 
 .bgSectionTitlesWrapper .bgSectionTitlesOverlay {
@@ -275,27 +303,37 @@ a {
   opacity: 1;
 }
 
+.scrollmagic-pin-spacer {
+  min-width: unset !important;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .h-fade-in {
   position: relative;
   width: 70%;
   padding: 57px 0;
   text-align: right;
-  color: #fff;
-  background-color: #887e6c;
   z-index: 10;
   -webkit-box-shadow: 1px 1px 10px #000;
           box-shadow: 1px 1px 10px #000;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .2s;
+  transition: .2s;
   -webkit-transform-origin: left;
           transform-origin: left;
   -webkit-transform: scaleX(0) skewY(3deg);
           transform: scaleX(0) skewY(3deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  color: #000;
+  background-color: #ffffff94;
 }
 
 .h-fade-in.cChanged {
+  color: #fff;
   background-color: #ff00007a;
 }
 
@@ -309,8 +347,8 @@ a {
   width: 95%;
   line-height: 25px;
   letter-spacing: -10px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .2s;
+  transition: .2s;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: right;
@@ -333,7 +371,7 @@ a {
   width: 85%;
   margin-top: 10px;
   margin-left: auto;
-  background-color: #736457;
+  background-color: #d48f80;
 }
 
 .sections-container {
@@ -365,8 +403,6 @@ a {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   z-index: 10;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .main-visual::after {
@@ -388,8 +424,6 @@ a {
   background-color: #3a281280;
   -webkit-transform: skewY(-8deg);
           transform: skewY(-8deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .main-visual__overlay-left, .main-visual__overlay-right {
@@ -464,8 +498,6 @@ a {
   height: 70px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 .gate-animation-section {
@@ -546,8 +578,11 @@ a {
   line-height: 40px;
   -webkit-transition: 1s !important;
   transition: 1s !important;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .my-words-wrapper .my-words-inner .my-words-mid {
@@ -555,8 +590,11 @@ a {
   line-height: 45px;
   -webkit-transition: 1s !important;
   transition: 1s !important;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .my-words-wrapper .my-words-inner .my-words-bottom {
@@ -564,8 +602,11 @@ a {
   line-height: 40px;
   -webkit-transition: 1s !important;
   transition: 1s !important;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .profile-section {
@@ -661,7 +702,88 @@ a {
   position: relative;
   z-index: 2;
   color: #000;
-  margin-top: 300px;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.previewImgWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #000000d9;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.previewImgWrapper.outview {
+  display: none;
+}
+
+.previewImgWrapper .previewImg {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutCloseTarget {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+}
+
+.aboutCloseTarget.active {
+  display: block;
+}
+
+.aboutCloseTarget.inview {
+  display: block;
+}
+
+.about-header {
+  display: inline-block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+  left: 45%;
+  width: 75%;
+  margin-top: 170px;
+  border-bottom: solid 1px #000;
+  text-align: right;
+  letter-spacing: 5px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
 }
 
 .about {
@@ -672,48 +794,104 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.about__about-header {
+.about__body-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 150px;
+}
+
+.about__body-wrapper__body-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: 0 3% 0 auto;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.about__body-wrapper__body-top .about-title {
+  letter-spacing: 10px;
+  white-space: nowrap;
+}
+
+.about__body-wrapper__body-top .about-body {
+  width: 100%;
+  height: 100%;
+  margin: 15px;
+}
+
+.about__body-wrapper__body-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.about__body-wrapper__body-bottom__about-img-inner {
+  position: relative;
+  width: 15%;
+  height: 200px;
+  -webkit-transform: skewY(-12deg);
+          transform: skewY(-12deg);
+  opacity: .6;
+  margin-left: 5px;
+}
+
+.about__body-wrapper__body-bottom__about-img-inner:hover {
+  opacity: .8;
+  -webkit-transform: scale(0.95) skewY(-12deg);
+          transform: scale(0.95) skewY(-12deg);
+}
+
+.about__body-wrapper__body-bottom__about-img-inner:nth-child(even) {
+  margin-top: 38px;
+}
+
+.about__body-wrapper__body-bottom__about-img-inner > img {
   position: absolute;
-  top: 100px;
-  border-bottom: ridge #000;
-  letter-spacing: 12px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about__body-wrapper__body-bottom__about-img-inner > span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.skills-section {
+  position: relative;
+  margin-top: 200px;
   z-index: 2;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.about__about-1, .about__about-2, .about__about-3 {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.about__about-1__top, .about__about-2__top, .about__about-3__top {
-  width: 100%;
-}
-
-.about__about-1__bottom, .about__about-2__bottom, .about__about-3__bottom {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .skills {
@@ -721,7 +899,6 @@ a {
   width: 100%;
   z-index: 2;
   margin-top: 100px;
-  margin-bottom: -170px;
 }
 
 .skills__skills-wrapper {
@@ -757,7 +934,7 @@ a {
   margin: 15px 0;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon {
   min-width: 54px;
   min-height: 47px;
   width: 7.5vw;
@@ -765,32 +942,32 @@ a {
   margin: 0 5px;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons.__ruby {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon.__ruby {
   background: url("/images/ruby-icon.png") no-repeat center;
   background-size: contain;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons.__rails {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon.__rails {
   background: url("/images/rails-icon.png") no-repeat center;
   background-size: contain;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons.__html {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon.__html {
   background: url("/images/html-icon.png") no-repeat center;
   background-size: contain;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons.__css {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon.__css {
   background: url("/images/css-icon.png") no-repeat center;
   background-size: contain;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons.__js {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon.__js {
   background: url("/images/js-icon.png") no-repeat center;
   background-size: contain;
 }
 
-.skills__skills-wrapper .skills-icons-wrapper .skill-icons.__next {
+.skills__skills-wrapper .skills-icons-wrapper .skill-icon.__next {
   background: url("/images/next.png") no-repeat center;
   background-size: contain;
 }
@@ -845,23 +1022,29 @@ Stylesheet: 480px以上(スマホの横向き)のモニタで適用
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 // ******************************************************************/
-  .font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+  .font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
     font-size: 12px;
   }
-  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about__about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
+  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
     font-size: 16px;
   }
   .font-lr, .my-words-wrapper .my-words-inner .my-words-mid {
     font-size: 17px;
   }
-  .font-lg, .my-words-wrapper .my-words-inner .my-words-top, .my-words-wrapper .my-words-inner .my-words-bottom, .profile__right__profile-wrapper .profile-name {
-    font-size: 28px;
+  .font-lg, .my-words-wrapper .my-words-inner .my-words-top, .my-words-wrapper .my-words-inner .my-words-bottom, .profile__right__profile-wrapper .profile-name, .about__body-wrapper__body-top .about-title {
+    font-size: 24px;
   }
-  .mb-lg {
-    margin-bottom: 150px !important;
+  .line-h-sm, .profile__right__profile-wrapper .profile-intro {
+    line-height: 21px;
   }
-  .pb-lg {
-    padding-bottom: 150px !important;
+  .line-h-md {
+    line-height: 23px;
+  }
+  .line-h-lr {
+    line-height: 28px;
+  }
+  .line-h-lg, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+    line-height: 26px;
   }
   .main-visual::after {
     top: 500px;
@@ -902,6 +1085,34 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   .profile__right__profile-wrapper .profile-intro {
     margin: 3% 15% 0 5%;
   }
+  .previewImgWrapper .previewImg {
+    width: 85%;
+    height: 450px;
+  }
+  .about__body-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    height: 510px;
+  }
+  .about__body-wrapper__body-top .about-body {
+    margin: 70px;
+  }
+  .about__body-wrapper__body-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 0 13%;
+  }
+  .about__body-wrapper__body-bottom__about-img-inner {
+    width: 75%;
+    height: 24%;
+  }
+  .about__body-wrapper__body-bottom__about-img-inner:nth-child(even) {
+    margin: -10px 0 30px 98px;
+  }
   .skills__skills-wrapper__skill-1, .skills__skills-wrapper__skill-2, .skills__skills-wrapper__skill-3 {
     height: 300px;
   }
@@ -916,17 +1127,17 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
-  .font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+  .font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
     font-size: 13px;
   }
-  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about__about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
+  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
     font-size: 18px;
   }
   .font-lr, .my-words-wrapper .my-words-inner .my-words-mid {
-    font-size: 23px;
+    font-size: 20px;
   }
-  .font-lg, .my-words-wrapper .my-words-inner .my-words-top, .my-words-wrapper .my-words-inner .my-words-bottom, .profile__right__profile-wrapper .profile-name {
-    font-size: 28px;
+  .font-lg, .my-words-wrapper .my-words-inner .my-words-top, .my-words-wrapper .my-words-inner .my-words-bottom, .profile__right__profile-wrapper .profile-name, .about__body-wrapper__body-top .about-title {
+    font-size: 26px;
   }
   .line-h-sm, .profile__right__profile-wrapper .profile-intro {
     line-height: 21px;
@@ -935,9 +1146,9 @@ Stylesheet: 960px以上のモニタで適用
     line-height: 23px;
   }
   .line-h-lr {
-    line-height: 25px;
+    line-height: 28px;
   }
-  .line-h-lg, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
+  .line-h-lg, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
     line-height: 26px;
   }
   .h-fade-in {
@@ -984,10 +1195,6 @@ Stylesheet: 960px以上のモニタで適用
   }
   .profile__right__profile-wrapper .profile-intro {
     margin: 3% 15% 0 35%;
-  }
-  .about {
-    z-index: 2;
-    margin-bottom: 200px;
   }
   .skills {
     margin-top: 150px;

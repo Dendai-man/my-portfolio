@@ -10,10 +10,10 @@ Stylesheet: 960px以上のモニタで適用
   font-size: 18px;
 }
 .font-lr {
-  font-size: 23px;
+  font-size: 20px;
 }
 .font-lg {
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .line-h-sm {
@@ -23,7 +23,7 @@ Stylesheet: 960px以上のモニタで適用
   line-height: 23px;
 }
 .line-h-lr {
-  line-height: 25px;
+  line-height: 28px;
 }
 .line-h-lg {
   line-height: 26px;
@@ -86,35 +86,6 @@ Stylesheet: 960px以上のモニタで適用
         }
       }
   }
-}
-
-.about {
-  z-index: 2;
-  margin-bottom: 200px;
-  // &__container {
-      // &__about-1 {
-      //     height: 550px;
-      //     // &__left {
-      //     // }
-      //     // &__right {
-            
-      //     // }
-      // }
-      // &__about-2 {
-      //     height: 400px;
-      //     &__left {
-      //     }
-      //     &__right {
-      //     }
-      // }
-      // &__about-3 {
-      //     height: 400px;
-      //     &__left {
-      //     }
-      //     &__right {
-      //     }
-      // }
-  // }
 }
 
 .skills {

@@ -12,10 +12,12 @@
     <link rel="stylesheet" type="text/css" href="/styles/loader.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Krona+One|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
 </head>
 <body id="body">
+    <div class="topCoverAnimate"></div>
     <!-- Body -->
     <div id="global-container">
        <!-- Nav Menu -->
@@ -49,7 +51,6 @@
         </nav>
         <!-- Main Sections -->
         <div class="sections-container">
-            <div class="pin-target" id="pinTarget"></div>
             <div class="bgSectionTitlesWrapper">
                 <span class="bgSectionTitles jsFadeInDelay">Welcome</span>
                 <div class="bgSectionTitlesOverlay"></div>
@@ -93,8 +94,8 @@
                         </p>
                         <p class="my-words-mid jsFadeInUp rellax" data-rellax-speed="2" data-rellax-percentage=".5">
                             <br>そんな私が「エンジニア」という道に気がついた時、
-                            埋もれかけていた夢が花開き、
-                            大きな希望と後悔が、全身を駆け巡りました。
+                            埋もれかけていた夢が掘り起こされ、
+                            大きな希望と後悔が全身を駆け巡りました。
                         </p>
                         <p class="my-words-bottom jsFadeInUp rellax" data-rellax-speed="2" data-rellax-percentage=".5">今からでも遅<span style='color: red'>く</span>ない。
                             私はこれからの人生を「ものづく<span style='color: red'>り</span>」に生きることにしました。
@@ -149,11 +150,11 @@
                 <h2 class="h-fade-in__body">Profile</h2>
             </div>
             <div class="profile">
-                <div class="profile__left jsFadeInOutUp">
+                <div class="profile__left jsFadeInUp">
                     <div class="profile-icon rellax" data-rellax-speed="3" data-rellax-percentage=".1"></div>
                 </div>
                 <div class="profile__right rellax" data-rellax-speed="3" data-rellax-percentage=".4">
-                    <div class="profile__right__profile-wrapper jsFadeInOutUp">
+                    <div class="profile__right__profile-wrapper jsFadeInUp">
                         <div class="profile-name">田代敬太</div>
                         <div class="profile-en-name">Keita Tashiro</div>
                         <div class="profile-my-background">青山学院大学 経済学部経済学科 二十年三月卒業　TOEIC795</div>
@@ -174,33 +175,92 @@
                 <div class="h-fade-in">
                     <div class="h-fade-in__body">About</div>
                 </div>
+                <p class="about-header">私がエンジニアを目指す理由</p>
                 <div class="about">
-                    <div class="about__about-header">Why enginner?
+                    <div class="about__body-wrapper jsFadeInOutDelay">
+                        <div class="about__body-wrapper__body-top rellax" data-rellax-speed="2" data-rellax-percentage=".8" id="about1">
+                            <span class="about-title">•ものづくり
+                            </span>
+                            <p class="about-body">
+                                こんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太です
+                                こんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太ですこんちは田代敬太ですこんにちは田代敬太です
+                            </p>
+                        </div>
+                        <div class="about__body-wrapper__body-bottom rellax" data-rellax-speed="-2" data-rellax-percentage="0">
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front01.JPG" alt="画像">                            
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front03.JPG" alt="画像">                        
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                        </div>
                     </div>
-                    <div class="about__about-1">
-                        <div class="about__about-1__top">
+                    <div class="about__body-wrapper jsFadeInOutDelay">
+                        <div class="about__body-wrapper__body-top rellax" data-rellax-speed="2" data-rellax-percentage=".8" id="about2">
+                            <p class="about-title">二、スキルアップ</p>
+                            <p class="about-body">ローレムイップサムローレムイップサムローレムイップサムローレム
+                                <br>イップサムローレムイップサムローレムイップサムローレム
+                                <br>イップサムローレムイップサムローレムイップサムローレムイップサム
+                            </p>
                         </div>
-                        <div class="about__about-1__bottom">
+                        <div class="about__body-wrapper__body-bottom rellax" data-rellax-speed="-2" data-rellax-percentage="0">
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front01.JPG" alt="画像">                            
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front03.JPG" alt="画像">                        
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front01.JPG" alt="画像">
+                            </div>
                         </div>
                     </div>
-                    <div class="about__about-2">
-                        <div class="about__about-2__top">
+                    <div class="about__body-wrapper jsFadeInOutDelay">
+                        <div class="about__body-wrapper__body-top rellax" data-rellax-speed="2" data-rellax-percentage=".8" id="about3">
+                            <p class="about-title">三、チーム</p>
+                            <p class="about-body">ローレムイップサムローレムイップサムローレムイップサムローレム
+                                イップサムローレムイップサムローレムイップサムローレム
+                                イップサムローレムイップサムローレムイップサムローレムイップサム
+                            </p>
                         </div>
-                        <div class="about__about-2__bottom">
+                        <div class="about__body-wrapper__body-bottom rellax" data-rellax-speed="-2" data-rellax-percentage="0">
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front01.JPG" alt="画像">                            
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front03.JPG" alt="画像">                        
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front02.JPG" alt="画像">
+                            </div>
+                            <div class="about__body-wrapper__body-bottom__about-img-inner">
+                                <img class="about-img" src="/images/bg-front03.JPG" alt="画像">                        
+                            </div>
                         </div>
                     </div>
-                    <div class="about__about-3">
-                        <div class="about__about-3__top">
-                        </div>
-                        <div class="about__about-3__bottom">
-                        </div>
-                    </div>
-                    <!-- <img src="/images/bg-front01.JPG" alt="画像">
-                        <img src="/images/bg-front02.JPG" alt="画像">
-                        <img src="/images/bg-front03.JPG" alt="画像">
-                        <img src="/images/bg-front01.JPG" alt="画像">
-                        <img src="/images/bg-front02.JPG" alt="画像">-->
                 </div>
+                <div class="previewImgWrapper no-pointer-events">
+                    <div class="previewImg"></div>
+                </div>
+                <div class="aboutCloseTarget no-pointer-events"></div>
             </section>
             <section class="skills-section" id="skills">
                 <div class="h-fade-in">
@@ -213,8 +273,8 @@
                         <strong>Back End</strong>
                         </div>
                         <div class="skills-icons-wrapper">
-                        <div class="skill-icons __ruby"></div>
-                        <div class="skill-icons __rails"></div>
+                        <div class="skill-icon __ruby"></div>
+                        <div class="skill-icon __rails"></div>
                         </div>
                         <p class="skill-body">Railsで掲示板アプリを作成しました。
                         MVCフレームワークを用いて、記事の投稿/削除/編集機能・ユーザー情報登録/ログイン/ログアウト機能・コメント機能・いいね機能・タグを用いた記事絞り込み機能などを実装してみました。
@@ -226,9 +286,9 @@
                         <strong>Front End</strong>
                         </div>
                         <div class="skills-icons-wrapper">
-                        <div class="skill-icons __html"></div>
-                        <div class="skill-icons __css"></div>
-                        <div class="skill-icons __js"></div>
+                        <div class="skill-icon __html"></div>
+                        <div class="skill-icon __css"></div>
+                        <div class="skill-icon __js"></div>
                         </div>
                         <p class="skill-body">
                         バックエンドをある程度学んだ後オリジナルアプリケーション作りに取り掛かりました。<br>当初はBootstrapやjQueryで簡易的なデザインを実装しようとしたのですが、満足したものが出来なかったため
@@ -240,7 +300,7 @@
                         <strong>Next</strong>
                         </div>
                         <div class="skills-icons-wrapper">
-                        <div class="skill-icons __next"></div>
+                        <div class="skill-icon __next"></div>
                         </div>
                         <p class="skill-body">バックエンドの学習中心に切り替えていきます。
                         同時にDockerやGithubやAWSやなど、現段階では？の多い知見を取り入れながら、効率的に技術力を磨いていきたいです。
