@@ -686,7 +686,7 @@ a {
 
 .about-header {
     @extend .font-md;
-    display: inline-block;
+    display: block;
     position: sticky;
     top: 100px;
     left: 45%;
@@ -711,7 +711,7 @@ a {
         &__body-top {
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 35%;
             margin: 0 3% 0 auto;
             writing-mode: vertical-rl;
             text-orientation: upright;

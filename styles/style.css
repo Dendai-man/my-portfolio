@@ -773,7 +773,7 @@ a {
 }
 
 .about-header {
-  display: inline-block;
+  display: block;
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
@@ -819,7 +819,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
+  width: 35%;
   margin: 0 3% 0 auto;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
@@ -1107,7 +1107,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 0 0 13%;
+    margin: 0 0 0 9%;
   }
   .about__body-wrapper__body-bottom__about-img-inner {
     width: 75%;
