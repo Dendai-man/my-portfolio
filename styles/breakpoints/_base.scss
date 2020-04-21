@@ -226,6 +226,7 @@ a {
         color: #fff;
         writing-mode: vertical-rl;
         text-orientation: upright;
+        -webkit-text-orientation: upright;
         transform: translate(-50%, -50%);
     }
     &.show {
@@ -263,6 +264,7 @@ a {
     letter-spacing: 4vh;
     writing-mode: vertical-rl;
     text-orientation: upright;
+    -webkit-text-orientation: upright;
     z-index: 1;
     & .bgSectionTitles {
         padding-top: 10vh;
@@ -713,6 +715,7 @@ a {
             margin: 0 3% 0 auto;
             writing-mode: vertical-rl;
             text-orientation: upright;
+            -webkit-text-orientation: upright;
             pointer-events: none;
             user-select: none;
             & .about-title {

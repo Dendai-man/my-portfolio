@@ -216,6 +216,7 @@ a {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
+  -webkit-text-orientation: upright;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -262,6 +263,7 @@ a {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
+  -webkit-text-orientation: upright;
   z-index: 1;
 }
 
@@ -823,6 +825,7 @@ a {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
+  -webkit-text-orientation: upright;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
