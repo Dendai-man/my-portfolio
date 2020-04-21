@@ -712,6 +712,7 @@ a {
             display: flex;
             flex-direction: column;
             width: 75%;
+            height: 100%;
             margin: 30px 3% 0 auto;
             writing-mode: vertical-rl;
             text-orientation: upright;
@@ -735,7 +736,7 @@ a {
             display: flex;
             flex-direction: row;
             width: 100%;
-            margin-top: -50px;
+            // margin-top: -50px;
             &__about-img-inner {
                 position: relative;
                 width: 15%;
