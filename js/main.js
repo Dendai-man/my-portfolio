@@ -2,29 +2,29 @@
 // onloadまでスクロール禁止
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-preventScroll();
 
-function preventScroll() {
+const preventScroll = function() {
 	// PCでのスクロール禁止
 	document.addEventListener("mousewheel", scroll_control, { passive: false });
 	// スマホでのタッチ操作でのスクロール禁止
-	document.addEventListener("touchmove", scroll_control, { passive: false });
+	document.addEventListener("touchmove", scroll_control, { passive: false });	
+}
+const returnScroll = function() {
+	document.removeEventListener("mousewheel", scroll_control, { passive: false });
+	// スマホでのタッチ操作でのスクロール禁止解除
+	document.removeEventListener('touchmove', scroll_control, { passive: false });
+}
+function scroll_control(event) {
+	event.preventDefault();
 }
 
+preventScroll();
 // スクロール禁止解除
 window.onload = () => {
-	const returnScroll = function() {
-		document.removeEventListener("mousewheel", scroll_control, { passive: false });
-		// スマホでのタッチ操作でのスクロール禁止解除
-		document.removeEventListener('touchmove', scroll_control, { passive: false });
-	}
 	setTimeout(returnScroll, 1500);
 	// PCでのスクロール禁止解除
 };
 // // スクロール関連メソッド
-function scroll_control(event) {
-    event.preventDefault();
-}
 
 
 
@@ -58,7 +58,6 @@ window.addEventListener('load', function () {
 	const so1 = new ScrollObserver('.jsFadeIn', true, {rootMargin: "0px 0px -25% 0px"});
 	const so2 = new ScrollObserver('.jsFadeInUp', true, {rootMargin: "0px 0px -30% 0px"});
 	const so3 = new ScrollObserver('.jsFadeInUpDelay', true, {rootMargin: "0px 0px -65% 0px"});
-
 	const so5 = new ScrollObserver('.jsFadeInDelay', true, {rootMargin: "0px 0px -75% 0px"});
 	const so6 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
 	const so7 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
@@ -194,7 +193,7 @@ new MenuIcon();
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// sections-container要素の背景に＠ランダムなspanを生成（rellax導入）
+// sections-container要素の背景に＠ランダムなspanを生成（rellaxを同時に導入）
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ノードを取得
 const section = document.querySelector('.sections-container');
@@ -216,7 +215,7 @@ const section = document.querySelector('.sections-container');
 		// クラス・属性を適用
 		newSpan.classList.add('rellax');
 		newSpan.classList.add('bgSpan');
-		newSpan.setAttribute('data-rellax-speed', Math.round((Math.random() * (6 - 1) + 1)));
+		newSpan.setAttribute('data-rellax-speed', Math.round((Math.random() * (5 - 1) + 1)));
 		newSpan.setAttribute('data-rellax-percentage', '.5');
 		// スタイルを適用
 		newSpan.style.position = "absolute";
@@ -230,19 +229,21 @@ const section = document.querySelector('.sections-container');
 		newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.4)";
 		newSpan.style.borderRadius = '3%';
 		newSpan.style.transform = 'rotate(45deg)';
-		newSpan.style.transition = '.5s';
-		newSpan.style.transitionTimingFunction = 'ease-out';
+		// newSpan.style.transition = '.3s';
+		// newSpan.style.transitionTimingFunction = 'ease-out';
 		newSpan.style.backfaceVisibility = 'hidden';
 		newDiv.appendChild(newSpan);
 	}
 
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// about sectionのイメージプレビュー機能
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 aboutImgPreview();
 		
 function aboutImgPreview () {
 	const aboutSectionImages = document.querySelectorAll('.about-img');
+
 	const previewImg = document.querySelector('.previewImg');
 	const previewImgWrapper = document.querySelector('.previewImgWrapper');
 	const closeTarget = document.querySelector('.aboutCloseTarget');
@@ -251,6 +252,7 @@ function aboutImgPreview () {
 		console.log("a");
 		previewImgWrapper.style.opacity = '0';
 		closeTarget.classList.remove('active');
+		returnScroll();
 	});
 
 	aboutSectionImages.forEach(aboutSectionImage => {
@@ -260,10 +262,11 @@ function aboutImgPreview () {
 			previewImg.style.backgroundImage = "url(" + pickURL;
 			previewImgWrapper.style.opacity = '1';
 			closeTarget.classList.add('active');
+			preventScroll();
 		});
 	});
-
-	aboutSectionImages.forEach(aboutSectionImage => {
+};
+	// aboutSectionImages.forEach(aboutSectionImage => {
 		// const pickURL = aboutSectionImage.src;
 		// aboutSectionImage.addEventListener('click', () => {
 		// 	console.log(pickURL);
@@ -271,9 +274,7 @@ function aboutImgPreview () {
 		// 	previewImgWrapper.style.opacity = '1';
 		// 	closeTarget.classList.add('active');
 		// });
-	});
-}
-
+	// });
 // aboutSectionImages.forEach(aboutSectionImage => {
 // 	aboutSectionImage.classList.add('rellax');
 // 	aboutSectionImage.setAttribute('data-rellax-speed', Math.round((Math.random() * (-3 - -1) + -1)));
@@ -282,8 +283,6 @@ function aboutImgPreview () {
 // 	aboutSectionImage.style.width = RandomSize;
 // 	aboutSectionImage.style.height = RandomSize;
 // })
-
-
 // DOM取得後indexに奇数をもつか偶数をもつかで分ける
 // const aboutImgDOMs = document.querySelectorAll('.about-body-bottom__about-img-inner');
 // const aboutImgDOMsEven = Array.from(aboutImgDOMs).filter((element, index) => {
@@ -292,17 +291,62 @@ function aboutImgPreview () {
 // const aboutImgDOMsOdd = Array.from(aboutImgDOMs).filter((element, index) => {
 // 	return index % 2 == 1;
 // });
-
-
 // aboutImgDOMsEven.forEach(aboutImgDOMEven => {
 // 	aboutImgDOMEven.style.top = Math.round((Math.random() * (50 - 0) + 0)) + "%";
 // 	aboutImgDOMEven.style.right = Math.round((Math.random() * (40 - 14) + 14)) + "%";
 // })
-
 // aboutImgDOMsOdd.forEach(aboutImgDOMOdd => {
 // 	aboutImgDOMOdd.style.top = Math.round((Math.random() * (-10 - -30) + -30)) + "%";
 // 	aboutImgDOMOdd.style.left = Math.round((Math.random() * (80 - 14) + 14)) + "%";
 // })
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// worksセクション、詳細プレビュー機能
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+worksSectionPreview();
+
+function worksSectionPreview() {
+	const worksDOM = document.querySelectorAll('.work');
+	const worksDOMArray = Array.from(worksDOM);
+	const workMoreDOMs = document.querySelectorAll('.workMore');
+
+	worksDOM.forEach(workDOM => {
+		workDOM.addEventListener('click', (el) => {
+			const currentIndex = worksDOMArray.indexOf.call(worksDOM, el.currentTarget);
+			const currentWorkDom = worksDOMArray[currentIndex];
+			const currentPrevSibling = worksDOMArray[currentIndex].previousElementSibling;
+
+			
+			worksDOMArray.forEach(el => {
+				if (!currentWorkDom.classList.contains('active')) {
+					el.classList.remove('active');
+				}
+			});
+			workMoreDOMs.forEach(el2 => {
+				if (!currentWorkDom.classList.contains('active')) {
+					el2.classList.remove('active');
+				}
+			});
+			
+			if (currentWorkDom.classList.contains('active')) {
+				console.log("a");
+				currentWorkDom.classList.remove('active');
+				currentPrevSibling.classList.remove('active');
+			} else {
+				console.log("b");
+				currentWorkDom.classList.add('active');
+				currentPrevSibling.classList.add('active');
+			}
+		});
+	});
+};
+
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -507,4 +551,3 @@ function aboutImgPreview () {
 //   console.log();
 // }
 // // 変数に値が設定されてるかどうかで分岐
-// なぜ？ => 0やundefinedやnullはfalseなので。

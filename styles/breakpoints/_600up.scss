@@ -52,7 +52,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     }
     
     .gate-animation-section {
-      margin-bottom: 2000px;
+      margin-bottom: 2300px;
     }
 
 .profile {
@@ -93,10 +93,10 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     flex-direction: row-reverse;
     height: 510px;
       &__body-top {
-          & .about-title {
-          }
+          // & .about-title {
+          // }
           & .about-body {
-            margin: 70px;
+            margin: 7%;
           }
       }
       &__body-bottom {
@@ -126,4 +126,45 @@ Stylesheet: 600px以上のタブレットやモニタで適用
             }
         }
     }
+}
+
+.works {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  // background-position: center;
+//             background-repeat: no-repeat;
+//             background-size: cover;
+//             background-attachment: fixed;
+  & .works-container {
+      &__work-inner {
+
+          flex-direction: row;
+          // margin-bottom: 150px;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10%;
+            left: 20%;
+            width: 120%;
+            height: 108%;
+            background-color: #000000;
+            transform: unset;
+        }
+          & .work {
+              width: 70%;
+              height: 300px;
+              &:nth-child(1) {
+                  margin-top: 150px;
+                  background-image: url(/images/bg-front03.jpg);
+              }
+              &:nth-child(2) {
+                  background-image: url(/images/bg-front01.jpg);
+              }
+          }
+      }
+  }
 }

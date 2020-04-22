@@ -75,15 +75,13 @@ const section1 = new ScrollMagic.Scene({triggerElement: '#profile', triggerHook:
 .setTween(changeText1)
 .addTo(controller);
 
-section1.on("enter", toggleBgClr)
-.on("leave", toggleBgClr);
+section1.on("enter leave", toggleBgClr);
 
 const section2 = new ScrollMagic.Scene({triggerElement: '#about', triggerHook: .3})
 .setTween(changeText2)
 .addTo(controller);
 
-section2.on("enter", toggleBgClr)
-.on("leave", toggleBgClr);
+section2.on("enter leave", toggleBgClr);
 
 
 const section3 = new ScrollMagic.Scene({triggerElement: '#skills', triggerHook: .3})
@@ -96,15 +94,11 @@ const section4 = new ScrollMagic.Scene({triggerElement: '#works', triggerHook: .
 .setTween(changeText4)
 .addTo(controller);
 
-section3.on("enter", toggleBgClr)
-.on("leave", toggleBgClr);
-
 const section5 = new ScrollMagic.Scene({triggerElement: '#contact', triggerHook: .3})
 .setTween(changeText5)
 .addTo(controller);
 
-section3.on("enter", toggleBgClr)
-.on("leave", toggleBgClr);
+section5.on("enter leave", toggleBgClr);
 
 // 各要素の背景色をトグル(要クラス化)
 function toggleBgClr (event) {
