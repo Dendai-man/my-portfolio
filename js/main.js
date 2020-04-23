@@ -62,7 +62,7 @@ window.addEventListener('load', function () {
 	const so6 = new ScrollObserver('.jsFadeInOut', false, {rootMargin: "-25% 0px -25% 0px"});
 	const so7 = new ScrollObserver('.jsFadeInOutDelay', false, {rootMargin: "-50% 0px -50% 0px"});
 	const so8 = new ScrollObserver('.main-visual__title-logo-inner-left', false, {rootMargin: "900% 0px -55% 0px"});
-	const so9 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -80% 0px"});
+	const so9 = new ScrollObserver('.main-visual__title-logo-inner-right', false, {rootMargin: "900% 0px -85% 0px"});
 	const so10 = new ScrollObserver('.h-fade-in__body', false, {rootMargin: "0px 0px -70% 0px"});
 	const so11 = new ScrollObserver('.h-fade-in', false, {rootMargin: "0px 0px -70% 0px"});
 	const so12 = new ScrollObserver('.skills__skill-2', false, {rootMargin: "0px 0px -65% 0px"});
@@ -223,13 +223,13 @@ const section = document.querySelector('.sections-container');
 		newSpan.style.height = spanSize;
 		newSpan.style.top = Math.round((Math.random() * (100 - 15) + 15)) + "%";
 		newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
-		r = Math.round( (Math.random( ) * (40 - 20) + 20) );
-		g = Math.round( (Math.random( ) * (40 - 20) + 20) );
-		b = Math.round( (Math.random( ) * (45 - 20) + 20) );
+		r = Math.round( (Math.random( ) * (20 - 15) + 15) * 7);
+		g = Math.round( (Math.random( ) * (20 - 15) + 15) * 4);
+		b = Math.round( (Math.random( ) * (25 - 15) + 15) * 3);
 		newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.3)";
 		newSpan.style.borderRadius = '3%';
 		newSpan.style.transform = 'rotate(45deg)';
-		// newSpan.style.transition = '.3s';
+		// newSpan.style.filter = 'blur(5px)'
 		// newSpan.style.transitionTimingFunction = 'ease-out';
 		newSpan.style.backfaceVisibility = 'hidden';
 		newDiv.appendChild(newSpan);

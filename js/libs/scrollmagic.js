@@ -71,34 +71,62 @@ function hidePreviewImg() {
 /////////////////////////////////////////////////////////////////////////////////////
 // 各セクション_シーン(背景セクションテキスト変更/bgSpan等各背景色変更/アニメーション)
 /////////////////////////////////////////////////////////////////////////////////////
-const section1 = new ScrollMagic.Scene({triggerElement: '#profile', triggerHook: .3})
+const section0 = new ScrollMagic.Scene({triggerElement: '#top', triggerHook: .3, reverse:true})
+.setTween(changeClr)
+.addTo(controller);
+
+
+const section1A = new ScrollMagic.Scene({triggerElement: '#profile', triggerHook: .3, reverse:true})
 .setTween(changeText1)
 .addTo(controller);
+section1A.on("enter leave", toggleBgClr);
 
-section1.on("enter leave", toggleBgClr);
+const section1B = new ScrollMagic.Scene({triggerElement: '#profile', triggerHook: .3})
+.setTween(changeClr2)
+.addTo(controller);
 
-const section2 = new ScrollMagic.Scene({triggerElement: '#about', triggerHook: .3})
+
+const section2A = new ScrollMagic.Scene({triggerElement: '#about', triggerHook: .3, reverse:true})
 .setTween(changeText2)
 .addTo(controller);
+section2A.on("enter leave", toggleBgClr);
 
-section2.on("enter leave", toggleBgClr);
-
-
-const section3 = new ScrollMagic.Scene({triggerElement: '#skills', triggerHook: .3})
-.setTween(changeText3)
+const section2B = new ScrollMagic.Scene({triggerElement: '#about', triggerHook: .3})
+.setTween(changeClr3)
 .addTo(controller);
 
-section3.on("enter leave", toggleBgClr);
 
-const section4 = new ScrollMagic.Scene({triggerElement: '#works', triggerHook: .3})
+const section3A = new ScrollMagic.Scene({triggerElement: '#skills', triggerHook: .3, reverse:true})
+.setTween(changeText3)
+.addTo(controller);
+section3A.on("enter leave", toggleBgClr);
+
+const section3B = new ScrollMagic.Scene({triggerElement: '#skills', triggerHook: .3})
+.setTween(changeClr4)
+.addTo(controller);
+
+
+const section4A = new ScrollMagic.Scene({triggerElement: '#works', triggerHook: .3, reverse:true})
 .setTween(changeText4)
 .addTo(controller);
 
-const section5 = new ScrollMagic.Scene({triggerElement: '#contact', triggerHook: .3})
-.setTween(changeText5)
+const section4B = new ScrollMagic.Scene({triggerElement: '#works', triggerHook: .3})
+.setTween(changeClr5)
 .addTo(controller);
 
-section5.on("enter leave", toggleBgClr);
+
+const section5A = new ScrollMagic.Scene({triggerElement: '#contact', triggerHook: .3, reverse:true})
+.setTween(changeText5)
+.addTo(controller);
+section5A.on("enter leave", toggleBgClr);
+
+const section5B = new ScrollMagic.Scene({triggerElement: '#contact', triggerHook: .3})
+.setTween(changeClr6)
+.addTo(controller);
+
+const section5C = new ScrollMagic.Scene({triggerElement: '.contact', triggerHook: .4})
+.setTween(coverSlide)
+.addTo(controller);
 
 // 各要素の背景色をトグル(要クラス化)
 function toggleBgClr (event) {
