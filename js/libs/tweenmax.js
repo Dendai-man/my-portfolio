@@ -11,9 +11,9 @@ changeText5.to(".bgSectionTitles", {text: "Contact"});
 
 
 const gateMoveLeft = new TimelineMax();
-gateMoveLeft.to(".gateLeft", {delay:1, duration:.6, scaleX:0, ease:"power1.inOut", stagger:".2", transformOrigin:"left"});
+gateMoveLeft.to(".gateLeft", {delay:.6, duration:.6, scaleX:0, ease:"power1.inOut", stagger:".2", transformOrigin:"left"});
 const gateMoveRight = new TimelineMax();
-gateMoveRight.to(".gateRight", {delay:1, duration:.6, scaleX:0,  ease:"power1.inOut", stagger:".2", transformOrigin:"right"});
+gateMoveRight.to(".gateRight", {delay:.6, duration:.6, scaleX:0,  ease:"power1.inOut", stagger:".2", transformOrigin:"right"});
 
 
 const fadeIn1 = new TimelineMax();

@@ -223,10 +223,10 @@ const section = document.querySelector('.sections-container');
 		newSpan.style.height = spanSize;
 		newSpan.style.top = Math.round((Math.random() * (100 - 15) + 15)) + "%";
 		newSpan.style.left = Math.round((Math.random() * (100 - 0) + 0)) + "%";
-		r = Math.round( (Math.random( ) * (20 - 15) + 15) ) * 7;
-		g = Math.round( (Math.random( ) * (20 - 15) + 15) ) * 6;
-		b = Math.round( (Math.random( ) * (25 - 15) + 15) ) * 4;
-		newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.4)";
+		r = Math.round( (Math.random( ) * (40 - 20) + 20) );
+		g = Math.round( (Math.random( ) * (40 - 20) + 20) );
+		b = Math.round( (Math.random( ) * (45 - 20) + 20) );
+		newSpan.style.backgroundColor= "rgba("+r+","+g+","+b+",.3)";
 		newSpan.style.borderRadius = '3%';
 		newSpan.style.transform = 'rotate(45deg)';
 		// newSpan.style.transition = '.3s';
@@ -309,26 +309,24 @@ worksSectionPreview();
 
 function worksSectionPreview() {
 	const worksDOM = document.querySelectorAll('.work');
-	const worksDOMArray = Array.from(worksDOM);
 	const workMoreDOMs = document.querySelectorAll('.workMore');
 
 	worksDOM.forEach(workDOM => {
 		workDOM.addEventListener('click', (el) => {
+			const worksDOMArray = Array.from(worksDOM);
 			const currentIndex = worksDOMArray.indexOf.call(worksDOM, el.currentTarget);
 			const currentWorkDom = worksDOMArray[currentIndex];
 			const currentPrevSibling = worksDOMArray[currentIndex].previousElementSibling;
 
-			
-			worksDOMArray.forEach(el => {
-				if (!currentWorkDom.classList.contains('active')) {
+			// 全てのノードから一旦removeする　if文は下のif文true処理の為
+			if (!currentWorkDom.classList.contains('active')) {
+				worksDOMArray.forEach(el => {
 					el.classList.remove('active');
-				}
-			});
-			workMoreDOMs.forEach(el2 => {
-				if (!currentWorkDom.classList.contains('active')) {
+				});
+				workMoreDOMs.forEach(el2 => {
 					el2.classList.remove('active');
-				}
-			});
+				});
+			}
 			
 			if (currentWorkDom.classList.contains('active')) {
 				console.log("a");

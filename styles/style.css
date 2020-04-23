@@ -25,7 +25,7 @@ a {
   font-size: 11px;
 }
 
-.font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
+.font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .link-title {
   font-size: 14px;
 }
 
@@ -306,10 +306,11 @@ a {
   -webkit-transition: .5s;
   transition: .5s;
   opacity: .95;
+  background-color: #ffffff59;
 }
 
 .bgSectionTitlesWrapper .bgSectionTitlesOverlay.cChanged {
-  background-color: #000000d9;
+  background-color: #000000bf;
   opacity: 1;
 }
 
@@ -338,11 +339,12 @@ a {
           transform: scaleX(0) skewY(3deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  color: #fff;
-  background-color: #b1a792d9;
+  color: #f00;
+  background-color: #ffffff00;
 }
 
 .h-fade-in.cChanged {
+  color: #fff;
   background-color: #ff00007a;
 }
 
@@ -376,11 +378,11 @@ a {
 .h-fade-in__body::after {
   content: "";
   display: block;
-  height: 4px;
+  height: 2px;
   width: 85%;
   margin-top: 10px;
   margin-left: auto;
-  background-color: #a59d8d;
+  background-color: #000;
 }
 
 .sections-container {
@@ -797,25 +799,22 @@ a {
 .about .about-bg {
   display: block;
   position: absolute;
-  top: 35%;
-  left: 0%;
-  width: 66%;
-  height: 5%;
-  background-color: #0000003b;
+  top: 94%;
+  right: 0%;
+  width: 70%;
+  height: 15%;
+  background-color: #fff;
   z-index: -1;
-  -webkit-transform: skewY(38deg);
-          transform: skewY(38deg);
+  -webkit-transform: skewY(-12deg);
+          transform: skewY(-12deg);
 }
 
 .about .about-bg:nth-child(2) {
-  top: 65%;
-}
-
-.about .about-bg:nth-child(3) {
-  top: 95%;
+  top: 120%;
 }
 
 .about__body-wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -837,7 +836,7 @@ a {
           flex-direction: column;
   width: 35%;
   height: 100%;
-  margin: -70px 3% 0 auto;
+  margin: -70px 10% 0 auto;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
@@ -880,12 +879,18 @@ a {
           transform: skewY(-12deg);
   opacity: .6;
   margin-left: 5px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .about__body-wrapper__body-bottom__about-img-inner:hover {
+  -webkit-box-shadow: .5px .5px 10px;
+          box-shadow: .5px .5px 10px;
   opacity: .8;
   -webkit-transform: scale(0.95) skewY(-12deg);
           transform: scale(0.95) skewY(-12deg);
+  -webkit-filter: sepia(0%);
+          filter: sepia(0%);
 }
 
 .about__body-wrapper__body-bottom__about-img-inner:nth-child(even) {
@@ -902,8 +907,6 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: .5px .5px 10px;
-          box-shadow: .5px .5px 10px;
   cursor: pointer;
 }
 
@@ -1047,7 +1050,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding-top: 150px;
+  padding: 100px 0;
   overflow: hidden;
 }
 
@@ -1188,8 +1191,76 @@ a {
 .contact-section {
   position: relative;
   z-index: 2;
-  height: 1000px;
-  margin-top: 150px;
+}
+
+.fill-link {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.link-title {
+  letter-spacing: 14px;
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.contact .link-wrapper {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 80%;
+}
+
+.contact__mail, .contact__wantedly, .contact__quita, .contact__github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  width: 93%;
+  background-color: #000;
+  color: #fff;
+  -webkit-box-shadow: 1px 1px 10px #000;
+          box-shadow: 1px 1px 10px #000;
+  margin-bottom: 10%;
+  -webkit-transform: skewY(2deg);
+          transform: skewY(2deg);
+}
+
+.contact__wantedly {
+  background-color: #4bafd2;
+}
+
+.contact__quita {
+  background-color: #55c500;
+}
+
+.contact__github {
+  background-color: #23292d;
 }
 
 footer {
@@ -1213,7 +1284,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   .font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
     font-size: 12px;
   }
-  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
+  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .link-title {
     font-size: 16px;
   }
   .font-lr, .my-words-wrapper .my-words-inner .my-words-mid {
@@ -1292,7 +1363,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 0 0 9%;
+    width: 100%;
   }
   .about__body-wrapper__body-bottom__about-img-inner {
     width: 75%;
@@ -1307,50 +1378,8 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
     margin: 0 30px;
   }
-  .works {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-  }
-  .works .works-container__work-inner {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .works .works-container__work-inner::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -10%;
-    left: 20%;
-    width: 120%;
-    height: 108%;
-    background-color: #000000;
-    -webkit-transform: unset;
-            transform: unset;
-  }
-  .works .works-container__work-inner .work {
-    width: 70%;
-    height: 300px;
-  }
-  .works .works-container__work-inner .work:nth-child(1) {
-    margin-top: 150px;
-    background-image: url(/images/bg-front03.jpg);
-  }
-  .works .works-container__work-inner .work:nth-child(2) {
-    background-image: url(/images/bg-front01.jpg);
+  .works .works-container__work-wrapper .work {
+    width: 110%;
   }
 }
 
@@ -1363,7 +1392,7 @@ Stylesheet: 960px以上のモニタで適用
   .font-sm, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
     font-size: 13px;
   }
-  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title {
+  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .link-title {
     font-size: 18px;
   }
   .font-lr, .my-words-wrapper .my-words-inner .my-words-mid {
@@ -1455,44 +1484,6 @@ Stylesheet: 960px以上のモニタで適用
   .skills__skills-wrapper__skill-3 {
     -webkit-transition-delay: 1s;
             transition-delay: 1s;
-  }
-  .works {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    padding-top: 150px;
-    overflow: hidden;
-  }
-  .works .works-bg {
-    display: block;
-    position: absolute;
-    top: 35%;
-    left: 20%;
-    width: 80%;
-    height: 40%;
-  }
-  .works .works-bg::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    background-color: #000000e6;
-    -webkit-transform: skewY(2deg);
-            transform: skewY(2deg);
   }
   .works .works-container__work-wrapper .work {
     width: 100%;
