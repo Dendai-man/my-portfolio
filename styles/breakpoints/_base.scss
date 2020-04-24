@@ -372,7 +372,7 @@ h2 {
     position: relative;
     width: 100%;
     height: 551px;
-    background: url("/images/main-visual-img.jpg") no-repeat center;
+    background: url("/images/main-visual.jpg") no-repeat center;
     background-size: cover;
     pointer-events: none;
     // margin-bottom: 100vh;
@@ -628,7 +628,7 @@ h2 {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 .about-section {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     color: #000;
 }
 
@@ -701,6 +701,7 @@ h2 {
     display: flex;
     flex-direction: column;
     & .about-bg {
+        visibility: visible;
         display: block;
         position: absolute;
         top: 85%;
@@ -731,12 +732,19 @@ h2 {
         // }
     }
     &__body-wrapper {
+        visibility: hidden;
         position: relative;
         display: flex;
         width: 100%;
         height: 500px;
         flex-direction: column;
+        margin-bottom: 200px;
+        pointer-events: none;
+        &.scrolled {
+            pointer-events: visible;
+        }
         &__body-top {
+            visibility: visible;
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -761,6 +769,7 @@ h2 {
             }
         }
         &__body-bottom {
+            visibility: visible;
             display: flex;
             flex-direction: row;
             width: 100%;
@@ -771,6 +780,7 @@ h2 {
                 transform: skewY(-12deg);
                 opacity: .6;
                 margin-left: 5px;
+                z-index: 999;
                 filter: grayscale(100%);
                 &:hover {
                     box-shadow: .5px .5px 10px;
@@ -1005,7 +1015,7 @@ h2 {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                // box-shadow: 5px 5px 10px #000;
+                box-shadow: 1px 1px 10px #fff;
                 transform: rotate(-8deg);
                 cursor: pointer;
                 filter: grayscale(100%);

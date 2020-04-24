@@ -404,7 +404,7 @@ a {
   position: relative;
   width: 100%;
   height: 551px;
-  background: url("/images/main-visual-img.jpg") no-repeat center;
+  background: url("/images/main-visual.jpg") no-repeat center;
   background-size: cover;
   pointer-events: none;
   z-index: 3;
@@ -714,7 +714,7 @@ a {
 
 .about-section {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   color: #000;
 }
 
@@ -810,6 +810,7 @@ a {
 }
 
 .about .about-bg {
+  visibility: visible;
   display: block;
   position: absolute;
   top: 85%;
@@ -830,6 +831,7 @@ a {
 }
 
 .about__body-wrapper {
+  visibility: hidden;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -840,9 +842,16 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 200px;
+  pointer-events: none;
+}
+
+.about__body-wrapper.scrolled {
+  pointer-events: visible;
 }
 
 .about__body-wrapper__body-top {
+  visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -876,6 +885,7 @@ a {
 }
 
 .about__body-wrapper__body-bottom {
+  visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -894,6 +904,7 @@ a {
           transform: skewY(-12deg);
   opacity: .6;
   margin-left: 5px;
+  z-index: 999;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
@@ -1173,6 +1184,8 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-box-shadow: 1px 1px 10px #fff;
+          box-shadow: 1px 1px 10px #fff;
   -webkit-transform: rotate(-8deg);
           transform: rotate(-8deg);
   cursor: pointer;
