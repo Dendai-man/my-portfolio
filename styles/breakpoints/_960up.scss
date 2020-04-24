@@ -4,7 +4,7 @@ Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
 .font-sm {
-  font-size: 13px;
+  font-size: 15px;
 }
 .font-md {
   font-size: 18px;
@@ -23,7 +23,7 @@ Stylesheet: 960px以上のモニタで適用
   line-height: 23px;
 }
 .line-h-lr {
-  line-height: 28px;
+  line-height: 23px;
 }
 .line-h-lg {
   line-height: 26px;
@@ -92,11 +92,11 @@ Stylesheet: 960px以上のモニタで適用
   &__body-wrapper {
       &__body-top {
           & .about-body {
-            margin: 14%;
+            margin: 20% 5% 0 0;
           }
       }
       &__body-bottom {
-        margin: 0 0 0 15%;
+        margin: 0 0 0 10%;
       }
   }
 }

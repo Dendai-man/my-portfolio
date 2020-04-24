@@ -247,25 +247,46 @@ function aboutImgPreview () {
 	const previewImg = document.querySelector('.previewImg');
 	const previewImgWrapper = document.querySelector('.previewImgWrapper');
 	const closeTarget = document.querySelector('.aboutCloseTarget');
+	// let previewImgDetail = document.querySelector('.previewImgDetail').innerText;
+	const detailTexts = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 
 	closeTarget.addEventListener('click', () => {
-		console.log("a");
 		previewImgWrapper.style.opacity = '0';
 		closeTarget.classList.remove('active');
+		// スクロール禁止解除
 		returnScroll();
 	});
 
 	aboutSectionImages.forEach(aboutSectionImage => {
 		const pickURL = aboutSectionImage.src;
-		aboutSectionImage.addEventListener('click', () => {
-			console.log(pickURL);
-			previewImg.style.backgroundImage = "url(" + pickURL;
-			previewImgWrapper.style.opacity = '1';
-			closeTarget.classList.add('active');
+		const aboutSectionImagesArray = Array.from(aboutSectionImages);
+		aboutSectionImage.addEventListener('click', (el) => {
+			// console.log(previewImgDetail);
+			// console.log(previewImgDetail);
+			const currentIndex = aboutSectionImagesArray.indexOf.call(aboutSectionImages, el.currentTarget);
+			// スクロール禁止
 			preventScroll();
+			// 拡大解除DOMを表示
+			closeTarget.classList.add('active');
+			// previewImgにURLとテキストを変更
+			previewImgWrapper.style.opacity = '1';
+			previewImg.style.backgroundImage = "url(" + pickURL;
+			changeInnerText(currentIndex);
+
+			function changeInnerText(index) {
+				document.querySelector('.previewImgDetail').innerText = detailTexts[index];
+			}
 		});
 	});
 };
+
+// 関連して、誤作動防止の為aタグクリック時にはスクロール禁止を解除
+const aTags = document.querySelectorAll('a');
+aTags.forEach(aTag => {
+	aTag.addEventListener('click', returnScroll);
+})
+
+
 	// aboutSectionImages.forEach(aboutSectionImage => {
 		// const pickURL = aboutSectionImage.src;
 		// aboutSectionImage.addEventListener('click', () => {
@@ -312,8 +333,8 @@ function worksSectionPreview() {
 	const workMoreDOMs = document.querySelectorAll('.workMore');
 
 	worksDOM.forEach(workDOM => {
+		const worksDOMArray = Array.from(worksDOM);
 		workDOM.addEventListener('click', (el) => {
-			const worksDOMArray = Array.from(worksDOM);
 			const currentIndex = worksDOMArray.indexOf.call(worksDOM, el.currentTarget);
 			const currentWorkDom = worksDOMArray[currentIndex];
 			const currentPrevSibling = worksDOMArray[currentIndex].previousElementSibling;
@@ -329,11 +350,9 @@ function worksSectionPreview() {
 			}
 			
 			if (currentWorkDom.classList.contains('active')) {
-				console.log("a");
 				currentWorkDom.classList.remove('active');
 				currentPrevSibling.classList.remove('active');
 			} else {
-				console.log("b");
 				currentWorkDom.classList.add('active');
 				currentPrevSibling.classList.add('active');
 			}

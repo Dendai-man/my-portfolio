@@ -11,17 +11,17 @@ changeText5.to(".bgSectionTitles", {text: "Contact"});
 
 
 const changeClr = new TimelineMax();
-changeClr.to(".navBottomTop", {color: "red"});
+changeClr.to(".navBottomTop", {color:"red", opacity:1});
 const changeClr2 = new TimelineMax();
-changeClr2.to(".navBottomProfile", {color: "red"});
+changeClr2.to(".navBottomProfile", {color:"red", opacity:1});
 const changeClr3 = new TimelineMax();
-changeClr3.to(".navBottomAbout", {color: "red"});
+changeClr3.to(".navBottomAbout", {color:"red", opacity:1});
 const changeClr4 = new TimelineMax();
-changeClr4.to(".navBottomSkills", {color: "red"});
+changeClr4.to(".navBottomSkills", {color:"red", opacity:1});
 const changeClr5 = new TimelineMax();
-changeClr5.to(".navBottomWorks", {color: "red"});
+changeClr5.to(".navBottomWorks", {color:"red", opacity:1});
 const changeClr6 = new TimelineMax();
-changeClr6.to(".navBottomContact", {color: "red"});
+changeClr6.to(".navBottomContact", {color:"red", opacity:1});
 
 
 const gateMoveLeft = new TimelineMax();
