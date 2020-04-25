@@ -404,7 +404,9 @@ a {
   position: relative;
   width: 100%;
   height: 551px;
-  background: url("/images/main-visual.jpg") no-repeat center;
+  background-image: url("/images/main-visual-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   pointer-events: none;
   z-index: 3;
@@ -1424,6 +1426,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     margin-left: 50px;
     color: #000;
     opacity: .4;
+  }
+  .main-visual {
+    background-image: url("/images/main-visual.jpg");
   }
   .main-visual::after {
     top: 500px;

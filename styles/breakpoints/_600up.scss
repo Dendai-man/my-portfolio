@@ -60,6 +60,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 
 
 .main-visual {
+        background-image: url("/images/main-visual.jpg");
         &::after {
             top: 500px;
         }
