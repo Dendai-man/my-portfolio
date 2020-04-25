@@ -1,8 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // onloadまでスクロール禁止
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 const preventScroll = function() {
 	// PCでのスクロール禁止
 	document.addEventListener("mousewheel", scroll_control, { passive: false });
@@ -14,6 +12,7 @@ const returnScroll = function() {
 	// スマホでのタッチ操作でのスクロール禁止解除
 	document.removeEventListener('touchmove', scroll_control, { passive: false });
 }
+// // スクロール関連メソッド
 function scroll_control(event) {
 	event.preventDefault();
 }
@@ -22,10 +21,13 @@ preventScroll();
 // スクロール禁止解除
 window.onload = () => {
 	setTimeout(returnScroll, 1500);
+	setTimeout(setGif, 1000);
 	// PCでのスクロール禁止解除
 };
-// // スクロール関連メソッド
 
+function setGif() {
+	document.querySelector('#aboutImg1').src = "/images/robot.gif";
+}
 
 
 // document.addEventListener('DOMContentloaded', () => {
