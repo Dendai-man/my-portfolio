@@ -26,7 +26,11 @@ window.onload = () => {
 };
 
 function setGif() {
-	document.querySelector('#aboutImg1').src = "/images/robot.gif";
+	document.querySelector('#aboutImg1').src = "/images/logic.gif";
+	document.querySelector('#aboutImg2').src = "/images/teach.gif";
+	document.querySelector('#aboutImg3').src = "/images/lego.gif";
+	// document.querySelector('#aboutImg4').src = "/images/ro.gif";
+	document.querySelector('#aboutImg5').src = "/images/robot.gif";
 }
 
 
