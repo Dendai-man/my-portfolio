@@ -124,7 +124,7 @@ const section5B = new ScrollMagic.Scene({triggerElement: '#contact', triggerHook
 .setTween(changeClr6)
 .addTo(controller);
 
-const section5C = new ScrollMagic.Scene({triggerElement: '.contact', triggerHook: .2})
+const section5C = new ScrollMagic.Scene({triggerElement: '.contact', triggerHook: .4})
 .setTween(coverSlide)
 .addTo(controller);
 

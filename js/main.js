@@ -21,16 +21,13 @@ preventScroll();
 // スクロール禁止解除
 window.onload = () => {
 	setTimeout(returnScroll, 1500);
-	setTimeout(setGif, 1000);
+	setTimeout(setGIF, 1500);
 	// PCでのスクロール禁止解除
 };
 
-function setGif() {
-	document.querySelector('#aboutImg1').src = "/images/logic.gif";
-	document.querySelector('#aboutImg2').src = "/images/teach.gif";
-	document.querySelector('#aboutImg3').src = "/images/lego.gif";
-	// document.querySelector('#aboutImg4').src = "/images/ro.gif";
-	document.querySelector('#aboutImg5').src = "/images/robot.gif";
+function setGIF() {
+	document.querySelector('#aboutImg2').src = '/images/robot.gif';
+	document.querySelector('#aboutImg3').src = '/images/logic.gif';
 }
 
 
@@ -264,11 +261,9 @@ function aboutImgPreview () {
 	});
 
 	aboutSectionImages.forEach(aboutSectionImage => {
-		const pickURL = aboutSectionImage.src;
-		const aboutSectionImagesArray = Array.from(aboutSectionImages);
 		aboutSectionImage.addEventListener('click', (el) => {
-			// console.log(previewImgDetail);
-			// console.log(previewImgDetail);
+			const pickURL = aboutSectionImage.src;
+			const aboutSectionImagesArray = Array.from(aboutSectionImages);
 			const currentIndex = aboutSectionImagesArray.indexOf.call(aboutSectionImages, el.currentTarget);
 			// スクロール禁止
 			preventScroll();

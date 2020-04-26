@@ -200,10 +200,17 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   height: 85vh;
   & .contact-bg-char {
       position: absolute;
-      top: 6%;
-      left: -1%;
+      top: 14%;
+      left: 28%;
       color: #000;
-      font-size: 120px;
-      letter-spacing: 30px;;
+      font-size: 20px;
+      letter-spacing: 18px;
+  }
+  &__mail {
+    margin-bottom: 5%;
+    opacity: .3;
+    &:hover {
+      opacity: .8;
+  }
   }
 }

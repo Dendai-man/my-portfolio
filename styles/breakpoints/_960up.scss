@@ -156,3 +156,22 @@ Stylesheet: 960px以上のモニタで適用
       }
   }
 }
+
+.contact {
+  & .contact-bg-char {
+    top: 24%;
+    left: 28%;
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 26px;
+    line-height: 127px;
+}
+  & .link-wrapper {
+      top: 25%;
+      left: 30%;
+      width: 40%;
+  }
+  &__mail {
+    margin-bottom: 10%;
+  }
+}

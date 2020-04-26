@@ -1228,23 +1228,22 @@ a {
   position: relative;
   width: 100%;
   height: 75vh;
-  overflow: hidden;
 }
 
 .contact .contact-bg-char {
   position: absolute;
-  top: -3%;
+  top: 19%;
   left: -2%;
   color: #000;
-  font-size: 75px;
-  letter-spacing: 7px;
-  line-height: 157px;
+  font-size: 57px;
+  letter-spacing: -3px;
+  line-height: 145px;
 }
 
 .contact .link-wrapper {
   position: absolute;
-  top: 20%;
-  right: 0;
+  top: 15%;
+  left: 37%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1258,10 +1257,11 @@ a {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  width: 80%;
+  width: 90%;
 }
 
 .contact__mail, .contact__wantedly, .contact__qiita, .contact__github {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1273,7 +1273,7 @@ a {
           align-items: center;
   height: 70px;
   width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 20%;
   background-color: #000;
   color: #fff;
   -webkit-box-shadow: 1px 1px 10px #000;
@@ -1286,7 +1286,8 @@ a {
 }
 
 .contact__mail:hover, .contact__wantedly:hover, .contact__qiita:hover, .contact__github:hover {
-  opacity: 1;
+  -webkit-transform: skewY(2deg) translateY(5px);
+          transform: skewY(2deg) translateY(5px);
 }
 
 .contact__mail .link-title-cover, .contact__wantedly .link-title-cover, .contact__qiita .link-title-cover, .contact__github .link-title-cover {
@@ -1511,11 +1512,18 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   .contact .contact-bg-char {
     position: absolute;
-    top: 6%;
-    left: -1%;
+    top: 14%;
+    left: 28%;
     color: #000;
-    font-size: 120px;
-    letter-spacing: 30px;
+    font-size: 20px;
+    letter-spacing: 18px;
+  }
+  .contact__mail, .contact__wantedly, .contact__qiita, .contact__github {
+    margin-bottom: 5%;
+    opacity: .3;
+  }
+  .contact__mail:hover, .contact__wantedly:hover, .contact__qiita:hover, .contact__github:hover {
+    opacity: .8;
   }
 }
 
@@ -1623,6 +1631,22 @@ Stylesheet: 960px以上のモニタで適用
   }
   .works .works-container__work-wrapper .work {
     width: 85%;
+  }
+  .contact .contact-bg-char {
+    top: 24%;
+    left: 28%;
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 26px;
+    line-height: 127px;
+  }
+  .contact .link-wrapper {
+    top: 25%;
+    left: 30%;
+    width: 40%;
+  }
+  .contact__mail, .contact__wantedly, .contact__qiita, .contact__github {
+    margin-bottom: 10%;
   }
 }
 /*# sourceMappingURL=style.css.map */
