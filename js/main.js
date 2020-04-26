@@ -26,8 +26,8 @@ window.onload = () => {
 };
 
 function setGIF() {
-	document.querySelector('#aboutImg2').src = '/images/robot.gif';
-	document.querySelector('#aboutImg3').src = '/images/logic.gif';
+	document.querySelector('#aboutImg2').src = '/images/resized2.gif';
+	document.querySelector('#aboutImg3').src = '/images/resized3.gif';
 }
 
 

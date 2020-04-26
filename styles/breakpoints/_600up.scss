@@ -112,43 +112,44 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 }
 
 
-.previewImgWrapper {
-  & .previewImg {
-      width: 85%;
-      height: 450px;
-  }
-}
 
 .about {
   &__body-wrapper {
     flex-direction: row-reverse;
     height: 510px;
-      &__body-top {
-          // & .about-title {
-          // }
-          & .about-body {
-            margin: 15% 2% 0 0;
-          }
+    &__body-top {
+      // & .about-title {
+        // }
+        & .about-body {
+          margin: 15% 2% 0 0;
+        }
       }
       &__body-bottom {
         flex-direction: column;
         // margin: 0 0 0 9%;
         width: 58%;
-          &__about-img-inner {
-              width: 75%; height: 24%;
-              &:nth-child(even){
-                  margin: -10px 0 30px 98px;
-              }
+        &__about-img-inner {
+          width: 75%; height: 24%;
+          &:nth-child(even){
+            margin: -10px 0 30px 98px;
           }
+        }
       }
+    }
   }
-}
-
-.skills {
+  .previewImgWrapper {
+    & .previewImg {
+        width: 60%;
+        min-width: 550px;
+        height: 350px;
+    }
+  }
+  
+  .skills {
     &__skills-wrapper {
-            // & .skills-icons-wrapper {
-            //     & .skill-icons {
-
+      // & .skills-icons-wrapper {
+        //     & .skill-icons {
+          
             //     }
             // }
         &__skill-1 {

@@ -1228,6 +1228,7 @@ a {
   position: relative;
   width: 100%;
   height: 75vh;
+  overflow: hidden;
 }
 
 .contact .contact-bg-char {
@@ -1470,10 +1471,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   .profile__right__profile-wrapper .profile-intro {
     margin: 3% 15% 0 5%;
   }
-  .previewImgWrapper .previewImg {
-    width: 85%;
-    height: 450px;
-  }
   .about__body-wrapper {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -1497,6 +1494,11 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   .about__body-wrapper__body-bottom__about-img-inner:nth-child(even) {
     margin: -10px 0 30px 98px;
+  }
+  .previewImgWrapper .previewImg {
+    width: 60%;
+    min-width: 550px;
+    height: 350px;
   }
   .skills__skills-wrapper__skill-1, .skills__skills-wrapper__skill-2, .skills__skills-wrapper__skill-3 {
     height: 300px;
@@ -1604,6 +1606,11 @@ Stylesheet: 960px以上のモニタで適用
   }
   .about__body-wrapper__body-bottom {
     margin: 0 0 0 10%;
+  }
+  .previewImgWrapper .previewImg {
+    width: 80%;
+    max-width: 800px;
+    height: 450px;
   }
   .skills {
     margin-top: 150px;
