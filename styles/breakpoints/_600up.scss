@@ -132,9 +132,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         &__about-img-inner {
           width: 75%;
           height: 24%;
-          // &:nth-child(even){
-          //   margin: -10px 0 30px 98px;
-          // }
+          &:nth-child(even){
+            margin: -10px 0 30px 98px;
+          }
         }
         &__about-video-inner {
           margin: -10px 0 30px 98px;

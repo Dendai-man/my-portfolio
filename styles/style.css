@@ -754,6 +754,7 @@ a {
 
 .previewImgWrapper .previewImg {
   position: absolute;
+  top: 25%;
   width: 100%;
   height: 300px;
   background-position: center;
@@ -766,6 +767,7 @@ a {
   top: 102%;
   left: 1%;
   color: #fff;
+  letter-spacing: 1.5px;
 }
 
 .aboutCloseTarget {
@@ -931,6 +933,8 @@ a {
 
 .about__body-wrapper__body-bottom__about-img-inner .about-img {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -967,6 +971,8 @@ a {
 
 .about__body-wrapper__body-bottom__about-video-inner .about-video {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1528,6 +1534,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   .about__body-wrapper__body-bottom__about-img-inner {
     width: 75%;
     height: 24%;
+  }
+  .about__body-wrapper__body-bottom__about-img-inner:nth-child(even) {
+    margin: -10px 0 30px 98px;
   }
   .about__body-wrapper__body-bottom__about-video-inner {
     margin: -10px 0 30px 98px;
