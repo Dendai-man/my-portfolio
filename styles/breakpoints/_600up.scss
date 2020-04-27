@@ -6,7 +6,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 
 // ******************************************************************/
 .font-sm {
-    font-size: 12px;
+  font-size: 11px;
 }
 .font-md {
   font-size: 16px;
@@ -122,6 +122,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         // }
         & .about-body {
           margin: 15% 2% 0 0;
+          line-height: 20px;
         }
       }
       &__body-bottom {
@@ -129,10 +130,16 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         // margin: 0 0 0 9%;
         width: 58%;
         &__about-img-inner {
-          width: 75%; height: 24%;
-          &:nth-child(even){
-            margin: -10px 0 30px 98px;
-          }
+          width: 75%;
+          height: 24%;
+          // &:nth-child(even){
+          //   margin: -10px 0 30px 98px;
+          // }
+        }
+        &__about-video-inner {
+          margin: -10px 0 30px 98px;
+          width: 75%;
+          height: 72%;
         }
       }
     }

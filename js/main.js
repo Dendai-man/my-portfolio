@@ -26,8 +26,8 @@ window.onload = () => {
 };
 
 function setGIF() {
-	document.querySelector('#aboutImg2').src = '/images/resized2.gif';
-	document.querySelector('#aboutImg3').src = '/images/resized3.gif';
+	document.querySelector('#aboutImg2').src = '/images/robot.gif';
+	document.querySelector('#aboutImg3').src = '/images/logic.gif';
 }
 
 
@@ -251,7 +251,12 @@ function aboutImgPreview () {
 	const previewImgWrapper = document.querySelector('.previewImgWrapper');
 	const closeTarget = document.querySelector('.aboutCloseTarget');
 	// let previewImgDetail = document.querySelector('.previewImgDetail').innerText;
-	const detailTexts = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
+	const detailTexts = 
+	["レゴクリエイターシリーズという様々な種類のパーツが含まれているセット。これを買い漁り自分だけのレゴをひたすら作っていました。",
+	"高校時代にゲーム内で作ったロボット。横スクロールアクション型のステージを作る為に制作。伝わりにくいかとは思いますが、このロボットの原型はただジャンプと移動が出来るだけの人形のようなものです。そこに様々な回路パーツを組み合わせ、3段攻撃や2段ジャンプなどの機能を持たせています。例えば上のゲージはオーバーヒートゲージで、2段ジャンプや攻撃を頻発すると一定時間操作が効かなくなるというリスクがあります。攻撃エフェクトなどのビジュアル面に関しても、細かなオブジェクトをひたすら切り貼りして作っています。",
+	"ロボットの論理回路。OR／NOR／XORゲートなど実際の論理ゲートに加えタイマーなどのスイッチャー、cssでいうtranslateのような機能をオブジェクトに与えるムーバー等があり、組み合わせ次第で多様な条件分岐をする回路が組めます。それをコントローラの入力と繋ぎ対応させることで実際に操作できます。回路上で光っている導線が実際に入力が走っている箇所です。高校生ぶりに起動して驚いたのですが機能ごとに回路がしっかりと分けられており、いわゆるリファクタリングが徹底されていました。",
+	"大学のサークルで行ったライブの画像です。照明",
+	"e","f","g","h","i","j","k","l","m","n","o"]
 
 	closeTarget.addEventListener('click', () => {
 		previewImgWrapper.style.opacity = '0';

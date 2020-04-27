@@ -21,11 +21,11 @@ a {
   color: #fff;
 }
 
-.font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
+.font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .previewImgWrapper .previewImg .previewImgDetail, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
   font-size: 9.5px;
 }
 
-.font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .previewImgWrapper .previewImg .previewImgDetail, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
+.font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
   font-size: 14px;
 }
 
@@ -758,13 +758,13 @@ a {
   height: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .previewImgWrapper .previewImg .previewImgDetail {
   position: absolute;
-  bottom: -60px;
-  left: 10%;
+  top: 102%;
+  left: 1%;
   color: #fff;
 }
 
@@ -930,6 +930,42 @@ a {
 }
 
 .about__body-wrapper__body-bottom__about-img-inner .about-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.about__body-wrapper__body-bottom__about-video-inner {
+  position: relative;
+  width: 60%;
+  height: 200px;
+  -webkit-transform: skewY(-12deg);
+          transform: skewY(-12deg);
+  opacity: .6;
+  margin-left: 5px;
+  z-index: 999;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.about__body-wrapper__body-bottom__about-video-inner:hover {
+  -webkit-box-shadow: .5px .5px 10px;
+          box-shadow: .5px .5px 10px;
+  opacity: .8;
+  -webkit-transform: scale(0.95) skewY(-12deg);
+          transform: scale(0.95) skewY(-12deg);
+  -webkit-filter: sepia(0%);
+          filter: sepia(0%);
+}
+
+.about__body-wrapper__body-bottom__about-video-inner.scrolled {
+  pointer-events: none;
+}
+
+.about__body-wrapper__body-bottom__about-video-inner .about-video {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1375,10 +1411,10 @@ Stylesheet: 480px以上(スマホの横向き)のモニタで適用
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 // ******************************************************************/
-  .font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
-    font-size: 12px;
+  .font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .previewImgWrapper .previewImg .previewImgDetail, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
+    font-size: 11px;
   }
-  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .previewImgWrapper .previewImg .previewImgDetail, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
+  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
     font-size: 16px;
   }
   .font-lr, .my-words-wrapper .my-words-inner .my-words-mid {
@@ -1480,6 +1516,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   .about__body-wrapper__body-top .about-body {
     margin: 15% 2% 0 0;
+    line-height: 20px;
   }
   .about__body-wrapper__body-bottom {
     -webkit-box-orient: vertical;
@@ -1492,8 +1529,10 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     width: 75%;
     height: 24%;
   }
-  .about__body-wrapper__body-bottom__about-img-inner:nth-child(even) {
+  .about__body-wrapper__body-bottom__about-video-inner {
     margin: -10px 0 30px 98px;
+    width: 75%;
+    height: 72%;
   }
   .previewImgWrapper .previewImg {
     width: 60%;
@@ -1535,10 +1574,10 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
-  .font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
-    font-size: 15px;
+  .font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .previewImgWrapper .previewImg .previewImgDetail, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
+    font-size: 13px;
   }
-  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .previewImgWrapper .previewImg .previewImgDetail, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
+  .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
     font-size: 18px;
   }
   .font-lr, .my-words-wrapper .my-words-inner .my-words-mid {

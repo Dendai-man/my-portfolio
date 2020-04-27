@@ -658,12 +658,12 @@ h2 {
         height: 300px;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         & .previewImgDetail {
-            @extend .font-md;
+            @extend .font-sm;
             position: absolute;
-            bottom: -60px;
-            left: 10%;
+            top: 102%;
+            left: 1%;
             color: $c-white;
         }
     }
@@ -797,6 +797,32 @@ h2 {
                     pointer-events: none;
                 }
                 & .about-img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+            }
+            &__about-video-inner {
+                position: relative;
+                width: 60%;
+                height: 200px;
+                transform: skewY(-12deg);
+                opacity: .6;
+                margin-left: 5px;
+                z-index: 999;
+                filter: grayscale(100%);
+                &:hover {
+                    box-shadow: .5px .5px 10px;
+                    opacity: .8;
+                    transform: scale(.95) skewY(-12deg);
+                    filter: sepia(0%);
+                }
+                &.scrolled {
+                    pointer-events: none;
+                }
+                & .about-video {
                     position: absolute;
                     width: 100%;
                     height: 100%;
