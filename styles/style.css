@@ -38,11 +38,11 @@ a {
 }
 
 .line-h-sm, .profile__right__profile-wrapper .profile-intro {
-  line-height: 16px;
+  line-height: 14px;
 }
 
 .line-h-md, .about__body-wrapper__body-top .about-body {
-  line-height: 17px;
+  line-height: 15px;
 }
 
 .line-h-lg, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body {
@@ -404,7 +404,7 @@ a {
   position: relative;
   width: 100%;
   height: 551px;
-  background-image: url("/images/main-visual-mobile.jpg");
+  background-image: url("/images/main-visual-img.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -822,8 +822,8 @@ a {
   width: 70%;
   height: 15%;
   background-color: #fff;
-  -webkit-box-shadow: 0 1px 5px;
-          box-shadow: 0 1px 5px;
+  -webkit-box-shadow: 0 1px 2px;
+          box-shadow: 0 1px 2px;
   z-index: -1;
   -webkit-transform: skewY(-12deg);
           transform: skewY(-12deg);
@@ -884,7 +884,7 @@ a {
 
 .about__body-wrapper__body-top .about-body {
   font-weight: bold;
-  height: 120%;
+  height: 101%;
   margin: 85px 10px 0 0;
 }
 
@@ -906,7 +906,7 @@ a {
   height: 200px;
   -webkit-transform: skewY(-12deg);
           transform: skewY(-12deg);
-  opacity: .6;
+  opacity: .4;
   margin-left: 5px;
   z-index: 999;
   -webkit-filter: grayscale(100%);
@@ -948,7 +948,7 @@ a {
   height: 200px;
   -webkit-transform: skewY(-12deg);
           transform: skewY(-12deg);
-  opacity: .6;
+  opacity: .4;
   margin-left: 5px;
   z-index: 999;
   -webkit-filter: grayscale(100%);
@@ -972,9 +972,39 @@ a {
 .about__body-wrapper__body-bottom__about-video-inner .about-video {
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.about__footer {
+  font-size: 15px;
+  width: 100%;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.about__footer::before {
+  content: "";
+  display: block;
+  position: absolute;
 }
 
 .skills-section {
@@ -1468,9 +1498,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     color: #000;
     opacity: .4;
   }
-  .main-visual {
-    background-image: url("/images/main-visual.jpg");
-  }
   .main-visual::after {
     top: 500px;
   }
@@ -1541,6 +1568,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     height: 72%;
   }
   .previewImgWrapper .previewImg {
+    top: 15%;
     width: 60%;
     min-width: 550px;
     height: 350px;
@@ -1567,7 +1595,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   .contact__mail, .contact__wantedly, .contact__qiita, .contact__github {
     margin-bottom: 5%;
-    opacity: .3;
+    opacity: .6;
   }
   .contact__mail:hover, .contact__wantedly:hover, .contact__qiita:hover, .contact__github:hover {
     opacity: .8;
@@ -1581,7 +1609,7 @@ Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
   .font-sm, .nav-bottom > ul > li > a, .profile__right__profile-wrapper .profile-my-background, .profile__right__profile-wrapper .profile-intro, .previewImgWrapper .previewImg .previewImgDetail, .about__body-wrapper__body-top .about-body, .skills__skills-wrapper__skill-1 .skill-body, .skills__skills-wrapper__skill-2 .skill-body, .skills__skills-wrapper__skill-3 .skill-body, .works .works-container__work-wrapper .workMore__body {
-    font-size: 13px;
+    font-size: 12.5px;
   }
   .font-md, .nav ul a, .h-fade-in__body, .profile__right__profile-wrapper .profile-en-name, .about-header, .skills__skills-wrapper__skill-1 .skill-title, .skills__skills-wrapper__skill-2 .skill-title, .skills__skills-wrapper__skill-3 .skill-title, .contact__mail .link-title, .contact__wantedly .link-title, .contact__qiita .link-title, .contact__github .link-title {
     font-size: 18px;

@@ -57,10 +57,10 @@ h2 {
 }
 
 .line-h-sm {
-    line-height: 16px;
+    line-height: 14px;
 }
 .line-h-md {
-    line-height: 17px;
+    line-height: 15px;
 }
 .line-h-lg {
     line-height: 22px;
@@ -372,7 +372,7 @@ h2 {
     position: relative;
     width: 100%;
     height: 551px;
-    background-image: url("/images/main-visual-mobile.jpg");
+    background-image: url("/images/main-visual-img.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -713,7 +713,7 @@ h2 {
         width: 70%;
         height: 15%;
         background-color: #fff;
-        box-shadow: 0 1px 5px;
+        box-shadow: 0 1px 2px;
         z-index: -1;
         transform: skewY(-12deg);
         &:nth-child(2){
@@ -768,7 +768,7 @@ h2 {
                 font-weight: bold;
                 @extend .font-sm;
                 @extend .line-h-md;
-                height: 120%;
+                height: 101%;
                 margin: 85px 10px 0 0;
             }
         }
@@ -782,7 +782,7 @@ h2 {
                 width: 15%;
                 height: 200px;
                 transform: skewY(-12deg);
-                opacity: .6;
+                opacity: .4;
                 margin-left: 5px;
                 z-index: 999;
                 filter: grayscale(100%);
@@ -813,7 +813,7 @@ h2 {
                 width: 60%;
                 height: 200px;
                 transform: skewY(-12deg);
-                opacity: .6;
+                opacity: .4;
                 margin-left: 5px;
                 z-index: 999;
                 filter: grayscale(100%);
@@ -829,11 +829,30 @@ h2 {
                 & .about-video {
                     position: absolute;
                     top: 0;
+                    right: 0;
+                    bottom: 0;
                     left: 0;
                     width: 100%;
                     height: 100%;
                 }
             }
+        }
+    }
+    &__footer {
+        font-size: 15px;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 5px;
+        text-align: center;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
         }
     }
 }

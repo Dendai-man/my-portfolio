@@ -60,7 +60,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 
 
 .main-visual {
-        background-image: url("/images/main-visual.jpg");
         &::after {
             top: 500px;
         }
@@ -146,6 +145,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   .previewImgWrapper {
     & .previewImg {
+        top: 15%;
         width: 60%;
         min-width: 550px;
         height: 350px;
@@ -216,7 +216,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   &__mail {
     margin-bottom: 5%;
-    opacity: .3;
+    opacity: .6;
     &:hover {
       opacity: .8;
   }
