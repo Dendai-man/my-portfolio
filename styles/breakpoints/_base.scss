@@ -720,20 +720,6 @@ h2 {
             top: 115%;
             width: 100%;
         }
-        // &:nth-child(3){
-        //     top: 65%;
-        // }
-        // &:nth-child(4){
-        //     top: 73%;
-        //     width: 100%;
-        // }
-        // &:nth-child(5){
-        //     top: 93%;
-        // }
-        // &:nth-child(6){
-        //     top: 100%;
-        //     width: 100%;
-        // }
     }
     &__body-wrapper {
         visibility: hidden;
@@ -839,7 +825,7 @@ h2 {
         }
     }
     &__footer {
-        font-size: 15px;
+        font-size: 12px;
         width: 100%;
         height: 500px;
         display: flex;
@@ -847,46 +833,13 @@ h2 {
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        letter-spacing: 5px;
+        // letter-spacing: 2px;
         text-align: center;
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-        }
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        white-space: nowrap;
     }
 }
-
-
-        // &__body {
-    //     position: sticky;
-    //     top: 0;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     width: 100%;
-    //     height: 100%;
-    //     z-index: 2;
-    // }
-    // &__about-2 {
-    //     @extend .about__about-1;
-    //     &__top {
-    //         @extend .about__about-1__top;
-    //     }
-    //     &__bottom {
-    //         @extend .about__about-1__bottom;
-    //     }
-    // }
-    // &__about-3 {
-    //     @extend .about__about-1;
-    //     &__top {
-    //         @extend .about__about-1__top;
-    //     }
-    //     &__bottom {
-    //         @extend .about__about-1__bottom;
-    // }
-    //     }
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Skills Section

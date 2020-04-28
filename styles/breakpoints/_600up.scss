@@ -117,55 +117,56 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     flex-direction: row-reverse;
     height: 510px;
     &__body-top {
-      // & .about-title {
-        // }
         & .about-body {
           margin: 15% 2% 0 0;
           line-height: 20px;
         }
       }
-      &__body-bottom {
-        flex-direction: column;
-        // margin: 0 0 0 9%;
-        width: 58%;
-        &__about-img-inner {
-          width: 75%;
-          height: 24%;
-          &:nth-child(even){
-            margin: -10px 0 30px 98px;
-          }
-        }
-        &__about-video-inner {
+    &__body-bottom {
+      flex-direction: column;
+      // margin: 0 0 0 9%;
+      width: 58%;
+      &__about-img-inner {
+        width: 75%;
+        height: 24%;
+        &:nth-child(even){
           margin: -10px 0 30px 98px;
-          width: 75%;
-          height: 72%;
         }
+      }
+      &__about-video-inner {
+        margin: -10px 0 30px 98px;
+        width: 75%;
+        height: 72%;
       }
     }
   }
-  .previewImgWrapper {
-    & .previewImg {
-        top: 15%;
-        width: 60%;
-        min-width: 550px;
-        height: 350px;
-    }
+  &__footer {
+    font-size: 12px;
+    width: 100%;
+    height: 500px;
+    letter-spacing: 3px;
+    writing-mode: unset;
+    text-orientation: unset;
   }
+}
+.previewImgWrapper {
+  & .previewImg {
+      top: 15%;
+      width: 60%;
+      min-width: 550px;
+      height: 350px;
+  }
+}
   
-  .skills {
-    &__skills-wrapper {
-      // & .skills-icons-wrapper {
-        //     & .skill-icons {
-          
-            //     }
-            // }
-        &__skill-1 {
-            height: 300px;
-            & .skill-body {
-                margin: 0 30px;
-            }
+.skills {
+  &__skills-wrapper {
+    &__skill-1 {
+        height: 300px;
+        & .skill-body {
+            margin: 0 30px;
         }
     }
+  }
 }
 
 .works {

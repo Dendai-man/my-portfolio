@@ -980,7 +980,7 @@ a {
 }
 
 .about__footer {
-  font-size: 15px;
+  font-size: 12px;
   width: 100%;
   height: 500px;
   display: -webkit-box;
@@ -997,14 +997,12 @@ a {
       -ms-flex-align: center;
           align-items: center;
   font-weight: bold;
-  letter-spacing: 5px;
   text-align: center;
-}
-
-.about__footer::before {
-  content: "";
-  display: block;
-  position: absolute;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
 }
 
 .skills-section {
@@ -1571,6 +1569,16 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     width: 75%;
     height: 72%;
   }
+  .about__footer {
+    font-size: 12px;
+    width: 100%;
+    height: 500px;
+    letter-spacing: 3px;
+    -webkit-writing-mode: unset;
+        -ms-writing-mode: unset;
+            writing-mode: unset;
+    text-orientation: unset;
+  }
   .previewImgWrapper .previewImg {
     top: 15%;
     width: 60%;
@@ -1683,6 +1691,12 @@ Stylesheet: 960px以上のモニタで適用
   }
   .about__body-wrapper__body-bottom {
     margin: 0 0 0 10%;
+  }
+  .about__footer {
+    font-size: 15px;
+    width: 100%;
+    height: 500px;
+    letter-spacing: 5px;
   }
   .previewImgWrapper .previewImg {
     width: 80%;
