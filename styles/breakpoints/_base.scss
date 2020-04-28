@@ -1071,11 +1071,14 @@ h2 {
                 cursor: pointer;
                 filter: grayscale(100%);
                 transition: .2s;
-                &:nth-child(1) {
-                    background-image: url(/images/bg-front03.jpg);
+                &.__1{
+                    background-image: url('/images/works1.jpg');
                 }
-                &:nth-child(2) {
-                    background-image: url(/images/bg-front01.jpg);
+                &.__2{
+                    background-image: url('/images/works2.jpg');
+                }
+                &.__3{
+                    background-image: url('/images/works3.jpg');
                 }
                 &.active{
                     transform: scale(.5) translate(-60%,-130%) rotate(0deg);

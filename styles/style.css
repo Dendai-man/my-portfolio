@@ -1266,12 +1266,16 @@ a {
   transition: .2s;
 }
 
-.works .works-container__work-wrapper .work:nth-child(1) {
-  background-image: url(/images/bg-front03.jpg);
+.works .works-container__work-wrapper .work.__1 {
+  background-image: url("/images/works1.jpg");
 }
 
-.works .works-container__work-wrapper .work:nth-child(2) {
-  background-image: url(/images/bg-front01.jpg);
+.works .works-container__work-wrapper .work.__2 {
+  background-image: url("/images/works2.jpg");
+}
+
+.works .works-container__work-wrapper .work.__3 {
+  background-image: url("/images/works3.jpg");
 }
 
 .works .works-container__work-wrapper .work.active {
