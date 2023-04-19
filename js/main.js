@@ -238,9 +238,9 @@ const section = document.querySelector('.sections-container');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // window.onloadでgifを読み込み
 function setGIF() {
-	document.querySelector('#aboutImg1').src = '/images/robot.gif';
-	document.querySelector('#aboutImg2').src = '/images/logic.gif';
-	document.querySelector('#aboutImg3').src = '/images/tennis.gif';
+	document.querySelector('#aboutImg1').src = './images/robot.gif';
+	document.querySelector('#aboutImg2').src = './images/logic.gif';
+	document.querySelector('#aboutImg3').src = './images/tennis.gif';
 }
 
 aboutImgPreview();

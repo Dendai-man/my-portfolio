@@ -25,7 +25,7 @@ class HeroSlider {
 				el: ".swiper-my-pagination",
 				clickable: true,
 				renderBullet: function (index, className) {
-					return '<span class="' + className + '">' + '<img src="/images/bg-front0' + (index + 1) + '-thumbnail.jpg" alt="">' + '</span>';
+					return '<span class="' + className + '">' + '<img src="./images/bg-front0' + (index + 1) + '-thumbnail.jpg" alt="">' + '</span>';
 				},
 			},
 
